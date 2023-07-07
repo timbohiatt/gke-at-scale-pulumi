@@ -1,0 +1,20 @@
+{
+    "kind": "update",
+    "startTime": 1687533819,
+    "message": "",
+    "environment": {
+        "exec.kind": "cli",
+        "pulumi.arch": "amd64",
+        "pulumi.os": "linux",
+        "pulumi.version": "v3.72.0",
+        "updatePlan": "false"
+    },
+    "config": {},
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1687533880,
+    "resourceChanges": {
+        "same": 18,
+        "update": 2
+    }
+}

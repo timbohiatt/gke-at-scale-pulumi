@@ -1,0 +1,19 @@
+{
+    "kind": "destroy",
+    "startTime": 1687748103,
+    "message": "",
+    "environment": {
+        "exec.kind": "cli",
+        "pulumi.arch": "amd64",
+        "pulumi.os": "linux",
+        "pulumi.version": "v3.73.0",
+        "updatePlan": "false"
+    },
+    "config": {},
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1687748145,
+    "resourceChanges": {
+        "delete": 12
+    }
+}

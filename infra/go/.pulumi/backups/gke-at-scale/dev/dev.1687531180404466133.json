@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/gke-at-scale/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-06-23T14:39:40.397252926Z",
+                "magic": "08d1ebcb6b470392398eed01b9718e6d45b3e6af3ee19f195bf6f9cb913f7294",
+                "version": "v3.72.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:s6M8w7DeyLg=:v1:JJp7XVN4dp+W8f5w:f5Jf6D7EFiBGuFjjpoOL3TqrmZhuYQ=="
+                }
+            }
+        }
+    }
+}

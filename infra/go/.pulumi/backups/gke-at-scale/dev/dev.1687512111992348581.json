@@ -1,0 +1,268 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/gke-at-scale/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-06-23T09:21:51.9776156Z",
+                "magic": "08d1ebcb6b470392398eed01b9718e6d45b3e6af3ee19f195bf6f9cb913f7294",
+                "version": "v3.72.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:s6M8w7DeyLg=:v1:JJp7XVN4dp+W8f5w:f5Jf6D7EFiBGuFjjpoOL3TqrmZhuYQ=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2023-06-23T09:21:26.803893537Z",
+                    "modified": "2023-06-23T09:21:26.803893537Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default",
+                    "custom": true,
+                    "id": "109bf508-9f52-4c04-b689-818189fb7e50",
+                    "type": "pulumi:providers:gcp",
+                    "inputs": {
+                        "version": "6.52.0"
+                    },
+                    "outputs": {
+                        "version": "6.52.0"
+                    },
+                    "created": "2023-06-23T09:21:26.888793839Z",
+                    "modified": "2023-06-23T09:21:26.888793839Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:serviceAccount/account:Account::gas-service-account",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                    "type": "gcp:serviceAccount/account:Account",
+                    "inputs": {
+                        "__defaults": [
+                            "disabled"
+                        ],
+                        "accountId": "svc-gke-at-scale-admin",
+                        "disabled": false,
+                        "displayName": "GKE at Scale - Admin Service Account",
+                        "project": "thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":300000000000}}",
+                        "accountId": "svc-gke-at-scale-admin",
+                        "description": "",
+                        "disabled": false,
+                        "displayName": "GKE at Scale - Admin Service Account",
+                        "email": "svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "id": "projects/thiatt-manual-004/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "member": "serviceAccount:svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "name": "projects/thiatt-manual-004/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "project": "thiatt-manual-004",
+                        "uniqueId": "109562272731256354141"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "accountId": null,
+                        "displayName": null,
+                        "project": null
+                    },
+                    "created": "2023-06-23T09:21:28.414731766Z",
+                    "modified": "2023-06-23T09:21:28.414731766Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/compute.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "compute.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/compute.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "compute.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T09:21:30.921722843Z",
+                    "modified": "2023-06-23T09:21:30.921722843Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/container.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "container.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/container.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "container.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T09:21:30.923045063Z",
+                    "modified": "2023-06-23T09:21:30.923045063Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                    "type": "gcp:compute/network:Network",
+                    "inputs": {
+                        "__defaults": [
+                            "deleteDefaultRoutesOnCreate"
+                        ],
+                        "autoCreateSubnetworks": false,
+                        "deleteDefaultRoutesOnCreate": false,
+                        "description": "GKE at Scale - Global VPC Network",
+                        "name": "gas-vpc",
+                        "project": "thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "autoCreateSubnetworks": false,
+                        "deleteDefaultRoutesOnCreate": false,
+                        "description": "GKE at Scale - Global VPC Network",
+                        "enableUlaInternalIpv6": false,
+                        "gatewayIpv4": "",
+                        "id": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "internalIpv6Range": "",
+                        "mtu": 0,
+                        "name": "gas-vpc",
+                        "project": "thiatt-manual-004",
+                        "routingMode": "REGIONAL",
+                        "selfLink": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/global/networks/gas-vpc"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "autoCreateSubnetworks": null,
+                        "description": null,
+                        "name": null,
+                        "project": null
+                    },
+                    "created": "2023-06-23T09:21:38.582202842Z",
+                    "modified": "2023-06-23T09:21:38.582202842Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/artifactregistry.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "artifactregistry.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/artifactregistry.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "artifactregistry.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T09:21:50.260558883Z",
+                    "modified": "2023-06-23T09:21:50.260558883Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-us-central1",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                    "type": "gcp:compute/subnetwork:Subnetwork",
+                    "inputs": {
+                        "__defaults": [],
+                        "description": "GKE at Scale - VPC Subnet - us-central1",
+                        "ipCidrRange": "10.128.50.0/24",
+                        "name": "gas-vpc-subnetwork-us-central1",
+                        "network": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "privateIpGoogleAccess": true,
+                        "project": "thiatt-manual-004",
+                        "region": "us-central1"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "creationTimestamp": "2023-06-23T02:21:41.074-07:00",
+                        "description": "GKE at Scale - VPC Subnet - us-central1",
+                        "externalIpv6Prefix": "",
+                        "gatewayAddress": "10.128.50.1",
+                        "id": "projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                        "ipCidrRange": "10.128.50.0/24",
+                        "ipv6AccessType": "",
+                        "ipv6CidrRange": "",
+                        "logConfig": null,
+                        "name": "gas-vpc-subnetwork-us-central1",
+                        "network": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "privateIpGoogleAccess": true,
+                        "privateIpv6GoogleAccess": "DISABLE_GOOGLE_ACCESS",
+                        "project": "thiatt-manual-004",
+                        "purpose": "PRIVATE",
+                        "region": "us-central1",
+                        "role": "",
+                        "secondaryIpRanges": [],
+                        "selfLink": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                        "stackType": "IPV4_ONLY"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "description": null,
+                        "ipCidrRange": null,
+                        "name": null,
+                        "network": [
+                            "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                        ],
+                        "privateIpGoogleAccess": null,
+                        "project": null,
+                        "region": null
+                    }
+                }
+            ]
+        }
+    }
+}

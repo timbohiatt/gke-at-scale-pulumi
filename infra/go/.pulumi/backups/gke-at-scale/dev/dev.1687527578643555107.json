@@ -1,0 +1,2725 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/gke-at-scale/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-06-23T13:39:38.592743638Z",
+                "magic": "08d1ebcb6b470392398eed01b9718e6d45b3e6af3ee19f195bf6f9cb913f7294",
+                "version": "v3.72.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:s6M8w7DeyLg=:v1:JJp7XVN4dp+W8f5w:f5Jf6D7EFiBGuFjjpoOL3TqrmZhuYQ=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "gas-artifact-registry-repository": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/locations/europe/repositories/gke-at-scale",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository"
+                        },
+                        "gas-gke-cluster-europe-west6": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/locations/europe-west6/clusters/gas-gke-cluster",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-europe-west6"
+                        },
+                        "gas-gke-cluster-kubeconfig-europe-west6": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:g+vtuMioqF1AGOEd:C8bHAc/ecUqtGvVLu5Mr/OYZVRE5but6uM6/Qmr92XVaITGKcluzt4C1BHiS8ekJWNyi2DMZlRru6HHgNCouwHEAAJUyfMzt/njsUEDRKntvSH97cnBwloyhkfVE1jhDsxo7ZIqWco59jBP6haAZ/hG6TY35EdmTJq7sJUsRxwS9W56ZFNxIOCTDhpiStpzBH3Sf2OKDKlZIZY1+yP1KCSHA1zkXt0rICnYdUuzjIAx7PlOXACCjxbV12u7Wu4yoM3lkO2ewLnOd6qB7T5jum6oXNbaGMkavUr+kzGOSwHdPJMgmJV/Q+f1b/4a463EXCQHF5/g2Vntk3DgCT4p+2l5WNsCIW8b8byBQi9LJdC3451AXoE8VbEwZGaLB1hkTMsw0+8tdOyUOcTXPeJMtXRS4YXlSiStgIK41r+vH6Y89Hl7nzmqRhQnUc/99ISL++LBDQX8feKbpbMz5sxQF7hCS0sypzNYJdLmkQWYGV1N1odNtxeN00YoP9IiWHEXC2l1u4vaDY35JUb5AT5Q/qJSFU4drY285ku8Uz61z130Eg08BcaRTpEcsvfeZZWurCtYMvwWCJQAl31KLSQV2b+FrDCQOddAhBEwB5B1CqF+xd1Hn86ms/HaFnFXgreGwSDDmytfgk1qG7mHb4VHYxrvLo7wDhojkqyWepaB6hxYpUL3RaW6+zq7+Zr1RZ2R7h8zjdYU3rpnavoQi83B3TdTU5w/i1JkCFDXmn0HuzaDcYZpKL31M+uORJddTUTK8Tf2Fhds9qPmZyfEHiiELMqHZKyn1exh0uwZL7MBrqQCoqVMVjst9p/3ee7GLO9LhuNo3zcP0Dl67/lKq8A4kv9oJvPr9rfcm5WrXPMvGvQVenANKRmf3FKZ3UDVNqSq4ZMPpbhKy5OGwGnXm+8LA3xbwa/Cl8I1SvYESKPL4Da2rgMHtl3UfELxFfnTzzUE3sd73GXuPMXAToay9YUJw4N/QBf/XHfwhU2UJtZTkSS/ahW1w7GD6XmMueNbxnSpYswJZco+txmGfk7IoJLu4vMO/oYNOd1u3i6RimtKksTZh1ICJB+xt4h70ppsTcYuN9MXCEn5r+8S+n//ZiQvPv607sEp5gkBN8IhbzhS976ah3+ej74GSmNNM1PmGckFLc7eKG47BO8OSFVg0juX0hRXhBkutmGS2h0ID06c+71CI1yvlezwejx6R7Pzn3GSCSiaCUiPf/wjX+8HIx6P2e5trsiTfWnCvZcBd8DEAlpg1P1IqEmctj4dDE0P/+LTpz4C+i9nwIDGcaiAQKsZq4E2yv5H2Joathk+YnNcCkdfG9xRMC6hVKT/CGtWSfjqiimskae2Bbw2sOgEx1WNXnKzfNOu5q9DrAtlZOAlJucTWiXGMOiuD4vt2BLQBgiTosfZ0E6WSmXWbNw4390S2EVijbW3wIwK87xknyWyG/q9HbzO7KZjTDODlISmNrnVhLpkD2hpbw7CfhGYj71Byo/jZzginTPvGlhRVJCUGFVbQHJ5ZzBqpht1QiXHXKIj5SMEyLKdBtgK53HwaMx36kDq9vaezqNkXg+E2ftvcTIlUR6g1NPDWXYhQ4VFUZgm3kZiRifReZx07FTRY+agaFyW6j3eR6qRyH0w3AOfwj/RLMlg8UQNuAC/+Gogn9GlwZoScnc3zh+8mcM6HmAPWag3cZHINNiAa4J51EzV/tb5joE6ymm9iuoE/EnjJOZv1acaNwT2A4CVzK5GK+5taJj4EyVQiotnj5lN53GERl/LpFA1zpiQsk7POgyNlNZ7tUPNzfXZVz6vz7pQgqYV5ctVwWiX2+Q1fI1TwvRyrQvhB7uzxKAVxIIoVhUxF/0dfJIT6kgnHI3Qo11o5hXP4HqhuGbmz9xPgk+HZipXDuDVbvqYjFDmROpxXmBRPRwlLuJWh8Ea3g+p62tc37ySy/hZe6uqPf1EGEJct6pYrfoogj96HrZ1jbBBHerl6dDBHn6gYOWOER/O7E962G59v2QOVAHHUyEU+Npaf/WYQEGhBRe6jBb9u5DA2OAsk/TEpaVuQUARBsn2W5DcjxkwOl1sRZ760HD72Pza6YOXT3GEgM14bOTrcW9ecBJI5plS7N3x61soI2Mr2J9A5d3PWOp5kgUO6Vy+4YCZJPANndr9HxTsock7KHaDpCVjOvHjP97DXtZTJlhG41LhEY72NwPr1evQPC6PumjkhJt5ZOzClKXU9LoupeY17d/aYDGGpy4El3ddzZVAHE3Ycas/j6ASzUNl+zzElp1wzWl2gKqHe0R4UePDYzQnRZkgb8POq+6oI557yjFpAKGy8EcAoEnUjCayY6WtRntfgGqWWGk3uUx82QrnedeOh/lMx7O7jjtzgqoWWUgiyorhNzcRW3g1/s8wl3wu7gYN3Vrlh81bQ3ZE16sxf3HB4mvK5qrIEBzl95pW4Hdg6TBMaRVKezI48P7pHnBUTGuuMRxq5MygPcB2FYlUHq3MTiixFxGP6OFP3jXbAMVIdP3ovQyIr4YE+A4N05pcIN5bOJr232tcnXTyRPxzIV/1EGdYqA36nB2C4N85fEPdJmfq23o007Ey8b6B5bTKha5LS8MC+Il0ae9r9c5H5e52fB2f4zzbPr/m14yxceA1EoYZawSle31i6S76VGGBKIIJkh7GYtEoonOQLgBEJlG2q38gCyMaxmVQWyU643Pya3W8wZQPnkq/OhMFExtI1Tepkw+cJruVuTOyXEqGH8RBMVmrrr90ouz2TumyhjuFGsmnMA6Yf3GyFwChFT6CTBElKB2Qdt7pWD3wZ5Gzmioo9Ot/qjJ0GEiJ3LlIls4dVXAoZjsCCV/77YrqxSUaiT0ha9YRBflkt93TnSmdtNQNBrb2/hbo2vplzBFrIk4ylIVGOtx5j4iEh6KDlrTLpASlJ+zxkX+Tkq8K/+F0h4E62vnh3zaZydg43/MUuXwgF7JldeBkS+HuS3TUVWMnS3IW8PV+8gplnqFxKDACGFdCYHzQMYMi9w7NsycN0qWaeif1nJ8X//4tqSFw1HA2zPiwwpI5w2XoKphUZCcAuJHVjhmXZAiPyxnXWOtZSoGU/Ric42OzzFL6ahuMz74IELMmuVD1TxAcf7ISsT30pTxYcWdLTW4oN9rWfOw3O/SG5C8oPWog5OeAfDob//Tdyg0eL1uQpglBT6Z4RtK6LmrASea2x+5UDEgXuQQ5QD7c2bQmu/NmWjZJ4Sad3koEDC5l6ekb4rESlekmtqED3WxUcc6RiPS7+7wNK4G3XJuIAqPyviVzMFS//BBcHssJHA2UxqQS4q8b0tGUyL/uihhWqYzQw8yY/3wcQaL90asMUo/TU3askEz/hHq8C5MxVVoH+QlkvVEcXBgXq6lxsp0qVW7K+Mm3pMu44dwAPONki9oPDGARX3GEd9JVwsuq/hXJoAkbALRCNFYa1eZYzhWtqeb72TxurwMpdHf7nuj1B2u8WjNWpLZCEY1I897jMxTG7pV2+TteAUj0NDEOTHVo14g1jUygRc5km61ZVl6TcSixSh+EksS+zz5HbX8Cl4muI9zVRduedYmuqpxhR4xT0TrjVQ6Ya8FuZil4w8LYtlur2hqYXJ0UYvzWx3E9IRqetCC0LAHo5YbVAkvhd4CiQRBKJwO7KxJOCPWeDzmMpxu4sw2AoaBuBEY1hRniRAMMvmvgHJVBq4MySLewmhw1rtFxqNBHaOVexXf1PSJMMFW/IHCSLznoTLsE8MLbogyOeeitWBy5ni5mVJnf7ASaROI4ZnDZagbnhwHLv7egQ"
+                        },
+                        "gas-gke-cluster-kubeconfig-us-central1": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:GqnZKqcgkTS9vODG:59lA9Cwv79F6F4h6POARhDW3MvQvd/WshRiUFi3DWjP2+eIp5STFcMYS5/CQEWg7oaLsGYmzh4RXgfZA2fiNL7S33AbEzKDyVYC15Hzq548+5iKM3AMTN9i2jp47SrakXizd6i4mmNwyh1YRJzpta/DjDBHR9cINSZxtAhyIF3/7VYX866tbMfti3nKWZwc2+UC8msu8EFSkWVUcjtHUj+86v65OXHUrcTLzVg2xb/WYBjo4PksktHJOy1HvtgJZbO2ij4ZGOU7Di4WJTN475T5fgVPgSFkJoxG/wynqTFNRHeDpyZ/o4JRy5S6Fuskorq1Eccy71vDC57+LIjpjWjKmx9uKc+droaJQVvEFLA9M6KIvy2Cb+YwnOotP7eEc0tIVTEJn3G6gr6J4DIDPqnqKzxSPf2jI2jpcE+5G49iR10iU4rooFMy7nTPs64zztVDQeu3m7AOspJz/scx9ieoMskF2N5+BbQWsiqzm8OZ6xefGG3j5Kr/qxJU3fly5eYfcolnp70l+Eme95yIgL/Uk9U8jsXWaDhDHm7FUtZ8VEvy4ejb9fwUeGTKvaIdeTWh37h16aSA5l5AjFYCNaEt52yrKHeyvHNUb23V1smHkO7WInq6WigamJo4pHdjPnDIehnlXp7Yh7liqRNP9x6dn43Vd+R4+wgdDsbH05zr1TxAXBp0TrNjnzcqrGMFKW1FuZuaWnABMGvTM5gpMemzAADdPD88+x/7uqDYmxgUTNawcrbBHn+u0+uIbH/QnJoT07GilLc0CY3V5B3Em2B8+gJlPAq2cOeSFnAoGEzJEk2SwzD32wJjNDSjHCJQ6SV/hrIBaVOD2zTqSoyrM2N/EsQhXue7l7CA2WLw57eN3cZxYZ8AF2eKcyw3smxhH//gdX2mP9rZ6vouXp2KSvHrjk8wr7JBdmIBqqdvm3bbW7pP8x2GqpAFqrlbtBOqM+fJ6Cvn6dcdHpVTwf+N9EIJkGBeteF/QziWsR/z7cSSttRy5iKvIhJHbWVWslZCBd5PULezxBg11PoQH3uLgQlYo8cPYOX8oDdn3KFmDPpRdhWiDdOz+iAsO3H2i5ZPUMNzgk7uBMpg1Hn/31xprPrCfTTiwp+z2JtcojHnNFA+bFpVjq7pj0DekXUhAxbPH+NyOpylR27q32cehQhuhT1qfGNJeH7hFJBTC3qUZWMHtRZSsgaWWbD7SSgszl4Oul1tEZWcecMLYxlu5zIL+yyAiS96WI5Vaq5iyb/f4hMjBTQQ47faUsewrXAFasJQIPMyOvdHqlF3JPQk1SRkQU0OUgILpOIxP8L+PkaUpjzSbLsNUkBNE9sPaLgMySNyrXykqQ+IroPxGhJUH8Ug3WiaIBS17GlJKgOLXA8yr/KGS0me9ohTUd5Zkhcv5uVsZCrZE5mywXBJQhPbjom8s6w8G8eCp5jnq/7SvD2xTSNJq0y0j9GOHxVVWCfxRTksGenKJGQ+l2f5AxZ3HccpmnrmWShYfA0JfFEPEQe5+zyQRz9CIRDxN7W90pRy2ckDSNox3H247fpBtsjCEcEyK3RyVF62tStZLw7M4OUf93RhSRMFqNnyCX4oZFrXGpRtR3R+KlzBK87NIuOXfQ5svx3W+FM4Yn+WYchWQalZcjp2xPfFMvJtTOuqNzU+ALnKoBpoq45jB7/tONlL0pCP2iF9gSA35lOjQLsxJ5mqCDz5ewnkqhNcuJKykLQPoQgG/xane3MsbvGR4o14v/3xJmBwYg0J9GCiR0t0RU6TLhkQdWZbpbOK+Ha+WltcJoWhgvemPm4xJ7QM9IxKsrc4H7fxblDoT2RYoxb/omiJzwmxw4+pgj2qaTMi0CPMbEGk5X4DTvbDDCmb+2+NMsupB/LqmzB+8aVyMRlUWANfTxqVaTOPNCa74mILAZf9cYBfD8C1pyad4Ba7ivmscN+qvaTSL8wgAXibVzO4wBEIGGBPVFrLCIxLS48io+CVHZVBqgkb7W9w9N/yre7Hkz58C34j496MD0YLx3xP2qXPsAiOSPQRTHARDHhu0gDj4tXqa0wptlaFcsrPSfnM8maNgAwIivifj2TvmNHnP7VlKompENr/1N15mKqZJYBHM/ra2zu/jy3HVS9ge5VoDKDuKAL6+t8I7dOm8cpc2pfRJ/YrGVSHEiofUxfWagpn8pMHwORvkEQBjaIF5ZvsEY1YRiv0zCigSbp+qHfLun/pTLiSpU5H47ajApA9bMyrDfxWsFt3UZyCq7PQ7yhmyoEND9yWMUiAm4QTdDWu9up2ymsvNFhLHlkECGqI8ZWEx4mFi1mtB+CXUSYHVplGSd1Ay3gDIwYCNtZR2wadWOU4QtT+OKgVpTWXKHt4MU7JWPkx0CodcLy52E9B1VXhKb0jyFCU0kxjoanIqq5r9FmNZxqNoMbY3qc0WVthCgmCHjwnT4UsQR7MP2Iof+JtvEFRWZo9SrQAe7iWOsI6x96xJnlTiqRbuOMfEa9EhBsjZUp/5e1aCvh9Qs7UdRst44m0C+wLLv+kvbEyEAOY2wndxu5kIxIH7025NvmhKH9zorAwfz2msUjCJKS2rVIbtYFdKiGoUQ/+ZrFBAoEPtVN2A6QRevlnQ7y6iPkxds406Z7MlyxBWG41RTEQWyMuMBQpgTR2QEOPPn9peP3/wh+GaBLn2h1UHbu3r4FS3x9UhrRi9qziCHX2EQPVNt113i/c7y/grkJXXTTyhaST2HcevGQvQDNIbRx4XoWr42QEPTKsTsV7BKvH5XWjYsg0BDP+Ylv2p0kPv9hf2AYcizCCM6gn3VzPrpWtYz2rY03lJf5hxTPrIqNYPTueSqdsP+12JAZPGo8YZgeHm7MJ1tjzOWRWbF+TtIX5z781wI5cW9SNFsjXcd911wjWMCQIF2WF3I17XhqWu/+t3qImB1uuHjBMdAJB4i9kCsCZQQAdJ5WjGzouNsFVxeQK50iyqTiBhb8Yog9xnHo/PlkhBX4DwAH7kT8WWFTIV6P/Ea+lLjZUflgDy8/5ylZQE+S0XVOVV6OLmCr1PwXbO3AKhvedPcTFebqhs5eyOlM8MAWThAA5mRDGq7Uu7nXrsPl1QifpLkooO8OFaY/lpPwhze/3bcpccMiSFse6/ZT/53GqdVLzv4cJNZ+ncAsTwB+TkxR4+6OsTTc1i9IN9KF/03eE8mC/OEKvIyZF2lfPDzb59inX22/p/WDNjRr7OxtrbeVhSq1G+GvWubyt8rUyjOYxsm86R3E7Ikeu4PQSGxtu28IAqrNPjHT3RbqrHta/Qb9dikm+/eytWpAawRWxWGp+XH3LDKUj8oRiPW1YQBVMNt4QvqBJUMwbP1r9obxSPwE7NbcO/hxzCvQSk3f62hws+EYoWiUGhKpFamJM8hE1LBRlAaHENztVttgfp9Y2rmtTygqBpS+WVUnpYgAXESEeM+E+cb/Zr0h0DhxdkO+ExK9vj9m+2odqeMJc0qtdGYCQxWFd+YWd9qXbWJ7GlPWzUSSmXpGcNbZlvR1aUp+OTmLIGfUr4DLeY+n9ucCmW15iu/W9q3/TRg2EgiLuCL4JlWVlwmh9FegHqgJaGRsywbilUbxEwSa2LLdvnFSrOe7yBZ17nlCUDGjw7QoRdbikjYLi7BkAMMTAeNgUM3MaWC899FSOdkn+MVkjjz3RzhJXnOGTQ3YV+pc67cymu3MMvL71bkh7hkfO9+eVWgynFI4eDVU61yZvt/hYbwcfbApHBeH3j8iDTGk4oKonz0cDEgl4ohIM+bLWPCitaM/V2wDv5J9+LaB9BhuY="
+                        },
+                        "gas-gke-cluster-us-central1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/locations/us-central1/clusters/gas-gke-cluster",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1"
+                        },
+                        "gas-gke-fleet": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "v1alpha/projects/thiatt-manual-004/locations/global/fleets/default",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet"
+                        },
+                        "gas-local-cmd-kubctl-get-ns-europe-west6": "GKE Cluster Name: gas-gke-cluster\nGKE Cluster Region: europe-west6\nGKE Cluster Project: thiatt-manual-004\nGKE Cluster Project Number: 1088204991034\nNAME                       STATUS   AGE\ndefault                    Active   3h58m\ngke-gmp-system             Active   3h56m\ngke-managed-filestorecsi   Active   3h57m\ngmp-public                 Active   3h56m\nkube-node-lease            Active   3h58m\nkube-public                Active   3h58m\nkube-system                Active   3h58m\nNAME                          EXTERNAL_ID                           LOCATION\ngas-gke-cluster-us-central1   221b049f-b987-48cf-8174-c706b049e780  global\ngas-gke-cluster-europe-west6  88ec92d4-6655-4abc-b192-54a8fc5164a7  global\nbindings:\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-servicemesh.iam.gserviceaccount.com\n  role: roles/anthosservicemesh.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-apigee.iam.gserviceaccount.com\n  role: roles/apigee.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-artifactregistry.iam.gserviceaccount.com\n  role: roles/artifactregistry.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@compute-system.iam.gserviceaccount.com\n  role: roles/compute.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@container-engine-robot.iam.gserviceaccount.com\n  role: roles/container.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@containerregistry.iam.gserviceaccount.com\n  role: roles/containerregistry.ServiceAgent\n- members:\n  - serviceAccount:1088204991034-compute@developer.gserviceaccount.com\n  - serviceAccount:1088204991034@cloudservices.gserviceaccount.com\n  role: roles/editor\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-gkehub.iam.gserviceaccount.com\n  role: roles/gkehub.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-meshdataplane.iam.gserviceaccount.com\n  role: roles/meshdataplane.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-mcmetering.iam.gserviceaccount.com\n  role: roles/multiclustermetering.serviceAgent\n- members:\n  - user:timhiatt@google.com\n  role: roles/owner\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-pubsub.iam.gserviceaccount.com\n  role: roles/pubsub.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@service-networking.iam.gserviceaccount.com\n  role: roles/servicenetworking.serviceAgent\netag: BwX-zBKI6I0=\nversion: 1\ncreateTime: '2023-06-23T12:36:17.280786910Z'\nmembershipStates:\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-europe-west6:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:09.919463688Z'\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-us-central1:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:31.177979338Z'\nname: projects/thiatt-manual-004/locations/global/features/servicemesh\nresourceState:\n  state: ACTIVE\nspec: {}\nupdateTime: '2023-06-23T13:33:32.492031845Z'",
+                        "gas-local-cmd-kubctl-get-ns-us-central1": "GKE Cluster Name: gas-gke-cluster\nGKE Cluster Region: us-central1\nGKE Cluster Project: thiatt-manual-004\nGKE Cluster Project Number: 1088204991034\nNAME                       STATUS   AGE\ndefault                    Active   4h8m\ngke-gmp-system             Active   4h7m\ngke-managed-filestorecsi   Active   4h7m\ngmp-public                 Active   4h7m\nkube-node-lease            Active   4h8m\nkube-public                Active   4h8m\nkube-system                Active   4h8m\nNAME                          EXTERNAL_ID                           LOCATION\ngas-gke-cluster-us-central1   221b049f-b987-48cf-8174-c706b049e780  global\ngas-gke-cluster-europe-west6  88ec92d4-6655-4abc-b192-54a8fc5164a7  global\ncreateTime: '2023-06-23T12:36:17.280786910Z'\nmembershipStates:\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-europe-west6:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:09.919463688Z'\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-us-central1:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:31.177979338Z'\nname: projects/thiatt-manual-004/locations/global/features/servicemesh\nresourceState:\n  state: ACTIVE\nspec: {}\nupdateTime: '2023-06-23T13:33:32.492031845Z'",
+                        "gas-service-account": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:serviceAccount/account:Account::gas-service-account"
+                        },
+                        "gas-vpc": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                        },
+                        "gas-vpc-subnetwork-europe-west6": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/regions/europe-west6/subnetworks/gas-vpc-subnetwork-europe-west6",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-europe-west6"
+                        },
+                        "gas-vpc-subnetwork-us-central1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-us-central1"
+                        },
+                        "gas-wip-gke-cluster": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-004/locations/global/workloadIdentityPools/gas-wip-gke",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster"
+                        }
+                    },
+                    "created": "2023-06-23T09:21:26.803893537Z",
+                    "modified": "2023-06-23T09:21:26.803893537Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default",
+                    "custom": true,
+                    "id": "109bf508-9f52-4c04-b689-818189fb7e50",
+                    "type": "pulumi:providers:gcp",
+                    "inputs": {
+                        "version": "6.52.0"
+                    },
+                    "outputs": {
+                        "version": "6.52.0"
+                    },
+                    "created": "2023-06-23T09:21:26.888793839Z",
+                    "modified": "2023-06-23T09:21:26.888793839Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/anthos.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "anthos.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/anthos.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "anthos.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T13:35:13.110967005Z",
+                    "modified": "2023-06-23T13:35:13.110967005Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/compute.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "compute.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/compute.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "compute.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T09:21:30.921722843Z",
+                    "modified": "2023-06-23T09:21:30.921722843Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/mesh.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "mesh.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/mesh.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "mesh.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T10:59:33.529346521Z",
+                    "modified": "2023-06-23T10:59:33.529346521Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/container.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "container.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/container.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "container.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T09:21:30.923045063Z",
+                    "modified": "2023-06-23T09:21:30.923045063Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                    "type": "gcp:compute/network:Network",
+                    "inputs": {
+                        "__defaults": [
+                            "deleteDefaultRoutesOnCreate"
+                        ],
+                        "autoCreateSubnetworks": false,
+                        "deleteDefaultRoutesOnCreate": false,
+                        "description": "GKE at Scale - Global VPC Network",
+                        "name": "gas-vpc",
+                        "project": "thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "autoCreateSubnetworks": false,
+                        "deleteDefaultRoutesOnCreate": false,
+                        "description": "GKE at Scale - Global VPC Network",
+                        "enableUlaInternalIpv6": false,
+                        "gatewayIpv4": "",
+                        "id": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "internalIpv6Range": "",
+                        "mtu": 0,
+                        "name": "gas-vpc",
+                        "project": "thiatt-manual-004",
+                        "routingMode": "REGIONAL",
+                        "selfLink": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/global/networks/gas-vpc"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "autoCreateSubnetworks": null,
+                        "description": null,
+                        "name": null,
+                        "project": null
+                    },
+                    "created": "2023-06-23T09:21:38.582202842Z",
+                    "modified": "2023-06-23T09:21:38.582202842Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:serviceAccount/account:Account::gas-service-account",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                    "type": "gcp:serviceAccount/account:Account",
+                    "inputs": {
+                        "__defaults": [
+                            "disabled"
+                        ],
+                        "accountId": "svc-gke-at-scale-admin",
+                        "disabled": false,
+                        "displayName": "GKE at Scale - Admin Service Account",
+                        "project": "thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":300000000000}}",
+                        "accountId": "svc-gke-at-scale-admin",
+                        "description": "",
+                        "disabled": false,
+                        "displayName": "GKE at Scale - Admin Service Account",
+                        "email": "svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "id": "projects/thiatt-manual-004/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "member": "serviceAccount:svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "name": "projects/thiatt-manual-004/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-004.iam.gserviceaccount.com",
+                        "project": "thiatt-manual-004",
+                        "uniqueId": "109562272731256354141"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "accountId": null,
+                        "displayName": null,
+                        "project": null
+                    },
+                    "created": "2023-06-23T09:21:28.414731766Z",
+                    "modified": "2023-06-23T09:21:28.414731766Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-004/artifactregistry.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-004",
+                        "service": "artifactregistry.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-004/artifactregistry.googleapis.com",
+                        "project": "thiatt-manual-004",
+                        "service": "artifactregistry.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-23T09:21:50.260558883Z",
+                    "modified": "2023-06-23T09:21:50.260558883Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-us-central1",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                    "type": "gcp:compute/subnetwork:Subnetwork",
+                    "inputs": {
+                        "__defaults": [],
+                        "description": "GKE at Scale - VPC Subnet - us-central1",
+                        "ipCidrRange": "10.128.50.0/24",
+                        "name": "gas-vpc-subnetwork-us-central1",
+                        "network": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "privateIpGoogleAccess": true,
+                        "project": "thiatt-manual-004",
+                        "region": "us-central1"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "creationTimestamp": "2023-06-23T02:21:41.074-07:00",
+                        "description": "GKE at Scale - VPC Subnet - us-central1",
+                        "externalIpv6Prefix": "",
+                        "gatewayAddress": "10.128.50.1",
+                        "id": "projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                        "ipCidrRange": "10.128.50.0/24",
+                        "ipv6AccessType": "",
+                        "ipv6CidrRange": "",
+                        "logConfig": null,
+                        "name": "gas-vpc-subnetwork-us-central1",
+                        "network": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "privateIpGoogleAccess": true,
+                        "privateIpv6GoogleAccess": "DISABLE_GOOGLE_ACCESS",
+                        "project": "thiatt-manual-004",
+                        "purpose": "PRIVATE",
+                        "region": "us-central1",
+                        "role": "",
+                        "secondaryIpRanges": [],
+                        "selfLink": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                        "stackType": "IPV4_ONLY"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "description": null,
+                        "ipCidrRange": null,
+                        "name": null,
+                        "network": [
+                            "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                        ],
+                        "privateIpGoogleAccess": null,
+                        "project": null,
+                        "region": null
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-europe-west6",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/regions/europe-west6/subnetworks/gas-vpc-subnetwork-europe-west6",
+                    "type": "gcp:compute/subnetwork:Subnetwork",
+                    "inputs": {
+                        "__defaults": [],
+                        "description": "GKE at Scale - VPC Subnet - europe-west6",
+                        "ipCidrRange": "10.128.100.0/24",
+                        "name": "gas-vpc-subnetwork-europe-west6",
+                        "network": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "privateIpGoogleAccess": true,
+                        "project": "thiatt-manual-004",
+                        "region": "europe-west6"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "creationTimestamp": "2023-06-23T02:33:21.629-07:00",
+                        "description": "GKE at Scale - VPC Subnet - europe-west6",
+                        "externalIpv6Prefix": "",
+                        "gatewayAddress": "10.128.100.1",
+                        "id": "projects/thiatt-manual-004/regions/europe-west6/subnetworks/gas-vpc-subnetwork-europe-west6",
+                        "ipCidrRange": "10.128.100.0/24",
+                        "ipv6AccessType": "",
+                        "ipv6CidrRange": "",
+                        "logConfig": null,
+                        "name": "gas-vpc-subnetwork-europe-west6",
+                        "network": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "privateIpGoogleAccess": true,
+                        "privateIpv6GoogleAccess": "DISABLE_GOOGLE_ACCESS",
+                        "project": "thiatt-manual-004",
+                        "purpose": "PRIVATE",
+                        "region": "europe-west6",
+                        "role": "",
+                        "secondaryIpRanges": [],
+                        "selfLink": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/regions/europe-west6/subnetworks/gas-vpc-subnetwork-europe-west6",
+                        "stackType": "IPV4_ONLY"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "description": null,
+                        "ipCidrRange": null,
+                        "name": null,
+                        "network": [
+                            "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                        ],
+                        "privateIpGoogleAccess": null,
+                        "project": null,
+                        "region": null
+                    },
+                    "created": "2023-06-23T09:33:42.194592071Z",
+                    "modified": "2023-06-23T09:33:42.194592071Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:command::default",
+                    "custom": true,
+                    "id": "a0abe55a-6f72-4cc4-adaa-4ce6d207473b",
+                    "type": "pulumi:providers:command",
+                    "inputs": {
+                        "version": "0.7.2"
+                    },
+                    "outputs": {
+                        "version": "0.7.2"
+                    },
+                    "created": "2023-06-23T10:22:05.843532048Z",
+                    "modified": "2023-06-23T10:22:05.843532048Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                    "custom": true,
+                    "id": "gas-local-cmd-gcloud-enable-fleetscbcc2cfb",
+                    "type": "command:local:Command",
+                    "inputs": {
+                        "create": "gcloud container fleet mesh enable --project thiatt-manual-004",
+                        "delete": "gcloud container fleet mesh disable --project thiatt-manual-004",
+                        "update": "gcloud container fleet mesh enable --project thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "create": "gcloud container fleet mesh enable --project thiatt-manual-004",
+                        "delete": "gcloud container fleet mesh disable --project thiatt-manual-004",
+                        "stderr": "Waiting for Feature Service Mesh to be created...\n........done.",
+                        "stdout": "",
+                        "update": "gcloud container fleet mesh enable --project thiatt-manual-004"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:command::default::a0abe55a-6f72-4cc4-adaa-4ce6d207473b",
+                    "propertyDependencies": {
+                        "create": null,
+                        "delete": null,
+                        "update": null
+                    },
+                    "created": "2023-06-23T12:36:21.136857385Z",
+                    "modified": "2023-06-23T12:36:21.136857385Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/locations/global/workloadIdentityPools/gas-wip-gke",
+                    "type": "gcp:iam/workloadIdentityPool:WorkloadIdentityPool",
+                    "inputs": {
+                        "__defaults": [],
+                        "description": "GKE at Scale - Workload Identity Pool for GKE Cluster",
+                        "disabled": false,
+                        "displayName": "gas-wip-gke-cluster",
+                        "project": "thiatt-manual-004",
+                        "workloadIdentityPoolId": "gas-wip-gke"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "description": "GKE at Scale - Workload Identity Pool for GKE Cluster",
+                        "disabled": false,
+                        "displayName": "gas-wip-gke-cluster",
+                        "id": "projects/thiatt-manual-004/locations/global/workloadIdentityPools/gas-wip-gke",
+                        "name": "projects/1088204991034/locations/global/workloadIdentityPools/gas-wip-gke",
+                        "project": "thiatt-manual-004",
+                        "state": "ACTIVE",
+                        "workloadIdentityPoolId": "gas-wip-gke"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "description": null,
+                        "disabled": null,
+                        "displayName": null,
+                        "project": null,
+                        "workloadIdentityPoolId": null
+                    },
+                    "created": "2023-06-23T09:23:07.358162324Z",
+                    "modified": "2023-06-23T09:23:07.358162324Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/locations/europe/repositories/gke-at-scale",
+                    "type": "gcp:artifactregistry/repository:Repository",
+                    "inputs": {
+                        "__defaults": [
+                            "mode"
+                        ],
+                        "description": "GKE at Scale",
+                        "format": "DOCKER",
+                        "location": "europe",
+                        "mode": "STANDARD_REPOSITORY",
+                        "project": "thiatt-manual-004",
+                        "repositoryId": "gke-at-scale"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "createTime": "2023-06-23T09:23:20.747396Z",
+                        "description": "GKE at Scale",
+                        "format": "DOCKER",
+                        "id": "projects/thiatt-manual-004/locations/europe/repositories/gke-at-scale",
+                        "kmsKeyName": "",
+                        "labels": {},
+                        "location": "europe",
+                        "mavenConfig": null,
+                        "mode": "STANDARD_REPOSITORY",
+                        "name": "gke-at-scale",
+                        "project": "thiatt-manual-004",
+                        "remoteRepositoryConfig": null,
+                        "repositoryId": "gke-at-scale",
+                        "updateTime": "2023-06-23T09:23:20.747396Z",
+                        "virtualRepositoryConfig": null
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "description": null,
+                        "format": null,
+                        "location": null,
+                        "project": null,
+                        "repositoryId": null
+                    },
+                    "created": "2023-06-23T09:23:27.73657156Z",
+                    "modified": "2023-06-23T09:23:27.73657156Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:google-native::default",
+                    "custom": true,
+                    "id": "ec962de1-c3a6-46cd-8b3d-4598aa059f48",
+                    "type": "pulumi:providers:google-native",
+                    "inputs": {
+                        "version": "0.30.0"
+                    },
+                    "outputs": {
+                        "version": "0.30.0"
+                    },
+                    "created": "2023-06-23T10:59:33.864412611Z",
+                    "modified": "2023-06-23T10:59:33.864412611Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet",
+                    "custom": true,
+                    "id": "v1alpha/projects/thiatt-manual-004/locations/global/fleets/default",
+                    "type": "google-native:gkehub/v1alpha:Fleet",
+                    "inputs": {
+                        "displayName": "gas-gke-cluster",
+                        "location": "global",
+                        "project": "thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "__defaults": {},
+                        "__inputs": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:ZnNQodlYd8Gr6M13:8tFYTqGN8101NvXVynowxNAIoi9tkK1K79w8noVSC+zkI9soBaKpkoGxTFmeXXsSGSKXijtMpVSv67iBdMk3ig215F7UgQ7vA/+DHqFF4hx1DIty62U2RtTkv4nCbQAGddC2"
+                        },
+                        "createTime": "2023-06-23T11:00:44.198179480Z",
+                        "displayName": "gas-gke-cluster",
+                        "name": "projects/thiatt-manual-004/locations/global/fleets/default",
+                        "state": {
+                            "code": "READY"
+                        },
+                        "uid": "de79d83b-603b-4d92-9c24-cbacef4ea00d",
+                        "updateTime": "2023-06-23T11:00:44.720640125Z"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:google-native::default::ec962de1-c3a6-46cd-8b3d-4598aa059f48",
+                    "propertyDependencies": {
+                        "displayName": null,
+                        "location": null,
+                        "project": null
+                    },
+                    "created": "2023-06-23T11:00:46.876583981Z",
+                    "modified": "2023-06-23T11:00:46.876583981Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/locations/us-central1/clusters/gas-gke-cluster",
+                    "type": "gcp:container/cluster:Cluster",
+                    "inputs": {
+                        "__defaults": [
+                            "enableKubernetesAlpha",
+                            "enableL4IlbSubsetting",
+                            "enableLegacyAbac"
+                        ],
+                        "enableAutopilot": true,
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "ipAllocationPolicy": {
+                            "__defaults": []
+                        },
+                        "location": "us-central1",
+                        "masterAuthorizedNetworksConfig": {
+                            "__defaults": [],
+                            "cidrBlocks": [
+                                {
+                                    "__defaults": [],
+                                    "cidrBlock": "0.0.0.0/0",
+                                    "displayName": "Global Public Access"
+                                }
+                            ]
+                        },
+                        "name": "gas-gke-cluster",
+                        "network": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "project": "thiatt-manual-004",
+                        "subnetwork": "projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                        "verticalPodAutoscaling": {
+                            "__defaults": [],
+                            "enabled": true
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":2400000000000,\"delete\":2400000000000,\"read\":2400000000000,\"update\":3600000000000},\"schema_version\":\"1\"}",
+                        "addonsConfig": {
+                            "cloudrunConfig": null,
+                            "configConnectorConfig": null,
+                            "dnsCacheConfig": {
+                                "enabled": true
+                            },
+                            "gcePersistentDiskCsiDriverConfig": {
+                                "enabled": true
+                            },
+                            "gcpFilestoreCsiDriverConfig": {
+                                "enabled": true
+                            },
+                            "gkeBackupAgentConfig": null,
+                            "horizontalPodAutoscaling": null,
+                            "httpLoadBalancing": null,
+                            "istioConfig": null,
+                            "kalmConfig": null,
+                            "networkPolicyConfig": {
+                                "disabled": true
+                            }
+                        },
+                        "authenticatorGroupsConfig": null,
+                        "binaryAuthorization": {
+                            "enabled": false,
+                            "evaluationMode": ""
+                        },
+                        "clusterAutoscaling": {
+                            "autoProvisioningDefaults": {
+                                "bootDiskKmsKey": "",
+                                "diskSize": 0,
+                                "diskType": "",
+                                "imageType": "COS_CONTAINERD",
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true,
+                                    "upgradeOptions": []
+                                },
+                                "minCpuPlatform": "",
+                                "oauthScopes": [
+                                    "https://www.googleapis.com/auth/devstorage.read_only",
+                                    "https://www.googleapis.com/auth/logging.write",
+                                    "https://www.googleapis.com/auth/monitoring",
+                                    "https://www.googleapis.com/auth/service.management.readonly",
+                                    "https://www.googleapis.com/auth/servicecontrol",
+                                    "https://www.googleapis.com/auth/trace.append"
+                                ],
+                                "serviceAccount": "default",
+                                "shieldedInstanceConfig": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                }
+                            },
+                            "autoscalingProfile": "OPTIMIZE_UTILIZATION",
+                            "enabled": true,
+                            "resourceLimits": [
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "cpu"
+                                },
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "memory"
+                                },
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "nvidia-tesla-t4"
+                                },
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "nvidia-tesla-a100"
+                                }
+                            ]
+                        },
+                        "clusterIpv4Cidr": "10.233.128.0/17",
+                        "clusterTelemetry": {
+                            "type": "ENABLED"
+                        },
+                        "confidentialNodes": null,
+                        "costManagementConfig": null,
+                        "databaseEncryption": {
+                            "keyName": "",
+                            "state": "DECRYPTED"
+                        },
+                        "datapathProvider": "ADVANCED_DATAPATH",
+                        "defaultMaxPodsPerNode": 110,
+                        "defaultSnatStatus": {
+                            "disabled": false
+                        },
+                        "description": "",
+                        "dnsConfig": null,
+                        "enableAutopilot": true,
+                        "enableBinaryAuthorization": false,
+                        "enableIntranodeVisibility": true,
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "enableShieldedNodes": true,
+                        "enableTpu": false,
+                        "endpoint": "34.28.26.25",
+                        "gatewayApiConfig": null,
+                        "id": "projects/thiatt-manual-004/locations/us-central1/clusters/gas-gke-cluster",
+                        "identityServiceConfig": null,
+                        "initialNodeCount": 0,
+                        "ipAllocationPolicy": {
+                            "clusterIpv4CidrBlock": "10.233.128.0/17",
+                            "clusterSecondaryRangeName": "gke-gas-gke-cluster-pods-d241963e",
+                            "servicesIpv4CidrBlock": "10.234.0.0/22",
+                            "servicesSecondaryRangeName": "gke-gas-gke-cluster-services-d241963e"
+                        },
+                        "labelFingerprint": "a9dc16a7",
+                        "location": "us-central1",
+                        "loggingConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS",
+                                "WORKLOADS"
+                            ]
+                        },
+                        "loggingService": "logging.googleapis.com/kubernetes",
+                        "maintenancePolicy": null,
+                        "masterAuth": {
+                            "clientCertificate": "",
+                            "clientCertificateConfig": {
+                                "issueClientCertificate": false
+                            },
+                            "clientKey": {
+                                "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                "ciphertext": "v1:Ajm9z+DRpCiHohf5:XRta6MggY7WBqrrOg0CwAX7g"
+                            },
+                            "clusterCaCertificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQU5qcHlaNWVScHh3eXFXb3VoeWM3WFV3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa1pqQmpPRFF3TkRjdE1EQm1NeTAwTWpJNExXSmtaVFF0TmpjNU5URTRaVEJsTURKaQpNQ0FYRFRJek1EWXlNekE0TWpNeU9Wb1lEekl3TlRNd05qRTFNRGt5TXpJNVdqQXZNUzB3S3dZRFZRUURFeVJtCk1HTTROREEwTnkwd01HWXpMVFF5TWpndFltUmxOQzAyTnprMU1UaGxNR1V3TW1Jd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FDeFZsRkhnUlo2RGtpdWFtUTJvbHAwKzFtY3N5ZDZ3cisydHJiQgovYnN6dlNROUFJMWZUc1BCdC9GeVpjZ2JMVzJJTVRkSThqZ3pSTm94dEk0WEUwdklNSEc0cjJ6azJzQmFCS1BvCjMrMzRTWlQxUlJubjFjWUFhd2dGZ1lOMGViV2V3c0Z1Q3hPRUI3LzFGK1NFc01xR3cvQzByYTZmU0VBNWJreisKOG05RGpndG5LNFgwTHRoWUhIaE1yR2pWWGM1SG91VjZjZVgwdWR0M2dGbkZneEtrVmxPQnJlRGdyT21UNlZjWApOWlN0dmZNWlRVdGxWaE9KYmxXR1pSZEYxdXhmckt3aTMrS1FPRHArVWMxM2wvNS9pQjMvbktPV2s1bXZQWVZlClFHZjBOb29uRkdUb2l3UUNZYUV3S0IrZ2lRbmRLQUZQNmRES1EwbklIK0FEUUlsRnY0akhTQ2dNd3g0VElNTCsKekx2YlRTc2ljUzJtejZJeUZvSUN6SE1la0l0M29sLzNxSFZtV0p0cTE1WE5LK2Q3WFZXRDNZREpJejB2TjRJOApBMUNlczQ0S1J3blNkRnN1UE9tYzYwWkE5M2x6VkxzNEFnWERJemU1N0FzVytFNU9ibzhOMjdVRUhNdnBqNEVyCk52T0lOWXJCZ01Obyt0aWNMZnMvd1hTWmYwRUNBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGREJ3akFacU1pMnpPQkZUNzg1b25tSzFmMkpMTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQk56TkhNOXQxSFdIZTJidmkxNlNrUnZTUFpmVmxmTWNEYmltQm5oUUdCCnhUMWJjVWpmM0M1WnRobDNzTW9JeW9tY1d6eGo3M2RtdjZ1L1VuU2ZkSk05WnJJTmZSTzlEaFJzckRjcmh3SDUKd09vdFgyNmZSQkpYRDR0SFdKSzlGS0Nnc1gvR1Z4dTM2VnJYVkxlMkE0UlhNaHBSQVBndkc4Wk96RTI5UHhORgovRmdGK3VoYnZ0WlhwSWlnMWNqQ1hVajdXbWlYeXczVmpzMnJudncxVDJNa3VZeTVaVmVTMnd2ZURNTE11RXBpCkNWeEZtc01neGlWMWlmV25rTXZ1eWticm8xUDJNaVpCSnRKR3lIcnIrRFNmaGR5bStLRDJld25lSEo3cFd5UlUKSEtpWDRBR3NFQlduZVd5bTExUUZFRjdxVnhmNVZMZzFJVm42TjBKd1Z5eW81ODQ2UVVNeE0vSHRxdlVGOVNLNApqd0x0Q0trbktXa2FXZ2cvNGt6WWx5MFNjRHlGVVQya3RVRWI4TEl1ZWZMVVI3ZkFzbTRIcnRCTVNMaFFNZ1ZoCmE3WUZpN0N0b0ZXQVNDV1hrcCt6aVpXWVZTZmRadVh4dWxhWmo0ZVd3bGZzUUZFZFpKUFFsZG8vbjJSNnN0Q08KY2d5aUdUWDVvWEFSR3NnNHVpbk5BSEE9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                        },
+                        "masterAuthorizedNetworksConfig": {
+                            "cidrBlocks": [
+                                {
+                                    "cidrBlock": "0.0.0.0/0",
+                                    "displayName": "Global Public Access"
+                                }
+                            ],
+                            "gcpPublicCidrsAccessEnabled": true
+                        },
+                        "masterVersion": "1.25.8-gke.1000",
+                        "meshCertificates": null,
+                        "monitoringConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS"
+                            ],
+                            "managedPrometheus": {
+                                "enabled": true
+                            }
+                        },
+                        "monitoringService": "monitoring.googleapis.com/kubernetes",
+                        "name": "gas-gke-cluster",
+                        "network": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "networkPolicy": {
+                            "enabled": false,
+                            "provider": "PROVIDER_UNSPECIFIED"
+                        },
+                        "networkingMode": "VPC_NATIVE",
+                        "nodeConfig": {
+                            "bootDiskKmsKey": "",
+                            "diskSizeGb": 100,
+                            "diskType": "pd-standard",
+                            "ephemeralStorageConfig": null,
+                            "gcfsConfig": null,
+                            "guestAccelerators": [],
+                            "gvnic": null,
+                            "imageType": "COS_CONTAINERD",
+                            "kubeletConfig": null,
+                            "labels": {},
+                            "linuxNodeConfig": null,
+                            "localSsdCount": 0,
+                            "loggingVariant": "DEFAULT",
+                            "machineType": "e2-medium",
+                            "metadata": {
+                                "disable-legacy-endpoints": "true"
+                            },
+                            "minCpuPlatform": "",
+                            "nodeGroup": "",
+                            "oauthScopes": [
+                                "https://www.googleapis.com/auth/monitoring",
+                                "https://www.googleapis.com/auth/devstorage.read_only",
+                                "https://www.googleapis.com/auth/logging.write",
+                                "https://www.googleapis.com/auth/service.management.readonly",
+                                "https://www.googleapis.com/auth/servicecontrol",
+                                "https://www.googleapis.com/auth/trace.append"
+                            ],
+                            "preemptible": false,
+                            "reservationAffinity": {
+                                "consumeReservationType": "NO_RESERVATION",
+                                "key": "",
+                                "values": []
+                            },
+                            "resourceLabels": {},
+                            "sandboxConfig": null,
+                            "serviceAccount": "default",
+                            "shieldedInstanceConfig": {
+                                "enableIntegrityMonitoring": true,
+                                "enableSecureBoot": true
+                            },
+                            "spot": false,
+                            "tags": [],
+                            "taints": [],
+                            "workloadMetadataConfig": {
+                                "mode": "GKE_METADATA"
+                            }
+                        },
+                        "nodeLocations": [
+                            "us-central1-b",
+                            "us-central1-f",
+                            "us-central1-c",
+                            "us-central1-a"
+                        ],
+                        "nodePoolAutoConfig": null,
+                        "nodePoolDefaults": {
+                            "nodeConfigDefaults": {
+                                "gcfsConfig": {
+                                    "enabled": true
+                                },
+                                "loggingVariant": "DEFAULT"
+                            }
+                        },
+                        "nodePools": [
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 1,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-c/instanceGroupManagers/gk3-gas-gke-cluster-default-pool-306b1eae-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-b/instanceGroupManagers/gk3-gas-gke-cluster-default-pool-478da465-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-c/instanceGroups/gk3-gas-gke-cluster-default-pool-306b1eae-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-b/instanceGroups/gk3-gas-gke-cluster-default-pool-478da465-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "default-pool",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.233.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-d241963e"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-medium",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 1,
+                                "nodeLocations": [
+                                    "us-central1-b",
+                                    "us-central1-c"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-f/instanceGroupManagers/gk3-gas-gke-cluster-pool-1-ed386378-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-1-b3f14c52-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-1-ad0bef17-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-1-5b60a0c7-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-f/instanceGroups/gk3-gas-gke-cluster-pool-1-ed386378-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-a/instanceGroups/gk3-gas-gke-cluster-pool-1-b3f14c52-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-b/instanceGroups/gk3-gas-gke-cluster-pool-1-ad0bef17-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-c/instanceGroups/gk3-gas-gke-cluster-pool-1-5b60a0c7-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-1",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.233.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-d241963e"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-2",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "us-central1-b",
+                                    "us-central1-f",
+                                    "us-central1-c",
+                                    "us-central1-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-f/instanceGroupManagers/gk3-gas-gke-cluster-pool-2-c26b84f8-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-2-6209c204-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-2-b38fd4c0-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-2-7dcb39c5-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-f/instanceGroups/gk3-gas-gke-cluster-pool-2-c26b84f8-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-a/instanceGroups/gk3-gas-gke-cluster-pool-2-6209c204-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-b/instanceGroups/gk3-gas-gke-cluster-pool-2-b38fd4c0-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-c/instanceGroups/gk3-gas-gke-cluster-pool-2-7dcb39c5-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-2",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.233.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-d241963e"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-4",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "us-central1-b",
+                                    "us-central1-f",
+                                    "us-central1-c",
+                                    "us-central1-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-f/instanceGroupManagers/gk3-gas-gke-cluster-pool-3-fd05a396-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-3-e742a861-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-3-851f522a-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-3-7c35d305-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-f/instanceGroups/gk3-gas-gke-cluster-pool-3-fd05a396-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-a/instanceGroups/gk3-gas-gke-cluster-pool-3-e742a861-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-b/instanceGroups/gk3-gas-gke-cluster-pool-3-851f522a-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-c/instanceGroups/gk3-gas-gke-cluster-pool-3-7c35d305-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-3",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.233.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-d241963e"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-8",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "us-central1-b",
+                                    "us-central1-f",
+                                    "us-central1-c",
+                                    "us-central1-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-f/instanceGroupManagers/gk3-gas-gke-cluster-pool-4-f85f794f-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-4-fdb31ea2-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-4-87f56448-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-4-4d11c767-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-f/instanceGroups/gk3-gas-gke-cluster-pool-4-f85f794f-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-a/instanceGroups/gk3-gas-gke-cluster-pool-4-fdb31ea2-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-b/instanceGroups/gk3-gas-gke-cluster-pool-4-87f56448-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-c/instanceGroups/gk3-gas-gke-cluster-pool-4-4d11c767-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-4",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.233.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-d241963e"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-16",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "us-central1-b",
+                                    "us-central1-f",
+                                    "us-central1-c",
+                                    "us-central1-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-f/instanceGroupManagers/gk3-gas-gke-cluster-pool-5-84e24d94-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-5-324ffb98-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-5-8a62b35a-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/us-central1-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-5-c6c27b78-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-f/instanceGroups/gk3-gas-gke-cluster-pool-5-84e24d94-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-a/instanceGroups/gk3-gas-gke-cluster-pool-5-324ffb98-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-b/instanceGroups/gk3-gas-gke-cluster-pool-5-8a62b35a-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/us-central1-c/instanceGroups/gk3-gas-gke-cluster-pool-5-c6c27b78-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-5",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.233.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-d241963e"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-32",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "us-central1-b",
+                                    "us-central1-f",
+                                    "us-central1-c",
+                                    "us-central1-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            }
+                        ],
+                        "nodeVersion": "1.25.8-gke.1000",
+                        "notificationConfig": {
+                            "pubsub": {
+                                "enabled": false,
+                                "filter": null,
+                                "topic": ""
+                            }
+                        },
+                        "podSecurityPolicyConfig": {
+                            "enabled": false
+                        },
+                        "privateClusterConfig": {
+                            "enablePrivateEndpoint": false,
+                            "enablePrivateNodes": false,
+                            "masterGlobalAccessConfig": {
+                                "enabled": false
+                            },
+                            "masterIpv4CidrBlock": "",
+                            "peeringName": "",
+                            "privateEndpoint": "10.128.50.2",
+                            "privateEndpointSubnetwork": "",
+                            "publicEndpoint": "34.28.26.25"
+                        },
+                        "privateIpv6GoogleAccess": "",
+                        "project": "thiatt-manual-004",
+                        "protectConfig": {
+                            "workloadConfig": {
+                                "auditMode": "MODE_UNSPECIFIED"
+                            },
+                            "workloadVulnerabilityMode": "WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED"
+                        },
+                        "releaseChannel": {
+                            "channel": "REGULAR"
+                        },
+                        "resourceLabels": {},
+                        "resourceUsageExportConfig": null,
+                        "selfLink": "https://container.googleapis.com/v1beta1/projects/thiatt-manual-004/locations/us-central1/clusters/gas-gke-cluster",
+                        "serviceExternalIpsConfig": {
+                            "enabled": false
+                        },
+                        "servicesIpv4Cidr": "10.234.0.0/22",
+                        "subnetwork": "projects/thiatt-manual-004/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                        "tpuConfig": null,
+                        "tpuIpv4CidrBlock": "",
+                        "verticalPodAutoscaling": {
+                            "enabled": true
+                        },
+                        "workloadIdentityConfig": {
+                            "workloadPool": "thiatt-manual-004.svc.id.goog"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                        "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc",
+                        "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-us-central1",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "enableAutopilot": null,
+                        "ipAllocationPolicy": null,
+                        "location": null,
+                        "masterAuthorizedNetworksConfig": null,
+                        "name": null,
+                        "network": [
+                            "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                        ],
+                        "project": null,
+                        "subnetwork": [
+                            "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-us-central1"
+                        ],
+                        "verticalPodAutoscaling": null
+                    },
+                    "created": "2023-06-23T09:29:35.231211251Z",
+                    "modified": "2023-06-23T09:29:35.231211251Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-us-central1",
+                    "custom": true,
+                    "id": "v1alpha/projects/thiatt-manual-004/locations/global/memberships/gas-gke-cluster-us-central1",
+                    "type": "google-native:gkehub/v1alpha:Membership",
+                    "inputs": {
+                        "endpoint": {
+                            "gkeCluster": {
+                                "resourceLink": "//container.googleapis.com/projects/thiatt-manual-004/locations/us-central1/clusters/gas-gke-cluster"
+                            }
+                        },
+                        "location": "global",
+                        "membershipId": "gas-gke-cluster-us-central1",
+                        "project": "thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "__defaults": {},
+                        "__inputs": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:T/8ZVKHOiFwBGGUU:MVlyIBChBxg+HXsvAYk73E40v/NgGS/MTGQol+2P4JqfX8/W2ZtuXynp6Hu+G2UpkXOqjPzO2iSe+QiTXvbrK3MhADWHOb5OeLsxH6Urr1p3hYfPyA7IwBJVZv1aPC3wO22h927ff66rsh7mkLxKM2ETpEUbh9R7D1tXdAnd4UcRo3JJLneWBDM47KId6WqtehxULtEWPzzqfhhirw2XFmlHoTDz4QgX6+Yiwa1IJbNeAUKlJTHUG98Qv2ROZUJul21Vwa5MM6QE/jHZwwXRWPNALc8nyDLDK5uR4LxJBLGYvv++dntVhzdzEkjsJhmTGyny3LtyZL+XP5vU3oghxm5B"
+                        },
+                        "createTime": "2023-06-23T11:13:02.499083969Z",
+                        "endpoint": {
+                            "gkeCluster": {
+                                "resourceLink": "//container.googleapis.com/projects/thiatt-manual-004/locations/us-central1/clusters/gas-gke-cluster"
+                            }
+                        },
+                        "externalId": "221b049f-b987-48cf-8174-c706b049e780",
+                        "monitoringConfig": {
+                            "cluster": "gas-gke-cluster",
+                            "clusterHash": "221b049f-b987-48cf-8174-c706b049e780",
+                            "kubernetesMetricsPrefix": "kubernetes.io",
+                            "location": "us-central1",
+                            "projectId": "thiatt-manual-004"
+                        },
+                        "name": "projects/thiatt-manual-004/locations/global/memberships/gas-gke-cluster-us-central1",
+                        "state": {
+                            "code": "READY"
+                        },
+                        "uniqueId": "2732d9bc-b512-4323-b36e-2d2592c1d4c8",
+                        "updateTime": "2023-06-23T11:13:30.275009070Z"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:google-native::default::ec962de1-c3a6-46cd-8b3d-4598aa059f48",
+                    "propertyDependencies": {
+                        "endpoint": null,
+                        "location": null,
+                        "membershipId": null,
+                        "project": null
+                    },
+                    "created": "2023-06-23T11:13:33.4172256Z",
+                    "modified": "2023-06-23T11:13:33.4172256Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-europe-west6",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-004/locations/europe-west6/clusters/gas-gke-cluster",
+                    "type": "gcp:container/cluster:Cluster",
+                    "inputs": {
+                        "__defaults": [
+                            "enableKubernetesAlpha",
+                            "enableL4IlbSubsetting",
+                            "enableLegacyAbac"
+                        ],
+                        "enableAutopilot": true,
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "ipAllocationPolicy": {
+                            "__defaults": []
+                        },
+                        "location": "europe-west6",
+                        "masterAuthorizedNetworksConfig": {
+                            "__defaults": [],
+                            "cidrBlocks": [
+                                {
+                                    "__defaults": [],
+                                    "cidrBlock": "0.0.0.0/0",
+                                    "displayName": "Global Public Access"
+                                }
+                            ]
+                        },
+                        "name": "gas-gke-cluster",
+                        "network": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "project": "thiatt-manual-004",
+                        "subnetwork": "projects/thiatt-manual-004/regions/europe-west6/subnetworks/gas-vpc-subnetwork-europe-west6",
+                        "verticalPodAutoscaling": {
+                            "__defaults": [],
+                            "enabled": true
+                        }
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":2400000000000,\"delete\":2400000000000,\"read\":2400000000000,\"update\":3600000000000},\"schema_version\":\"1\"}",
+                        "addonsConfig": {
+                            "cloudrunConfig": null,
+                            "configConnectorConfig": null,
+                            "dnsCacheConfig": {
+                                "enabled": true
+                            },
+                            "gcePersistentDiskCsiDriverConfig": {
+                                "enabled": true
+                            },
+                            "gcpFilestoreCsiDriverConfig": {
+                                "enabled": true
+                            },
+                            "gkeBackupAgentConfig": null,
+                            "horizontalPodAutoscaling": null,
+                            "httpLoadBalancing": null,
+                            "istioConfig": null,
+                            "kalmConfig": null,
+                            "networkPolicyConfig": {
+                                "disabled": true
+                            }
+                        },
+                        "authenticatorGroupsConfig": null,
+                        "binaryAuthorization": {
+                            "enabled": false,
+                            "evaluationMode": ""
+                        },
+                        "clusterAutoscaling": {
+                            "autoProvisioningDefaults": {
+                                "bootDiskKmsKey": "",
+                                "diskSize": 0,
+                                "diskType": "",
+                                "imageType": "COS_CONTAINERD",
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true,
+                                    "upgradeOptions": []
+                                },
+                                "minCpuPlatform": "",
+                                "oauthScopes": [
+                                    "https://www.googleapis.com/auth/devstorage.read_only",
+                                    "https://www.googleapis.com/auth/logging.write",
+                                    "https://www.googleapis.com/auth/monitoring",
+                                    "https://www.googleapis.com/auth/service.management.readonly",
+                                    "https://www.googleapis.com/auth/servicecontrol",
+                                    "https://www.googleapis.com/auth/trace.append"
+                                ],
+                                "serviceAccount": "default",
+                                "shieldedInstanceConfig": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                }
+                            },
+                            "autoscalingProfile": "OPTIMIZE_UTILIZATION",
+                            "enabled": true,
+                            "resourceLimits": [
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "cpu"
+                                },
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "memory"
+                                },
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "nvidia-tesla-t4"
+                                },
+                                {
+                                    "maximum": 1000000000,
+                                    "minimum": 0,
+                                    "resourceType": "nvidia-tesla-a100"
+                                }
+                            ]
+                        },
+                        "clusterIpv4Cidr": "10.51.128.0/17",
+                        "clusterTelemetry": {
+                            "type": "ENABLED"
+                        },
+                        "confidentialNodes": null,
+                        "costManagementConfig": null,
+                        "databaseEncryption": {
+                            "keyName": "",
+                            "state": "DECRYPTED"
+                        },
+                        "datapathProvider": "ADVANCED_DATAPATH",
+                        "defaultMaxPodsPerNode": 110,
+                        "defaultSnatStatus": {
+                            "disabled": false
+                        },
+                        "description": "",
+                        "dnsConfig": null,
+                        "enableAutopilot": true,
+                        "enableBinaryAuthorization": false,
+                        "enableIntranodeVisibility": true,
+                        "enableKubernetesAlpha": false,
+                        "enableL4IlbSubsetting": false,
+                        "enableLegacyAbac": false,
+                        "enableShieldedNodes": true,
+                        "enableTpu": false,
+                        "endpoint": "34.65.80.199",
+                        "gatewayApiConfig": null,
+                        "id": "projects/thiatt-manual-004/locations/europe-west6/clusters/gas-gke-cluster",
+                        "identityServiceConfig": null,
+                        "initialNodeCount": 0,
+                        "ipAllocationPolicy": {
+                            "clusterIpv4CidrBlock": "10.51.128.0/17",
+                            "clusterSecondaryRangeName": "gke-gas-gke-cluster-pods-65294362",
+                            "servicesIpv4CidrBlock": "10.52.0.0/22",
+                            "servicesSecondaryRangeName": "gke-gas-gke-cluster-services-65294362"
+                        },
+                        "labelFingerprint": "a9dc16a7",
+                        "location": "europe-west6",
+                        "loggingConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS",
+                                "WORKLOADS"
+                            ]
+                        },
+                        "loggingService": "logging.googleapis.com/kubernetes",
+                        "maintenancePolicy": null,
+                        "masterAuth": {
+                            "clientCertificate": "",
+                            "clientCertificateConfig": {
+                                "issueClientCertificate": false
+                            },
+                            "clientKey": {
+                                "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                "ciphertext": "v1:olfss3DFyQgLFZZq:CVxonxARNu7ZkclAzj2Jjxs5"
+                            },
+                            "clusterCaCertificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMRENDQXBTZ0F3SUJBZ0lRVnFhNitBZ0hkTzcyUkRJbWdvdnh6akFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlReVl6TmxaRGs0T1Mwell6aGxMVFJqWVRrdE9XTmtZeTFqTURSa05UbG1PVEl5WkRrdwpJQmNOTWpNd05qSXpNRGd6TXpReldoZ1BNakExTXpBMk1UVXdPVE16TkROYU1DOHhMVEFyQmdOVkJBTVRKREpqCk0yVmtPVGc1TFROak9HVXROR05oT1MwNVkyUmpMV013TkdRMU9XWTVNakprT1RDQ0FhSXdEUVlKS29aSWh2Y04KQVFFQkJRQURnZ0dQQURDQ0FZb0NnZ0dCQU5JQnpJTXdvYTdVMnVPd3BxRXBsVEdtdWFCQWZnaGJabEVFRStZWApGY3pkUmhoSEhwMCtoWnhaeHhodWZya2dDMHZGU3VTZ25melN6SHZiNmFqQVlqdzRFeDBtMG5oSkh4UTJFRm13CnpvRmtkU0QxY3J4R1l2ZlBHWDIwWXlDZThSNHZhQUlEUjBzWG1tYTFMVjQ0YVRvMkYrRXROQUFNbTVHcnhGanEKYkN5blBvdXVZTVlQK0NqY05XMXhiSmkxSWNtUE1tZmkrcDBlZi9oT1R5ZGI1NkdYTVgzODhTQ2RTcndoWEdNMApqaUF6NnFwamZEWmdGTWdYWExQNzlxVnhUdjRhZnM1V2pHUlJaLythT0p4RE52L3JDWTNRU1U0N29odDZKditvCnlvWDAyb0JkNjM2blRNdnRuNzJ2NXVtby9IblpVczJTcjV1NjlFMzV4RWI1dmg5MVRIbFlXRG1zVExZZS92VmsKNExZbkdCbE1peWNpTEI1KzhXWHRGZ3laWTFUcllDN1NKaGNMTmcvVGxvbXEzekQvcUV4dEtSRHFuNFFqUi9xTgpKSkR0ZWN3NWZGSGdtcC8vV0tTS3FRTGh3ZnFpUmNyVE9YRDBrcnNwSzhHT1ZtVTVjQldzMUx0NFc1Qm80NTNqCldOL3laekovZ3VaYUZNTTAvL2tkMzZ1S0d3SURBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWdRd0R3WUQKVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVVoZ2lYVFZYM3VEMS9lM3pLVFBocm1oOVFqVmd3RFFZSgpLb1pJaHZjTkFRRUxCUUFEZ2dHQkFFcnY2akpKM0grQ1RaM25kK05ENkx5eVM2VmdUZ25xZ21FcVNCaWsrUWtDCkJ4bkpLc2FpNWphbElOOU4ydzlmZHMva2NueEZjKzFETHZZLzdlSEloMjVkaUs4ZExqWVg5Sk5hVzhTemRxS0kKbFJHc1JOMlJCS0FPRkJDTk1hUjhTQ1JxWjE2d2NDRnVta1dTWG81S1Y2cndPc3pGbkVCeWFyWHM0bi9kWlVaeQo3R3ZZeXdrMyttRkxTbnRaZ3dqUUtuV255VVdXOTdOUlVCRXJ6N0F3TUIweDM3UVk4Qkw3bFJqcTEvQVQ4SGRHCmVMZmluOFV2dysralE2SE1RaFJHOUE3cnp1RlAyVEl6bU15L2JlLzE3UlVNTmYvZk9IOXJCNjNkZVhXRm1FcGwKcG1CdzI1cU9JRWxuNVZCM0NRQ1FGZHV4WU5nQkJVeUlFUmVCRHFUNW1WVzFkWmVidTlnU3FyY0puVXpzeHhBMApYL1dpK1o0aEFNaVlHQ1pBV2FBQ0FsSXlFNUp1R2JrVzAyTUxKTmd5MFJJVU4wdVhBTEpvU3NYVExKWmVXTkp0ClhSeWFrNmdFSWlSYzFvazl4NUVENStLRTlyLzZFMEQvZW8xV3hibmxOeEdtbFhoUXBBcko4cVh6Q1Bjc1o5ZUoKdGlVVUtZRXNEbUY2YTl5V0JpRXRBZz09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+                        },
+                        "masterAuthorizedNetworksConfig": {
+                            "cidrBlocks": [
+                                {
+                                    "cidrBlock": "0.0.0.0/0",
+                                    "displayName": "Global Public Access"
+                                }
+                            ],
+                            "gcpPublicCidrsAccessEnabled": true
+                        },
+                        "masterVersion": "1.25.8-gke.1000",
+                        "meshCertificates": null,
+                        "monitoringConfig": {
+                            "enableComponents": [
+                                "SYSTEM_COMPONENTS"
+                            ],
+                            "managedPrometheus": {
+                                "enabled": true
+                            }
+                        },
+                        "monitoringService": "monitoring.googleapis.com/kubernetes",
+                        "name": "gas-gke-cluster",
+                        "network": "projects/thiatt-manual-004/global/networks/gas-vpc",
+                        "networkPolicy": {
+                            "enabled": false,
+                            "provider": "PROVIDER_UNSPECIFIED"
+                        },
+                        "networkingMode": "VPC_NATIVE",
+                        "nodeConfig": {
+                            "bootDiskKmsKey": "",
+                            "diskSizeGb": 100,
+                            "diskType": "pd-standard",
+                            "ephemeralStorageConfig": null,
+                            "gcfsConfig": null,
+                            "guestAccelerators": [],
+                            "gvnic": null,
+                            "imageType": "COS_CONTAINERD",
+                            "kubeletConfig": null,
+                            "labels": {},
+                            "linuxNodeConfig": null,
+                            "localSsdCount": 0,
+                            "loggingVariant": "DEFAULT",
+                            "machineType": "e2-medium",
+                            "metadata": {
+                                "disable-legacy-endpoints": "true"
+                            },
+                            "minCpuPlatform": "",
+                            "nodeGroup": "",
+                            "oauthScopes": [
+                                "https://www.googleapis.com/auth/monitoring",
+                                "https://www.googleapis.com/auth/devstorage.read_only",
+                                "https://www.googleapis.com/auth/logging.write",
+                                "https://www.googleapis.com/auth/service.management.readonly",
+                                "https://www.googleapis.com/auth/servicecontrol",
+                                "https://www.googleapis.com/auth/trace.append"
+                            ],
+                            "preemptible": false,
+                            "reservationAffinity": {
+                                "consumeReservationType": "NO_RESERVATION",
+                                "key": "",
+                                "values": []
+                            },
+                            "resourceLabels": {},
+                            "sandboxConfig": null,
+                            "serviceAccount": "default",
+                            "shieldedInstanceConfig": {
+                                "enableIntegrityMonitoring": true,
+                                "enableSecureBoot": true
+                            },
+                            "spot": false,
+                            "tags": [],
+                            "taints": [],
+                            "workloadMetadataConfig": {
+                                "mode": "GKE_METADATA"
+                            }
+                        },
+                        "nodeLocations": [
+                            "europe-west6-b",
+                            "europe-west6-c",
+                            "europe-west6-a"
+                        ],
+                        "nodePoolAutoConfig": null,
+                        "nodePoolDefaults": {
+                            "nodeConfigDefaults": {
+                                "gcfsConfig": {
+                                    "enabled": true
+                                },
+                                "loggingVariant": "DEFAULT"
+                            }
+                        },
+                        "nodePools": [
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 1,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroupManagers/gk3-gas-gke-cluster-default-pool-e0465389-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroupManagers/gk3-gas-gke-cluster-default-pool-2869dc4e-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroups/gk3-gas-gke-cluster-default-pool-e0465389-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroups/gk3-gas-gke-cluster-default-pool-2869dc4e-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "default-pool",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.51.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-65294362"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-medium",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 1,
+                                "nodeLocations": [
+                                    "europe-west6-c",
+                                    "europe-west6-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-1-d3b58d78-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-1-069b84bb-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-1-8df7cc6e-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroups/gk3-gas-gke-cluster-pool-1-d3b58d78-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroups/gk3-gas-gke-cluster-pool-1-069b84bb-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroups/gk3-gas-gke-cluster-pool-1-8df7cc6e-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-1",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.51.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-65294362"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-2",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "europe-west6-b",
+                                    "europe-west6-c",
+                                    "europe-west6-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-2-2232028c-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-2-6af737a0-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-2-76dc5d3f-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroups/gk3-gas-gke-cluster-pool-2-2232028c-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroups/gk3-gas-gke-cluster-pool-2-6af737a0-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroups/gk3-gas-gke-cluster-pool-2-76dc5d3f-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-2",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.51.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-65294362"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-4",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "europe-west6-b",
+                                    "europe-west6-c",
+                                    "europe-west6-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-3-075acb1c-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-3-e0a44325-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-3-89c76ded-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroups/gk3-gas-gke-cluster-pool-3-075acb1c-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroups/gk3-gas-gke-cluster-pool-3-e0a44325-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroups/gk3-gas-gke-cluster-pool-3-89c76ded-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-3",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.51.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-65294362"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-8",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "europe-west6-b",
+                                    "europe-west6-c",
+                                    "europe-west6-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-4-96ee863c-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-4-d0ec9529-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-4-803d00c4-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroups/gk3-gas-gke-cluster-pool-4-96ee863c-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroups/gk3-gas-gke-cluster-pool-4-d0ec9529-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroups/gk3-gas-gke-cluster-pool-4-803d00c4-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-4",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.51.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-65294362"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-16",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "europe-west6-b",
+                                    "europe-west6-c",
+                                    "europe-west6-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            },
+                            {
+                                "autoscaling": {
+                                    "locationPolicy": "BALANCED",
+                                    "maxNodeCount": 1000,
+                                    "minNodeCount": 0,
+                                    "totalMaxNodeCount": 0,
+                                    "totalMinNodeCount": 0
+                                },
+                                "initialNodeCount": 0,
+                                "instanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroupManagers/gk3-gas-gke-cluster-pool-5-d6560f47-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroupManagers/gk3-gas-gke-cluster-pool-5-a8293743-grp",
+                                    "https://www.googleapis.com/compute/v1/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroupManagers/gk3-gas-gke-cluster-pool-5-d87319f8-grp"
+                                ],
+                                "managedInstanceGroupUrls": [
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-c/instanceGroups/gk3-gas-gke-cluster-pool-5-d6560f47-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-a/instanceGroups/gk3-gas-gke-cluster-pool-5-a8293743-grp",
+                                    "https://www.googleapis.com/compute/beta/projects/thiatt-manual-004/zones/europe-west6-b/instanceGroups/gk3-gas-gke-cluster-pool-5-d87319f8-grp"
+                                ],
+                                "management": {
+                                    "autoRepair": true,
+                                    "autoUpgrade": true
+                                },
+                                "maxPodsPerNode": 32,
+                                "name": "pool-5",
+                                "namePrefix": "",
+                                "networkConfig": {
+                                    "createPodRange": false,
+                                    "enablePrivateNodes": false,
+                                    "podIpv4CidrBlock": "10.51.128.0/17",
+                                    "podRange": "gke-gas-gke-cluster-pods-65294362"
+                                },
+                                "nodeConfig": {
+                                    "bootDiskKmsKey": "",
+                                    "diskSizeGb": 100,
+                                    "diskType": "pd-standard",
+                                    "ephemeralStorageConfig": null,
+                                    "gcfsConfig": null,
+                                    "guestAccelerators": [],
+                                    "gvnic": null,
+                                    "imageType": "COS_CONTAINERD",
+                                    "kubeletConfig": null,
+                                    "labels": {},
+                                    "linuxNodeConfig": null,
+                                    "localSsdCount": 0,
+                                    "loggingVariant": "DEFAULT",
+                                    "machineType": "e2-standard-32",
+                                    "metadata": {
+                                        "disable-legacy-endpoints": "true"
+                                    },
+                                    "minCpuPlatform": "",
+                                    "nodeGroup": "",
+                                    "oauthScopes": [
+                                        "https://www.googleapis.com/auth/monitoring",
+                                        "https://www.googleapis.com/auth/devstorage.read_only",
+                                        "https://www.googleapis.com/auth/logging.write",
+                                        "https://www.googleapis.com/auth/service.management.readonly",
+                                        "https://www.googleapis.com/auth/servicecontrol",
+                                        "https://www.googleapis.com/auth/trace.append"
+                                    ],
+                                    "preemptible": false,
+                                    "reservationAffinity": {
+                                        "consumeReservationType": "NO_RESERVATION",
+                                        "key": "",
+                                        "values": []
+                                    },
+                                    "resourceLabels": {},
+                                    "sandboxConfig": null,
+                                    "serviceAccount": "default",
+                                    "shieldedInstanceConfig": {
+                                        "enableIntegrityMonitoring": true,
+                                        "enableSecureBoot": true
+                                    },
+                                    "spot": false,
+                                    "tags": [],
+                                    "taints": [],
+                                    "workloadMetadataConfig": {
+                                        "mode": "GKE_METADATA"
+                                    }
+                                },
+                                "nodeCount": 0,
+                                "nodeLocations": [
+                                    "europe-west6-b",
+                                    "europe-west6-c",
+                                    "europe-west6-a"
+                                ],
+                                "placementPolicy": null,
+                                "upgradeSettings": {
+                                    "blueGreenSettings": null,
+                                    "maxSurge": 1,
+                                    "maxUnavailable": 0,
+                                    "strategy": "SURGE"
+                                },
+                                "version": "1.25.8-gke.1000"
+                            }
+                        ],
+                        "nodeVersion": "1.25.8-gke.1000",
+                        "notificationConfig": {
+                            "pubsub": {
+                                "enabled": false,
+                                "filter": null,
+                                "topic": ""
+                            }
+                        },
+                        "podSecurityPolicyConfig": {
+                            "enabled": false
+                        },
+                        "privateClusterConfig": {
+                            "enablePrivateEndpoint": false,
+                            "enablePrivateNodes": false,
+                            "masterGlobalAccessConfig": {
+                                "enabled": false
+                            },
+                            "masterIpv4CidrBlock": "",
+                            "peeringName": "",
+                            "privateEndpoint": "10.128.100.2",
+                            "privateEndpointSubnetwork": "",
+                            "publicEndpoint": "34.65.80.199"
+                        },
+                        "privateIpv6GoogleAccess": "",
+                        "project": "thiatt-manual-004",
+                        "protectConfig": {
+                            "workloadConfig": {
+                                "auditMode": "MODE_UNSPECIFIED"
+                            },
+                            "workloadVulnerabilityMode": "WORKLOAD_VULNERABILITY_MODE_UNSPECIFIED"
+                        },
+                        "releaseChannel": {
+                            "channel": "REGULAR"
+                        },
+                        "resourceLabels": {},
+                        "resourceUsageExportConfig": null,
+                        "selfLink": "https://container.googleapis.com/v1beta1/projects/thiatt-manual-004/locations/europe-west6/clusters/gas-gke-cluster",
+                        "serviceExternalIpsConfig": {
+                            "enabled": false
+                        },
+                        "servicesIpv4Cidr": "10.52.0.0/22",
+                        "subnetwork": "projects/thiatt-manual-004/regions/europe-west6/subnetworks/gas-vpc-subnetwork-europe-west6",
+                        "tpuConfig": null,
+                        "tpuIpv4CidrBlock": "",
+                        "verticalPodAutoscaling": {
+                            "enabled": true
+                        },
+                        "workloadIdentityConfig": {
+                            "workloadPool": "thiatt-manual-004.svc.id.goog"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                        "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc",
+                        "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-europe-west6",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-us-central1"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::109bf508-9f52-4c04-b689-818189fb7e50",
+                    "propertyDependencies": {
+                        "enableAutopilot": null,
+                        "ipAllocationPolicy": null,
+                        "location": null,
+                        "masterAuthorizedNetworksConfig": null,
+                        "name": null,
+                        "network": [
+                            "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                        ],
+                        "project": null,
+                        "subnetwork": [
+                            "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-europe-west6"
+                        ],
+                        "verticalPodAutoscaling": null
+                    },
+                    "created": "2023-06-23T09:39:52.120755691Z",
+                    "modified": "2023-06-23T10:32:29.024216586Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-europe-west6",
+                    "custom": true,
+                    "id": "v1alpha/projects/thiatt-manual-004/locations/global/memberships/gas-gke-cluster-europe-west6",
+                    "type": "google-native:gkehub/v1alpha:Membership",
+                    "inputs": {
+                        "endpoint": {
+                            "gkeCluster": {
+                                "resourceLink": "//container.googleapis.com/projects/thiatt-manual-004/locations/europe-west6/clusters/gas-gke-cluster"
+                            }
+                        },
+                        "location": "global",
+                        "membershipId": "gas-gke-cluster-europe-west6",
+                        "project": "thiatt-manual-004"
+                    },
+                    "outputs": {
+                        "__defaults": {},
+                        "__inputs": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:VwrqAT8kVVuWsqfM:vg+NkTQ4IO+zITv0TKZq7/+FS4tfFEU/PXt3282D3420aeC2+LEAnhx74m8+2V6sC0gJvfSSXnmh3ey0T9/U8WoOQZ/7ijHRye63s7I8kqtLoyzgBHUYhSJqRMCZj7nxWxUktzCCQMP+hvZHc3+MzozH2GaPGg8PcMEex3DOlKV280POr3nJCyIqhnWJ4PsIXZ1U6rZopEBbVeN0gruWiNQYQgZjx95pXMMkpyBXlauYyhr4dbFaiWqbHC5NIF1487JmQ6jVJrPjify4BN2YNlKXWBWQrypOrmimOlma5jHz+KKzsss+zv10njRIihKVzSzMo5BdzRyFjcchKiICrnkA4C4="
+                        },
+                        "createTime": "2023-06-23T11:13:35.748210019Z",
+                        "endpoint": {
+                            "gkeCluster": {
+                                "resourceLink": "//container.googleapis.com/projects/thiatt-manual-004/locations/europe-west6/clusters/gas-gke-cluster"
+                            }
+                        },
+                        "externalId": "88ec92d4-6655-4abc-b192-54a8fc5164a7",
+                        "monitoringConfig": {
+                            "cluster": "gas-gke-cluster",
+                            "clusterHash": "88ec92d4-6655-4abc-b192-54a8fc5164a7",
+                            "kubernetesMetricsPrefix": "kubernetes.io",
+                            "location": "europe-west6",
+                            "projectId": "thiatt-manual-004"
+                        },
+                        "name": "projects/thiatt-manual-004/locations/global/memberships/gas-gke-cluster-europe-west6",
+                        "state": {
+                            "code": "READY"
+                        },
+                        "uniqueId": "c908fb1c-af99-4c3d-a269-e30d2b729d26",
+                        "updateTime": "2023-06-23T11:13:45.175008353Z"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-europe-west6",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-us-central1"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:google-native::default::ec962de1-c3a6-46cd-8b3d-4598aa059f48",
+                    "propertyDependencies": {
+                        "endpoint": null,
+                        "location": null,
+                        "membershipId": null,
+                        "project": null
+                    },
+                    "created": "2023-06-23T11:13:47.956888707Z",
+                    "modified": "2023-06-23T11:13:47.956888707Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-kubctl-get-ns-us-central1",
+                    "custom": true,
+                    "id": "gas-local-cmd-kubctl-get-ns-us-central1f134f64b",
+                    "type": "command:local:Command",
+                    "inputs": {
+                        "create": "./gke-config/setup.sh -c gas-gke-cluster -r us-central1 -p thiatt-manual-004 -n 1088204991034 ",
+                        "update": "./gke-config/setup.sh -c gas-gke-cluster -r us-central1 -p thiatt-manual-004 -n 1088204991034 "
+                    },
+                    "outputs": {
+                        "create": "./gke-config/setup.sh -c gas-gke-cluster -r us-central1 -p thiatt-manual-004 -n 1088204991034 ",
+                        "stderr": "Fetching cluster endpoint and auth data.\nkubeconfig entry generated for gas-gke-cluster.\nERROR: (gcloud.projects.add-iam-policy-binding) Resource in projects [thiatt-manual-004:setIamPolicy] is the subject of a conflict: There were concurrent policy changes. Please retry the whole read-modify-write with exponential backoff. The request's ETag '\\007\\005\\376\\313\\357\\232#\\245' did not match the current policy's ETag '\\007\\005\\376\\314\\022\\210\\350\\215'.\n- '@type': type.googleapis.com/google.rpc.DebugInfo\n  detail: There were concurrent policy changes. Please retry the whole read-modify-write\n    with exponential backoff. The request's ETag '\\007\\005\\376\\313\\357\\232#\\245' did\n    not match the current policy's ETag '\\007\\005\\376\\314\\022\\210\\350\\215'.\nUpdating gas-gke-cluster...\n...done.\nUpdated [https://container.googleapis.com/v1/projects/thiatt-manual-004/zones/us-central1/clusters/gas-gke-cluster].\nTo inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/us-central1/gas-gke-cluster?project=thiatt-manual-004\nERROR: (gcloud.container.fleet.mesh.update) Membership projects/thiatt-manual-004/locations/global/memberships/221b049f-b987-48cf-8174-c706b049e780 does not exist in the fleet.",
+                        "stdout": "GKE Cluster Name: gas-gke-cluster\nGKE Cluster Region: us-central1\nGKE Cluster Project: thiatt-manual-004\nGKE Cluster Project Number: 1088204991034\nNAME                       STATUS   AGE\ndefault                    Active   4h8m\ngke-gmp-system             Active   4h7m\ngke-managed-filestorecsi   Active   4h7m\ngmp-public                 Active   4h7m\nkube-node-lease            Active   4h8m\nkube-public                Active   4h8m\nkube-system                Active   4h8m\nNAME                          EXTERNAL_ID                           LOCATION\ngas-gke-cluster-us-central1   221b049f-b987-48cf-8174-c706b049e780  global\ngas-gke-cluster-europe-west6  88ec92d4-6655-4abc-b192-54a8fc5164a7  global\ncreateTime: '2023-06-23T12:36:17.280786910Z'\nmembershipStates:\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-europe-west6:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:09.919463688Z'\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-us-central1:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:31.177979338Z'\nname: projects/thiatt-manual-004/locations/global/features/servicemesh\nresourceState:\n  state: ACTIVE\nspec: {}\nupdateTime: '2023-06-23T13:33:32.492031845Z'",
+                        "update": "./gke-config/setup.sh -c gas-gke-cluster -r us-central1 -p thiatt-manual-004 -n 1088204991034 "
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-europe-west6",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-europe-west6",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-us-central1"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:command::default::a0abe55a-6f72-4cc4-adaa-4ce6d207473b",
+                    "propertyDependencies": {
+                        "create": null,
+                        "update": null
+                    },
+                    "created": "2023-06-23T10:43:28.659656755Z",
+                    "modified": "2023-06-23T13:35:32.949202374Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-kubctl-get-ns-europe-west6",
+                    "custom": true,
+                    "id": "gas-local-cmd-kubctl-get-ns-europe-west6f2d43f49",
+                    "type": "command:local:Command",
+                    "inputs": {
+                        "create": "./gke-config/setup.sh -c gas-gke-cluster -r europe-west6 -p thiatt-manual-004 -n 1088204991034 ",
+                        "update": "./gke-config/setup.sh -c gas-gke-cluster -r europe-west6 -p thiatt-manual-004 -n 1088204991034 "
+                    },
+                    "outputs": {
+                        "create": "./gke-config/setup.sh -c gas-gke-cluster -r europe-west6 -p thiatt-manual-004 -n 1088204991034 ",
+                        "stderr": "Fetching cluster endpoint and auth data.\nkubeconfig entry generated for gas-gke-cluster.\nUpdated IAM policy for project [thiatt-manual-004].\nUpdating gas-gke-cluster...\ndone.\nUpdated [https://container.googleapis.com/v1/projects/thiatt-manual-004/zones/europe-west6/clusters/gas-gke-cluster].\nTo inspect the contents of your cluster, go to: https://console.cloud.google.com/kubernetes/workload_/gcloud/europe-west6/gas-gke-cluster?project=thiatt-manual-004\nERROR: (gcloud.container.fleet.mesh.update) Membership projects/thiatt-manual-004/locations/global/memberships/88ec92d4-6655-4abc-b192-54a8fc5164a7 does not exist in the fleet.",
+                        "stdout": "GKE Cluster Name: gas-gke-cluster\nGKE Cluster Region: europe-west6\nGKE Cluster Project: thiatt-manual-004\nGKE Cluster Project Number: 1088204991034\nNAME                       STATUS   AGE\ndefault                    Active   3h58m\ngke-gmp-system             Active   3h56m\ngke-managed-filestorecsi   Active   3h57m\ngmp-public                 Active   3h56m\nkube-node-lease            Active   3h58m\nkube-public                Active   3h58m\nkube-system                Active   3h58m\nNAME                          EXTERNAL_ID                           LOCATION\ngas-gke-cluster-us-central1   221b049f-b987-48cf-8174-c706b049e780  global\ngas-gke-cluster-europe-west6  88ec92d4-6655-4abc-b192-54a8fc5164a7  global\nbindings:\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-servicemesh.iam.gserviceaccount.com\n  role: roles/anthosservicemesh.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-apigee.iam.gserviceaccount.com\n  role: roles/apigee.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-artifactregistry.iam.gserviceaccount.com\n  role: roles/artifactregistry.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@compute-system.iam.gserviceaccount.com\n  role: roles/compute.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@container-engine-robot.iam.gserviceaccount.com\n  role: roles/container.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@containerregistry.iam.gserviceaccount.com\n  role: roles/containerregistry.ServiceAgent\n- members:\n  - serviceAccount:1088204991034-compute@developer.gserviceaccount.com\n  - serviceAccount:1088204991034@cloudservices.gserviceaccount.com\n  role: roles/editor\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-gkehub.iam.gserviceaccount.com\n  role: roles/gkehub.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-meshdataplane.iam.gserviceaccount.com\n  role: roles/meshdataplane.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-mcmetering.iam.gserviceaccount.com\n  role: roles/multiclustermetering.serviceAgent\n- members:\n  - user:timhiatt@google.com\n  role: roles/owner\n- members:\n  - serviceAccount:service-1088204991034@gcp-sa-pubsub.iam.gserviceaccount.com\n  role: roles/pubsub.serviceAgent\n- members:\n  - serviceAccount:service-1088204991034@service-networking.iam.gserviceaccount.com\n  role: roles/servicenetworking.serviceAgent\netag: BwX-zBKI6I0=\nversion: 1\ncreateTime: '2023-06-23T12:36:17.280786910Z'\nmembershipStates:\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-europe-west6:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:09.919463688Z'\n  projects/1088204991034/locations/global/memberships/gas-gke-cluster-us-central1:\n    servicemesh:\n      controlPlaneManagement:\n        state: DISABLED\n      dataPlaneManagement:\n        details:\n        - code: DISABLED\n          details: Data Plane Management is not enabled.\n        state: DISABLED\n    state:\n      code: OK\n      description: Please see https://cloud.google.com/service-mesh/docs/install for\n        instructions to onboard to Anthos Service Mesh.\n      updateTime: '2023-06-23T13:33:31.177979338Z'\nname: projects/thiatt-manual-004/locations/global/features/servicemesh\nresourceState:\n  state: ACTIVE\nspec: {}\nupdateTime: '2023-06-23T13:33:32.492031845Z'",
+                        "update": "./gke-config/setup.sh -c gas-gke-cluster -r europe-west6 -p thiatt-manual-004 -n 1088204991034 "
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-europe-west6",
+                        "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-europe-west6",
+                        "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Membership::gas-gke-fleet-membership-us-central1"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:command::default::a0abe55a-6f72-4cc4-adaa-4ce6d207473b",
+                    "propertyDependencies": {
+                        "create": null,
+                        "update": null
+                    },
+                    "created": "2023-06-23T10:43:28.651091888Z",
+                    "modified": "2023-06-23T13:35:30.650477248Z"
+                }
+            ]
+        }
+    }
+}

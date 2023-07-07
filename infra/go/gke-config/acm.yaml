@@ -1,0 +1,15 @@
+# acm.yaml
+
+applySpecVersion: 1
+spec:
+  configSync:
+    # Set to true to install and enable Config Sync
+    enabled: true
+    # If you don't have a source of truth yet, omit the
+    # following fields. You can configure them later.
+    sourceType: git
+    sourceFormat: unstructured
+    syncRepo: https://github.com/timbohiatt/anthos-config-sync-demos
+    syncBranch: main
+    secretType: none
+    policyDir: 001-multi-team-demo

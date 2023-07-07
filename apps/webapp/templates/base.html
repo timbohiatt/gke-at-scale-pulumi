@@ -1,0 +1,31 @@
+{{define "base"}}
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            clifford: '#da373d',
+                            primary: '{{ .ColorHexPrimary }}',
+                            secondary: '{{ .ColorHexSecondary }}',
+                            background: '{{ .ColorHexBackground }}',
+                        }
+                    }
+                }
+            }
+        </script>
+        <title>{{.Title}}</title>
+    </head>
+    <body class="bg-background">
+    {{template "body" .}}
+    </body>
+    </html>
+{{end}}

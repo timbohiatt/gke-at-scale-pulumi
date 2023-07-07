@@ -1,0 +1,11 @@
+architectures:
+- linux/amd64
+- linux/arm64
+dashboards: null
+dependencies:
+  istio:
+    sha: 197f259f869b10a012e9f89a2e98624c97f91d1d
+docker: gcr.io/gke-release/asm
+dockerOutput: context
+skipGenerateBillOfMaterials: false
+version: 1.17.2-asm.1

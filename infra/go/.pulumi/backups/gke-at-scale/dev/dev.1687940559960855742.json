@@ -1,0 +1,525 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/gke-at-scale/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-06-28T08:22:39.928373568Z",
+                "magic": "b5474f4f11c814c2c5b366a0bf2cbd20040e2d7a1d7827413d1432d468437683",
+                "version": "v3.73.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:ALbmvV+u5EA=:v1:pk6Iv/p2mJXRzhF0:5nO507DPcmo9cWn7jpOCJy7uO77UYg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default",
+                    "custom": true,
+                    "id": "8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "type": "pulumi:providers:gcp",
+                    "inputs": {
+                        "version": "6.52.0"
+                    },
+                    "outputs": {
+                        "version": "6.52.0"
+                    },
+                    "created": "2023-06-26T20:49:55.713069912Z",
+                    "modified": "2023-06-26T20:49:55.713069912Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "outputs": {
+                        "gas-artifact-registry-repository": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/locations/europe/repositories/gke-at-scale",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository"
+                        },
+                        "gas-gke-cluster-asia-east1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/locations/asia-east1/clusters/gas-gke-cluster",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-asia-east1"
+                        },
+                        "gas-gke-cluster-australia-southeast1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/locations/australia-southeast1/clusters/gas-gke-cluster",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-australia-southeast1"
+                        },
+                        "gas-gke-cluster-europe-west6": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/locations/europe-west6/clusters/gas-gke-cluster",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-europe-west6"
+                        },
+                        "gas-gke-cluster-kubeconfig-asia-east1": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:XfLJNp884XM5G9mD:TB2D90uVXzROX/cVl2d8zAILjGtlNP+JpPqgl7igSe61J2RwsBPlyVDvJTRB/Dy9ecFAnKzWitI1ec/asASAQaovcvVqG0xvnkRGulFgwYiB8uuHsw7UGQ1o8K1cz7ZUfiyeIv68Va16X2yS0r1uj90JSx3uINNCayONlAyxfcgAg5gnOBDC6LyvqI17RGGRg2W8d4IG2WAtRnNbTRkprr+aJ/RGZQfPzZHmeHoLUrcqLnpwDIQ1eoCBh5M/StR687RSSqOv9I+9fYjRDWFDHxkA1koo2l0dwuWfaSlEKFU2May50MCBEFRUI3b+Cn0gD57Fm3Ju5DtHB/fKY5cQhm/7QOYD71Yf1b312hwPFmApY9P4fSq9lZ3HmEQb6Qq5T/oIc8OLyxWSsCIcePUwB1QxtE5b/ql3reOFHIikdKB3NKWWNnivBhTgYsj58PeXxa69GBf8wtSfjCV6QFyuGTaljURZsBdZGHO83p2U1/y6Gb70uuwEc4ASKyBMxavUvCoDw/CaD7vSgvsD9uDKdGd/dqzhmNedMCmLRNTwVmAuhIvjEOHGTlz1I1LtDNyMwxT/gjPXPugNyLjuzGBUiFmiM2SEpeyWyPU+H5TObyxyYhLgTQ1n31YFcI9DibrurSIBghOrisfjE+BftPGCj4DyqzY97vjrK2/ZU2fvh1Uf0BsSzHRuH6val89Jdx2J+zHgW1wIsD/J8t7TX/Xx9lXEn/wan/22r1ogJm+5zUH0ziS6kG5TD9xxPfg4QYwvKW3LEvMBTy5HaJ1m8fg9ZQUQsi9iIxWvTQ8bwKNaMthz1hFdUbTn4chWDU9wVvA+FXHVU35Yp/jjA2llt9XsFn73i7u9jtunt5rpOhIozKFuupEuKtfDkjJacHHZxwmb00hjgrgl9UGVP+xoUd4qtchEzJINuG8G6aXKPs0fIIokHC6Z4syTkr1GxKTUl4uZSySfnPE0UxKt8Ef1bG54KM2KggSlbho8cyK8wGzua7tgxzBdYnTtrxge0woadyLgv2eArgnkYFM6hBH2Anz4EmjaTFDeTSw5Ax7+2KkIfVUACeZpaGe27hl90iduoGHUues7/E0kN1GtoFJPXM/ZVYfayNHsN70afnsub55utMhh0jpIzXqWAjx937+fAoZEzqswXeVXFfuDFUP5Eox4VWOhTWMFpchPbd9PKySM3PUdz+9ZBFZ1KVoP1TZYNZM9NOtXJPFJEwzNRx7JP7SR0fKQmHKpxmQEI6yp3b8cq00FekrwUF+LObj1SqCOmNtKQgkDQWAq50GYt3/gDD2HlgNRMHYSFO6HqBncEvJb+VvEvaPgqlDCXiwebUvfbL005hJUvGCj0d4w46xniudplOftPBj3+CZ5TDKvHvZzMwW66wlwz/LWz+Dn2nm6GN+XDCLhYwzDgtFmpxqkzrl6y2Uz36FErOc0Q+Qk4lAxkZYPy5xGXntqIp75Q8l2lMprUVOOjkAkdBmnllCpkmFCGO8fvmfB7Wk1XtWp1tGaYCp2xUWy2rJoIjwTb24XM9l5F5P6ya5s7Jq2RtJgYg1w8deHGOtGZPayfyYvdyW02ohHEOSGBKs74GHghj3qh3efy27JVlTwL2QOtBO2RhhZUyQWW+nODmUk2zQ8DLop4CQYNbNciQBuYT1fm4BNnzODYaktX+hxxRMEgKbuULm0NSYWxgFl3UTGmIm96mJoxTnBoX8artGHydDtbimZUVdfnybddTU/mDA24uZVHs1E7pPB1Tn9QrKyaNfiaCOYunEZxDUUMg1Ie2XK+z+Sp3xLb1jY5HE3vCINY4LQTyqxHu22er4yqFRHeYGXAnj/smj5hUz3shfaotMPcTGDTUoC6D/Bqpr+h+CE2NqMshEgfdyQhzfS8gzd31V7UNqBDcvNVTNJzk9ihFIzCe2M+8MGPawt7T/uU7wwAx8XTLIowwyU+cUx1MGR9doy17khasfsglUmuHyhWsaBw/MIQLxgCwzjJFCuVq0eRRegU6XfooyOEaQ7mOdkVZpaeZ6NQFG42olkXz72Kb5/foSCEEUibupHh4R1ui1+RrD6tE886GGj/2tbtqd5uxesynF+OTnHB6xBC6MCWFrl89A3qhPBS1VWCmB9pJ0aa8/BWL61nNaWwbLS4mxXv8/wEJeaxpTMs1taLQSjNDou63hQgimfZqXcqGAFexD+/Tm069WSPw2+c52uiRcSWMjzmXlHBizW/Yj3kUx4IlWF4qRBIBlsnq6XfG8BmiJOEitsXM9VfnEBAb7c0AyedwjCAEK61porqqTehtg4UnaRDZ0C9kqom3ELN+XVy6G5OU5L8h9V7OYofKb0F5ZRNGo4jM8/swn5uo8vTg4mhpZYFXz0zqFxhdy8u9j2tbUMYpuumVQFRoCyzbyNIwmnUZ+cuBMRwWom+5SAz4XgxxU5SqmaMmFhTl5GopNxCebAel+ts//FUoUjT/cY6dOob1CL9uyS2cdz36b08Tzz2cZ6uErxZSbxloYH2TubJu4viedmIQKeYcyXkXjKAGB+4+ZbAtaiUleFFFCmxsep53wXkzcSjy6VRERHEoz1nmBfA6hbO4fl2hB7+ZkwLZnJwMzthBJD/f1yeW4G2qDtPXSTR8Vz9JQS/gP5/wJHPLi+pmyBeLQ4col3NVFIu5iEO42j0G+H/2c3kXPAGGUI7F7QybQT075jP4VVgbMfed4PvHS0cYtSxTIbjwxZvcTQPLvkUCl1cHYQ22/UlVdkGzVKjqRCPdOeMlMRSPVppDu+PcRtCMx0iVHY4RSwljXApyCtTY6fhVFVK79P3N2xGfqATRb99spc8HVP1gfVsQxsU1l8R3j+D8ee2IhzstYrDpfAN7n0v5QD6JigwffqzXOEn3eL1cf0/0f0+Ao+fDSH2Algb/XIrHt0SIdPrrCGsY7NjS48qOqq+8GJtjM0URPPNl7WGaiRQZpECtrQoziEz6qkUrBRYvw9Jogi+eXjbM4x9Z2Yks8wedA1091cCcoC09HO0lIy/SNWgIqZpUI2ogRvnpulDL0UwlXTkLPmmyTxCBTYjoDOSj++isa1Dl8adEmsLgevpYIKRqo+VVxiaYjSosin1lS8G2VPGzgjqng8IciePw4Z0wyez+Sta0PLu9DmM9XqhWnBWpTng4gPwroU/O+1G7OAnq71grKpC2z7IAve6rG94iynYEHv1iPfUv8KkSxmZen+izqc6quJrBpXSiSOW4YZTcfLExDjGdufsrQ1gsln5Xlbm5auBbEROXF2HnkIJ0y3DK75jya194POErqizZZReDe/bbLMSJVQCHUtBv6XIQH9+iSO09O97y/y8mw/i7JixKQ5nJR8h4gxLda97mAfxz4Zlc2NMDRzz5yoR+aqG3g/GdIqFQD4ACGJhGEuSRqgOiRThYPEtQIG6tNR9xj7t1PvjqIbz2Nukw8+qJUXn4VpaUAM9fN4XhXdcKcXZKMRJ6D5H724Ngtcr8bsT7PlLc3nYBUcwuhL3w5dFfyKBZVEdTU47rjJCvqH2jGUe+z8/iAGgIx5oz5PE8roH4oYGL1OKbGrqB3749pBnMySHnX7RKYtpyY6ExIKp1jD9xqXGzvnLO5+jLFH2gJJxVsSOzXjjQKs4qJ5uafeR9PeK4i2mmbys/XI7Gf8rhWArlrtY+3At03+fJtdm+N/T+SSBFSwGeaqYFJBj43jf7VxeeEBY4PIrobvB7aYpssbve1ZAE0g1Yciw5OvXhqCW2qSbPkH+QLSZnBXz78W8HfDYddh5EqIN/BSYauV5oGzc1NANhtbbEfnMA=="
+                        },
+                        "gas-gke-cluster-kubeconfig-australia-southeast1": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:lXIY/6iur6IA7WxQ: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"
+                        },
+                        "gas-gke-cluster-kubeconfig-europe-west6": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:fgcLoVgIDnfkcFb8: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"
+                        },
+                        "gas-gke-cluster-kubeconfig-us-central1": {
+                            "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                            "ciphertext": "v1:YDBQI5IpJ0aFtqGO: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"
+                        },
+                        "gas-gke-cluster-us-central1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/locations/us-central1/clusters/gas-gke-cluster",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:container/cluster:Cluster::gas-gke-cluster-us-central1"
+                        },
+                        "gas-gke-fleet": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "v1alpha/projects/thiatt-manual-005/locations/global/fleets/default",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::google-native:gkehub/v1alpha:Fleet::gas-gke-fleet"
+                        },
+                        "gas-local-cmd-kubctl-get-ns-asia-east1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "gas-local-cmd-kubctl-get-ns-asia-east1153cc948",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-kubctl-get-ns-asia-east1"
+                        },
+                        "gas-local-cmd-kubctl-get-ns-australia-southeast1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/locations/europe/repositories/gke-at-scale",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:artifactregistry/repository:Repository::gas-artifact-registry-repository"
+                        },
+                        "gas-local-cmd-kubctl-get-ns-europe-west6": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "gas-local-cmd-kubctl-get-ns-europe-west6204473b1",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-kubctl-get-ns-europe-west6"
+                        },
+                        "gas-local-cmd-kubctl-get-ns-us-central1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "gas-local-cmd-kubctl-get-ns-us-central1e6211e87",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-kubctl-get-ns-us-central1"
+                        },
+                        "gas-local-docker-image-app": "europe-docker.pkg.dev/thiatt-manual-005/gke-at-scale/webapp:latest",
+                        "gas-service-account": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-005.iam.gserviceaccount.com",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:serviceAccount/account:Account::gas-service-account"
+                        },
+                        "gas-vpc": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/global/networks/gas-vpc",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc"
+                        },
+                        "gas-vpc-subnetwork-asia-east1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/regions/asia-east1/subnetworks/gas-vpc-subnetwork-asia-east1",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-asia-east1"
+                        },
+                        "gas-vpc-subnetwork-australia-southeast1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/regions/australia-southeast1/subnetworks/gas-vpc-subnetwork-australia-southeast1",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-australia-southeast1"
+                        },
+                        "gas-vpc-subnetwork-europe-west6": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/regions/europe-west6/subnetworks/gas-vpc-subnetwork-europe-west6",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-europe-west6"
+                        },
+                        "gas-vpc-subnetwork-us-central1": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/regions/us-central1/subnetworks/gas-vpc-subnetwork-us-central1",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/subnetwork:Subnetwork::gas-vpc-subnetwork-us-central1"
+                        },
+                        "gas-wip-gke-cluster": {
+                            "4dabf18193072939515e22adb298388d": "5cf8f73096256a8f31e491e813e4eb8e",
+                            "id": "projects/thiatt-manual-005/locations/global/workloadIdentityPools/gas-wip-gke-004",
+                            "packageVersion": "",
+                            "urn": "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster"
+                        }
+                    },
+                    "created": "2023-06-26T20:49:55.714506024Z",
+                    "modified": "2023-06-26T20:49:55.714506024Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:serviceAccount/account:Account::gas-service-account",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-005/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-005.iam.gserviceaccount.com",
+                    "type": "gcp:serviceAccount/account:Account",
+                    "inputs": {
+                        "__defaults": [
+                            "disabled"
+                        ],
+                        "accountId": "svc-gke-at-scale-admin",
+                        "disabled": false,
+                        "displayName": "GKE at Scale - Admin Service Account",
+                        "project": "thiatt-manual-005"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":300000000000}}",
+                        "accountId": "svc-gke-at-scale-admin",
+                        "description": "",
+                        "disabled": false,
+                        "displayName": "GKE at Scale - Admin Service Account",
+                        "email": "svc-gke-at-scale-admin@thiatt-manual-005.iam.gserviceaccount.com",
+                        "id": "projects/thiatt-manual-005/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-005.iam.gserviceaccount.com",
+                        "member": "serviceAccount:svc-gke-at-scale-admin@thiatt-manual-005.iam.gserviceaccount.com",
+                        "name": "projects/thiatt-manual-005/serviceAccounts/svc-gke-at-scale-admin@thiatt-manual-005.iam.gserviceaccount.com",
+                        "project": "thiatt-manual-005",
+                        "uniqueId": "107454711499044570487"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "accountId": null,
+                        "displayName": null,
+                        "project": null
+                    },
+                    "created": "2023-06-26T20:49:58.395158969Z",
+                    "modified": "2023-06-26T20:49:58.395158969Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-005/mesh.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-005",
+                        "service": "mesh.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-005/mesh.googleapis.com",
+                        "project": "thiatt-manual-005",
+                        "service": "mesh.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-26T20:50:01.266288377Z",
+                    "modified": "2023-06-26T20:50:01.266288377Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-005/container.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-005",
+                        "service": "container.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-005/container.googleapis.com",
+                        "project": "thiatt-manual-005",
+                        "service": "container.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-26T20:50:01.267948801Z",
+                    "modified": "2023-06-26T20:50:01.267948801Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-005/compute.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-005",
+                        "service": "compute.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-005/compute.googleapis.com",
+                        "project": "thiatt-manual-005",
+                        "service": "compute.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-26T20:50:01.270236152Z",
+                    "modified": "2023-06-26T20:50:01.270236152Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-005/anthos.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-005",
+                        "service": "anthos.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-005/anthos.googleapis.com",
+                        "project": "thiatt-manual-005",
+                        "service": "anthos.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-26T20:50:01.272066595Z",
+                    "modified": "2023-06-26T20:50:01.272066595Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                    "custom": true,
+                    "id": "thiatt-manual-005/artifactregistry.googleapis.com",
+                    "type": "gcp:projects/service:Service",
+                    "inputs": {
+                        "__defaults": [],
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "project": "thiatt-manual-005",
+                        "service": "artifactregistry.googleapis.com"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"read\":600000000000,\"update\":1200000000000}}",
+                        "disableDependentServices": true,
+                        "disableOnDestroy": false,
+                        "id": "thiatt-manual-005/artifactregistry.googleapis.com",
+                        "project": "thiatt-manual-005",
+                        "service": "artifactregistry.googleapis.com"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "disableDependentServices": null,
+                        "disableOnDestroy": null,
+                        "project": null,
+                        "service": null
+                    },
+                    "created": "2023-06-26T20:50:01.273629887Z",
+                    "modified": "2023-06-26T20:50:01.273629887Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:command::default",
+                    "custom": true,
+                    "id": "14e59b57-888b-4723-b7d9-af29d33e690a",
+                    "type": "pulumi:providers:command",
+                    "inputs": {
+                        "version": "0.7.2"
+                    },
+                    "outputs": {
+                        "version": "0.7.2"
+                    },
+                    "created": "2023-06-26T20:50:01.314958689Z",
+                    "modified": "2023-06-26T20:50:01.314958689Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                    "custom": true,
+                    "id": "gas-local-cmd-gcloud-enable-fleets4760333f",
+                    "type": "command:local:Command",
+                    "inputs": {
+                        "create": "gcloud container fleet mesh enable --project thiatt-manual-005",
+                        "delete": "gcloud container fleet mesh disable --project thiatt-manual-005",
+                        "update": "gcloud container fleet mesh enable --project thiatt-manual-005"
+                    },
+                    "outputs": {
+                        "create": "gcloud container fleet mesh enable --project thiatt-manual-005",
+                        "delete": "gcloud container fleet mesh disable --project thiatt-manual-005",
+                        "stderr": "Waiting for Feature Service Mesh to be created...\n........done.",
+                        "stdout": "",
+                        "update": "gcloud container fleet mesh enable --project thiatt-manual-005"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:command::default::14e59b57-888b-4723-b7d9-af29d33e690a",
+                    "propertyDependencies": {
+                        "create": null,
+                        "delete": null,
+                        "update": null
+                    },
+                    "created": "2023-06-26T20:50:06.85986107Z",
+                    "modified": "2023-06-26T20:50:06.85986107Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-005/locations/global/workloadIdentityPools/gas-wip-gke-004",
+                    "type": "gcp:iam/workloadIdentityPool:WorkloadIdentityPool",
+                    "inputs": {
+                        "__defaults": [],
+                        "description": "GKE at Scale - Workload Identity Pool for GKE Cluster",
+                        "disabled": false,
+                        "displayName": "gas-wip-gke-cluster",
+                        "project": "thiatt-manual-005",
+                        "workloadIdentityPoolId": "gas-wip-gke-004"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "description": "GKE at Scale - Workload Identity Pool for GKE Cluster",
+                        "disabled": false,
+                        "displayName": "gas-wip-gke-cluster",
+                        "id": "projects/thiatt-manual-005/locations/global/workloadIdentityPools/gas-wip-gke-004",
+                        "name": "projects/537793902734/locations/global/workloadIdentityPools/gas-wip-gke-004",
+                        "project": "thiatt-manual-005",
+                        "state": "ACTIVE",
+                        "workloadIdentityPoolId": "gas-wip-gke-004"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "description": null,
+                        "disabled": null,
+                        "displayName": null,
+                        "project": null,
+                        "workloadIdentityPoolId": null
+                    },
+                    "created": "2023-06-26T20:50:18.099086365Z",
+                    "modified": "2023-06-26T20:50:18.099086365Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:google-native::default",
+                    "custom": true,
+                    "id": "60241f29-5055-4e79-aec6-187c676c5728",
+                    "type": "pulumi:providers:google-native",
+                    "inputs": {
+                        "version": "0.30.0"
+                    },
+                    "outputs": {
+                        "version": "0.30.0"
+                    },
+                    "created": "2023-06-26T20:50:28.75858748Z",
+                    "modified": "2023-06-26T20:50:28.75858748Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::gcp:compute/network:Network::gas-vpc",
+                    "custom": true,
+                    "id": "projects/thiatt-manual-005/global/networks/gas-vpc",
+                    "type": "gcp:compute/network:Network",
+                    "inputs": {
+                        "__defaults": [
+                            "deleteDefaultRoutesOnCreate"
+                        ],
+                        "autoCreateSubnetworks": false,
+                        "deleteDefaultRoutesOnCreate": false,
+                        "description": "GKE at Scale - Global VPC Network",
+                        "name": "gas-vpc",
+                        "project": "thiatt-manual-005"
+                    },
+                    "outputs": {
+                        "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000}}",
+                        "autoCreateSubnetworks": false,
+                        "deleteDefaultRoutesOnCreate": false,
+                        "description": "GKE at Scale - Global VPC Network",
+                        "enableUlaInternalIpv6": false,
+                        "gatewayIpv4": "",
+                        "id": "projects/thiatt-manual-005/global/networks/gas-vpc",
+                        "internalIpv6Range": "",
+                        "mtu": 0,
+                        "name": "gas-vpc",
+                        "project": "thiatt-manual-005",
+                        "routingMode": "REGIONAL",
+                        "selfLink": "https://www.googleapis.com/compute/v1/projects/thiatt-manual-005/global/networks/gas-vpc"
+                    },
+                    "parent": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "dependencies": [
+                        "urn:pulumi:dev::gke-at-scale::command:local:Command::gas-local-cmd-gcloud-enable-fleets",
+                        "urn:pulumi:dev::gke-at-scale::gcp:iam/workloadIdentityPool:WorkloadIdentityPool::gas-wip-gke-cluster",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-anthos.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-artifactregistry.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-compute.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-container.googleapis.com",
+                        "urn:pulumi:dev::gke-at-scale::gcp:projects/service:Service::gas-project-service-mesh.googleapis.com"
+                    ],
+                    "provider": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default::8d8b6712-78d8-429e-ae1c-6bf582868358",
+                    "propertyDependencies": {
+                        "autoCreateSubnetworks": null,
+                        "description": null,
+                        "name": null,
+                        "project": null
+                    },
+                    "created": "2023-06-26T20:50:39.775139146Z",
+                    "modified": "2023-06-26T20:50:39.775139146Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:docker::default",
+                    "custom": true,
+                    "id": "337b7d38-be31-4639-909a-837d8e7b4d80",
+                    "type": "pulumi:providers:docker",
+                    "inputs": {
+                        "version": "4.2.4"
+                    },
+                    "outputs": {
+                        "version": "4.2.4"
+                    },
+                    "created": "2023-06-26T21:18:40.419244751Z",
+                    "modified": "2023-06-26T21:18:40.419244751Z"
+                }
+            ]
+        }
+    }
+}

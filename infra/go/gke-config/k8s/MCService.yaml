@@ -1,0 +1,16 @@
+---
+apiVersion: networking.gke.io/v1
+kind: MultiClusterService
+metadata:
+  name: gke-at-scale-demo-app
+  namespace: gke-at-scale
+spec:
+  template:
+    spec:
+      selector:
+        app: gke-at-scale-demo-app
+      ports:
+      - name: web
+        protocol: TCP
+        port: 80
+        targetPort: 80

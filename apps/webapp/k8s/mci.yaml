@@ -1,0 +1,12 @@
+---
+apiVersion: networking.gke.io/v1
+kind: MultiClusterIngress
+metadata:
+  name: demo-ingress
+  namespace: demo
+spec:
+  template:
+    spec:
+      backend:
+        serviceName: demo-mcs
+        servicePort: 8080
