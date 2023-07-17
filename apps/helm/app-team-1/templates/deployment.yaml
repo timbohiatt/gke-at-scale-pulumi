@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.name }}
+  namespace: {{ .Values.namespace.name }}
+  labels:
+    {{- range $key, $val := .Values.global.labels }}
+      {{ $key }}: {{ $val }}
+    {{- end }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.app.name }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app.name }}
+    spec:
+      containers:
+      - name: {{ .Values.app.name }}
+        image: europe-docker.pkg.dev/thiatt-manual-020/showcase-containers/001-up-and-running:latest
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: CUSTOMER
+          value: "Some Person!"
+        - name: COLOR_PRIMARY
+          value: "#000000"
+        - name: COLOR_SECONDARY
+          value: "#5f5f61"
+        - name: COLOR_BACKGROUND
+          value: "#FFFFFF"
+        - name: LOCATION
+          value: {{ .Values.app.region }}
+        - name: PLATFORM
+          value: "GKE Autopilot"

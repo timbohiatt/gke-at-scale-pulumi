@@ -47,10 +47,6 @@ else
     echo "[SKIP - Fleet Ingress Registration]"
 fi
 
-# Describe Fleet Ingress
-echo "[ACTION - Describe GKE Fleet Ingress]"
-gcloud container fleet ingress describe --project=${GKE_PROJECT}
-
 # Fleet Mesh Update
 echo "[ACTION - Update GKE Fleet Mesh with Memberships]"
 gcloud container fleet mesh update --management automatic --memberships ${MEMBERSHIPS} --project ${GKE_PROJECT} --location global
@@ -78,6 +74,7 @@ if [ "${GKE_IDX}" == "0" ]; then
     TAGS=${TAGS:1}
     echo "Network tags for pod ranges are $TAGS"
 
+    # TODO Move to Pulumi
     echo "[ACTION - Creating Firewall Rules]"
     gcloud compute firewall-rules create asm-multicluster-pods \
         --allow=tcp,udp,icmp,esp,ah,sctp \
@@ -105,17 +102,9 @@ echo "[ACTION - Install ASM on GKE Cluster: ${GKE_CLUSTER} Region: ${GKE_REGION}
       --output_dir "./output/${GKE_CLUSTER}-${GKE_REGION}" \
       --channel rapid
 
-# Confirm Version of ASM
-./gke-config/asmcli --version
-
-# Describe Mesh
-echo "[ACTION - Describe Fleet Mesh]"
-gcloud container fleet mesh describe --project ${GKE_PROJECT}
-
 # Patch MultiCluster Mode on the Cluster
 kubectl patch configmap/asm-options -n istio-system --type merge -p '{"data":{"multicluster_mode":"connected"}}'
 
 # Enable Global Access to Cluster
 #gcloud container clusters update ${GKE_CLUSTER} --project ${GKE_PROJECT} --zone ${GKE_REGION} --enable-master-global-access
-
-gcloud beta container fleet config-management apply --membership ${MEMBERSHIPS} --project ${GKE_PROJECT} --config="./gke-config/acm.yaml"
+#gcloud beta container fleet config-management apply --membership ${MEMBERSHIPS} --project ${GKE_PROJECT} --config="./gke-config/acm.yaml"

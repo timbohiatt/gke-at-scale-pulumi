@@ -4,10 +4,10 @@ go 1.18
 
 require (
 	github.com/pulumi/pulumi-command/sdk v0.7.2
-	github.com/pulumi/pulumi-docker/sdk/v4 v4.2.4
 	github.com/pulumi/pulumi-gcp/sdk/v6 v6.52.0
 	github.com/pulumi/pulumi-google-native/sdk v0.30.0
 	github.com/pulumi/pulumi-kubernetes/sdk/v3 v3.29.1
+	github.com/pulumi/pulumi-synced-folder/sdk v0.0.9
 	github.com/pulumi/pulumi/sdk/v3 v3.69.0
 )
 

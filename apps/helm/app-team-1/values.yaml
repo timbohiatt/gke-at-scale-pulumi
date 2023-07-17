@@ -1,0 +1,31 @@
+# Default values for cluster-ops.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+global: 
+  labels:
+    project: gke-at-scale
+    team: app-team-1
+    region: 
+    app: up-and-running-app
+  domain:
+
+app: 
+  name: up-and-running-app
+  region: 
+
+service: 
+  name: up-and-running-service
+
+virtualService: 
+  name: up-and-running-virtual-service
+  gateways:
+    - asm-ingress/asm-ingressgateway
+
+namespace: 
+  name: app-team-1
+  labels: 
+    name: app-team-1
+    istio-injection: enabled

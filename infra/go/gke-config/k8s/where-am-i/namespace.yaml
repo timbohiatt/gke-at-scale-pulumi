@@ -1,8 +1,0 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: whereami
-  labels:
-    name: whereami
-    istio-injection: enabled
