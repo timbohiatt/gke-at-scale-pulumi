@@ -17,6 +17,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 
 	helm "github.com/pulumi/pulumi-kubernetes/sdk/v3/go/kubernetes/helm/v3"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
 
 type cloudRegion struct {
@@ -25,39 +26,42 @@ type cloudRegion struct {
 	SubnetIp           string
 	GKECluster         *container.Cluster
 	KubernetesProvider *k8s.Provider
-	//Subnet          *compute.Subnetwork
-	//CloudRunService *cloudrunv2.Service
 }
 
 var CloudRegions = []cloudRegion{
 	cloudRegion{
-		Enabled:  false,
-		Region:   "us-central1",
-		SubnetIp: "10.128.50.0/24",
+		Enabled:            true,
+		Region:             "us-central1",
+		SubnetIp:           "10.128.50.0/24",
+		KubernetesProvider: &k8s.Provider{},
 	},
 	cloudRegion{
-		Enabled:  true,
-		Region:   "europe-west6",
-		SubnetIp: "10.128.100.0/24",
+		Enabled:            true,
+		Region:             "europe-west6",
+		SubnetIp:           "10.128.100.0/24",
+		KubernetesProvider: &k8s.Provider{},
 	},
 	cloudRegion{
-		Enabled:  true,
-		Region:   "asia-east1",
-		SubnetIp: "10.128.150.0/24",
+		Enabled:            false,
+		Region:             "asia-east1",
+		SubnetIp:           "10.128.150.0/24",
+		KubernetesProvider: &k8s.Provider{},
 	},
 	cloudRegion{
-		Enabled:  false,
-		Region:   "australia-southeast1",
-		SubnetIp: "10.128.200.0/24",
+		Enabled:            false,
+		Region:             "australia-southeast1",
+		SubnetIp:           "10.128.200.0/24",
+		KubernetesProvider: &k8s.Provider{},
 	},
 }
 
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 
-		urnPrefix := "gas"
-		domain := "gke-at-scale.com"
-		gcpProjectId := "thiatt-manual-011"
+		cfg := config.New(ctx, "")
+		urnPrefix := cfg.Require("prefix")
+		domain := cfg.Require("domainName")
+		gcpProjectId := cfg.Require("gcpProjectId")
 		gcpGKEClusterName := fmt.Sprintf("%s-gke-cluster", urnPrefix)
 
 		// Create a Pulumi Resource Array Object to Store Specific Dependancies within.
@@ -198,148 +202,55 @@ func main() {
 			return err
 		}
 
-		// Construct Google Cloud Load Balancer
-
-		// Create Global Load Balancer Static IP Address
-		urn = fmt.Sprintf("%s-glb-ip-address", urnPrefix)
-		gcpGlobalAddress, err := compute.NewGlobalAddress(ctx, urn, &compute.GlobalAddressArgs{
+		// Create Firewall Rules Health Checks
+		urn = fmt.Sprintf("%s-fw-ingress-allow-health-checks", urnPrefix)
+		_, err = compute.NewFirewall(ctx, urn, &compute.FirewallArgs{
 			Project:     pulumi.String(gcpProjectId),
-			Name:        pulumi.String(fmt.Sprintf("%s-glb-ip-address", urnPrefix)),
-			AddressType: pulumi.String("EXTERNAL"),
-			IpVersion:   pulumi.String("IPV4"),
-			Description: pulumi.String("GKE At Scale - Global Load Balancer Static IP Address"),
-		})
-		if err != nil {
-			return err
-		}
-		ctx.Export(urn, gcpGlobalAddress)
-
-		// Create Managed SSL Certificate
-		urn = fmt.Sprintf("%s-glb-ssl-cert", urnPrefix)
-		gcpGLBManagedSSLCert, err := compute.NewManagedSslCertificate(ctx, urn, &compute.ManagedSslCertificateArgs{
-			Project:     pulumi.String(gcpProjectId),
-			Name:        pulumi.String(fmt.Sprintf("%s-glb-ssl-cert", urnPrefix)),
-			Description: pulumi.String("Global Load Balancer - Managed SSL Certificate - GKE at Scale!"),
-			Type:        pulumi.String("MANAGED"),
-			Managed: &compute.ManagedSslCertificateManagedArgs{
-				Domains: pulumi.StringArray{
-					pulumi.String(domain),
-				},
-			},
-		})
-
-		var backendServiceBackendArray = compute.BackendServiceBackendArray{}
-		urn = fmt.Sprintf("%s-glb-bes", urnPrefix)
-		gcpBackendService, err := compute.NewBackendService(ctx, urn, &compute.BackendServiceArgs{
-			Project:     pulumi.String(gcpProjectId),
-			Name:        pulumi.String(fmt.Sprintf("%s-bes", urnPrefix)),
-			Description: pulumi.String("Global Load Balancer - Backend Service - GKE At Scale!"),
-			CdnPolicy: &compute.BackendServiceCdnPolicyArgs{
-				ClientTtl:  pulumi.Int(5),
-				DefaultTtl: pulumi.Int(5),
-				MaxTtl:     pulumi.Int(5),
-			},
-			ConnectionDrainingTimeoutSec: pulumi.Int(10),
-			Backends:                     backendServiceBackendArray,
-		})
-		if err != nil {
-			return err
-		}
-
-		// Create URL Map
-		urn = fmt.Sprintf("%s-glb-url-map-https", urnPrefix)
-		gcpGLBURLMapHTTPS, err := compute.NewURLMap(ctx, urn, &compute.URLMapArgs{
-			Project:        pulumi.String(gcpProjectId),
-			Name:           pulumi.String(fmt.Sprintf("%s-glb-urlmap-https", urnPrefix)),
-			Description:    pulumi.String("Global Load Balancer - HTTPS URL Map - GKE At Scale!"),
-			DefaultService: gcpBackendService.SelfLink,
-		})
-		if err != nil {
-			return err
-		}
-
-		// Create URL Map
-		urn = fmt.Sprintf("%s-glb-url-map-http", urnPrefix)
-		gcpGLBURLMapHTTP, err := compute.NewURLMap(ctx, urn, &compute.URLMapArgs{
-			Project:     pulumi.String(gcpProjectId),
-			Name:        pulumi.String(fmt.Sprintf("%s-glb-urlmap-http", urnPrefix)),
-			Description: pulumi.String("Global Load Balancer - HTTP URL Map - GKE At Scale!"),
-			HostRules: &compute.URLMapHostRuleArray{
-				&compute.URLMapHostRuleArgs{
-					Hosts: pulumi.StringArray{
-						pulumi.String(domain),
-					},
-					PathMatcher: pulumi.String("all-paths"),
-					Description: pulumi.String("Default Route All Paths"),
-				},
-			},
-			PathMatchers: &compute.URLMapPathMatcherArray{
-				&compute.URLMapPathMatcherArgs{
-					Name:           pulumi.String("all-paths"),
-					DefaultService: gcpBackendService.SelfLink,
-					PathRules: &compute.URLMapPathMatcherPathRuleArray{
-						&compute.URLMapPathMatcherPathRuleArgs{
-							Paths: pulumi.StringArray{
-								pulumi.String("/*"),
-							},
-							UrlRedirect: &compute.URLMapPathMatcherPathRuleUrlRedirectArgs{
-								StripQuery:    pulumi.Bool(false),
-								HttpsRedirect: pulumi.Bool(true),
-							},
-						},
+			Name:        pulumi.String(urn),
+			Description: pulumi.String("FW - Allow - Ingress - TCP Health Checks"),
+			Network:     gcpNetwork.Name,
+			Allows: compute.FirewallAllowArray{
+				&compute.FirewallAllowArgs{
+					Protocol: pulumi.String("tcp"),
+					Ports: pulumi.StringArray{
+						pulumi.String("80"),
+						pulumi.String("8080"),
+						pulumi.String("443"),
 					},
 				},
 			},
-			DefaultService: gcpBackendService.SelfLink,
-		})
-		if err != nil {
-			return err
-		}
-
-		// Create Target HTTPS Proxy
-		urn = fmt.Sprintf("%s-glb-https-proxy", urnPrefix)
-		gcpGLBTargetHTTPSProxy, err := compute.NewTargetHttpsProxy(ctx, urn, &compute.TargetHttpsProxyArgs{
-			Project: pulumi.String(gcpProjectId),
-			Name:    pulumi.String(urn),
-			UrlMap:  gcpGLBURLMapHTTPS.SelfLink,
-			SslCertificates: pulumi.StringArray{
-				gcpGLBManagedSSLCert.SelfLink,
+			SourceRanges: pulumi.StringArray{
+				pulumi.String("35.191.0.0/16"),
+				pulumi.String("130.211.0.0/22"),
 			},
 		})
 		if err != nil {
 			return err
 		}
 
-		// Create Target HTTP Proxy
-		urn = fmt.Sprintf("%s-glb-http-proxy", urnPrefix)
-		gcpGLBTargetHTTPProxy, err := compute.NewTargetHttpProxy(ctx, urn, &compute.TargetHttpProxyArgs{
-			Project: pulumi.String(gcpProjectId),
-			Name:    pulumi.String(urn),
-			UrlMap:  gcpGLBURLMapHTTP.SelfLink,
-		})
-		if err != nil {
-			return err
-		}
-
-		urn = fmt.Sprintf("%s-glb-https-forwarding-rule", urnPrefix)
-		_, err = compute.NewGlobalForwardingRule(ctx, urn, &compute.GlobalForwardingRuleArgs{
-			Project:             pulumi.String(gcpProjectId),
-			Target:              gcpGLBTargetHTTPSProxy.SelfLink,
-			IpAddress:           gcpGlobalAddress.SelfLink,
-			PortRange:           pulumi.String("443"),
-			LoadBalancingScheme: pulumi.String("EXTERNAL"),
-		})
-		if err != nil {
-			return err
-		}
-
-		urn = fmt.Sprintf("%s-glb-http-forwarding-rule", urnPrefix)
-		_, err = compute.NewGlobalForwardingRule(ctx, urn, &compute.GlobalForwardingRuleArgs{
-			Project:             pulumi.String(gcpProjectId),
-			Target:              gcpGLBTargetHTTPProxy.SelfLink,
-			IpAddress:           gcpGlobalAddress.SelfLink,
-			PortRange:           pulumi.String("80"),
-			LoadBalancingScheme: pulumi.String("EXTERNAL"),
+		// Create Firewall Rules Health Checks
+		urn = fmt.Sprintf("%s-fw-ingress-allow-cluster-app-access", urnPrefix)
+		_, err = compute.NewFirewall(ctx, urn, &compute.FirewallArgs{
+			Project:     pulumi.String(gcpProjectId),
+			Name:        pulumi.String(urn),
+			Description: pulumi.String("FW - Allow - Ingress - Load Balancer to Application"),
+			Network:     gcpNetwork.Name,
+			Allows: compute.FirewallAllowArray{
+				&compute.FirewallAllowArgs{
+					Protocol: pulumi.String("tcp"),
+					Ports: pulumi.StringArray{
+						pulumi.String("80"),
+						pulumi.String("8080"),
+						pulumi.String("443"),
+					},
+				},
+			},
+			SourceRanges: pulumi.StringArray{
+				pulumi.String("0.0.0.0/0"),
+			},
+			TargetTags: pulumi.StringArray{
+				pulumi.String("gke-app-access"),
+			},
 		})
 		if err != nil {
 			return err
@@ -406,6 +317,40 @@ func main() {
 			cloudRegion.GKECluster = gcpGKECluster
 			// Add Cluster as a Explicit Dependency.
 			gcpDependencies = append(gcpDependencies, gcpGKECluster)
+
+			// Create a Kubernetes provider instance that uses our kubeconfig for this regions GKE Cluster.
+			urn = fmt.Sprintf("%s-kubernetesProvider-%s", urnPrefix, cloudRegion.Region)
+			k8sProvider, err := k8s.NewProvider(ctx, urn, &k8s.ProviderArgs{
+				Kubeconfig: pulumi.Sprintf(`apiVersion: v1
+				clusters:
+				- cluster:
+					certificate-authority-data: %[3]s
+					server: https://%[2]s
+				name: %[1]s
+				contexts:
+				- context:
+					cluster: %[1]s
+					user: %[1]s
+				name: %[1]s
+				current-context: %[1]s
+				kind: Config
+				preferences: {}
+				users:
+				- name: %[1]s
+				user:
+					exec:
+					apiVersion: client.authentication.k8s.io/v1beta1
+					command: gke-gcloud-auth-plugin
+					installHint: Install gke-gcloud-auth-plugin for use with kubectl by following
+						https://cloud.google.com/blog/products/containers-kubernetes/kubectl-auth-changes-in-gke
+					provideClusterInfo: true
+						`, gcpGKECluster.Name, gcpGKECluster.Endpoint, gcpGKECluster.MasterAuth.ClusterCaCertificate().Elem()),
+			}, pulumi.DependsOn(gcpDependencies))
+			if err != nil {
+				return err
+			}
+			cloudRegion.KubernetesProvider = k8sProvider
+			gcpDependencies = append(gcpDependencies, k8sProvider)
 		}
 
 		// Configure Google Cloud Kubernetes & Clusters;
@@ -428,9 +373,10 @@ func main() {
 
 			urn = fmt.Sprintf("%s-helm-deploy-cluster-ops-%s", urnPrefix, cloudRegion.Region)
 			helmClusterOps, err := helm.NewChart(ctx, urn, helm.ChartArgs{
-				Chart:   pulumi.String("cluster-ops"),
-				Version: pulumi.String("0.1.1"),
-				Path:    pulumi.String("../../apps/helm"),
+				Chart:          pulumi.String("cluster-ops"),
+				ResourcePrefix: cloudRegion.Region,
+				Version:        pulumi.String("0.1.1"),
+				Path:           pulumi.String("../../apps/helm"),
 				Values: pulumi.Map{
 					"global": pulumi.Map{
 						"labels": pulumi.Map{
@@ -447,40 +393,51 @@ func main() {
 							}},
 					},
 				},
-			}, pulumi.DependsOn(gcpDependencies))
+			}, pulumi.Provider(cloudRegion.KubernetesProvider), pulumi.DependsOn(gcpDependencies))
 			if err != nil {
 				return err
 			}
+			// Add Cluster as a Explicit Dependency.
+			gcpDependencies = append(gcpDependencies, helmClusterOps)
 
 			urn = fmt.Sprintf("%s-iam-svc-account-k8s-binding-%s", urnPrefix, cloudRegion.Region)
-			_, err = serviceaccount.NewIAMBinding(ctx, urn, &serviceaccount.IAMBindingArgs{
+			gcpAutoNegIAMBindings, err := serviceaccount.NewIAMBinding(ctx, urn, &serviceaccount.IAMBindingArgs{
 				ServiceAccountId: gcpServiceAccountAutoNeg.Name,
 				Role:             pulumi.String("roles/iam.workloadIdentityUser"),
 				Members: pulumi.StringArray{
 					pulumi.String(fmt.Sprintf("serviceAccount:%s.svc.id.goog[autoneg-system/autoneg-controller-manager]", gcpProjectId)),
 				},
-			}, pulumi.DependsOn([]pulumi.Resource{helmClusterOps}))
+			}, pulumi.DependsOn(gcpDependencies))
 			if err != nil {
 				return err
 			}
+			// Add Cluster as a Explicit Dependency.
+			gcpDependencies = append(gcpDependencies, gcpAutoNegIAMBindings)
 
 			urn = fmt.Sprintf("%s-helm-deploy-app-team-1-%s", urnPrefix, cloudRegion.Region)
 			_, err = helm.NewChart(ctx, urn, helm.ChartArgs{
-				Chart:   pulumi.String("app-team-1"),
-				Version: pulumi.String("0.1.1"),
-				Path:    pulumi.String("../../apps/helm"),
+				Chart:          pulumi.String("app-team-1"),
+				ResourcePrefix: cloudRegion.Region,
+				Version:        pulumi.String("0.1.1"),
+				Path:           pulumi.String("../../apps/helm"),
 				Values: pulumi.Map{
 					"global": pulumi.Map{
 						"labels": pulumi.Map{
 							"region": pulumi.String(cloudRegion.Region),
 						},
 					},
+					"app": pulumi.Map{
+						"customer":        pulumi.String("Pulumi Developer!"),
+						"region":          pulumi.String(cloudRegion.Region),
+						"colorPrimary":    pulumi.String("#805ac3"),
+						"colorSecondary":  pulumi.String("#F6B436"),
+						"colorBackground": pulumi.String("#FFFFFF"),
+					},
 				},
-			}, pulumi.DependsOn(gcpDependencies))
+			}, pulumi.Provider(cloudRegion.KubernetesProvider), pulumi.DependsOn(gcpDependencies))
 			if err != nil {
 				return err
 			}
-
 		}
 
 		// Configure Multi Cluster ASM Mesh;
@@ -506,6 +463,193 @@ func main() {
 		gcpDependencies = append(gcpDependencies, gcpASMMesh)
 		ctx.Export(urn, gcpASMMesh)
 
+		// Construct Google Cloud Load Balancer
+
+		// Create Global Load Balancer Static IP Address
+		urn = fmt.Sprintf("%s-glb-ip-address", urnPrefix)
+		gcpGlobalAddress, err := compute.NewGlobalAddress(ctx, urn, &compute.GlobalAddressArgs{
+			Project:     pulumi.String(gcpProjectId),
+			Name:        pulumi.String(fmt.Sprintf("%s-glb-ip-address", urnPrefix)),
+			AddressType: pulumi.String("EXTERNAL"),
+			IpVersion:   pulumi.String("IPV4"),
+			Description: pulumi.String("GKE At Scale - Global Load Balancer Static IP Address"),
+		})
+		if err != nil {
+			return err
+		}
+
+		// Create Managed SSL Certificate
+		urn = fmt.Sprintf("%s-glb-ssl-cert", urnPrefix)
+		gcpGLBManagedSSLCert, err := compute.NewManagedSslCertificate(ctx, urn, &compute.ManagedSslCertificateArgs{
+			Project:     pulumi.String(gcpProjectId),
+			Name:        pulumi.String(fmt.Sprintf("%s-glb-ssl-cert", urnPrefix)),
+			Description: pulumi.String("Global Load Balancer - Managed SSL Certificate - GKE at Scale!"),
+			Type:        pulumi.String("MANAGED"),
+			Managed: &compute.ManagedSslCertificateManagedArgs{
+				Domains: pulumi.StringArray{
+					pulumi.String(domain),
+				},
+			},
+		}, pulumi.DependsOn(gcpDependencies))
+
+		urn = fmt.Sprintf("%s-glb-tcp-health-check", urnPrefix)
+		gcpGLBTCPHealthCheck, err := compute.NewHealthCheck(ctx, urn, &compute.HealthCheckArgs{
+			Project:          pulumi.String(gcpProjectId),
+			CheckIntervalSec: pulumi.Int(1),
+			Description:      pulumi.String("TCP Health Check"),
+			HealthyThreshold: pulumi.Int(4),
+			TcpHealthCheck: &compute.HealthCheckTcpHealthCheckArgs{
+				Port:        pulumi.Int(8080),
+				ProxyHeader: pulumi.String("NONE"),
+			},
+			TimeoutSec:         pulumi.Int(1),
+			UnhealthyThreshold: pulumi.Int(5),
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
+		var backendServiceBackendArray = compute.BackendServiceBackendArray{}
+		urn = fmt.Sprintf("%s-glb-bes", urnPrefix)
+		gcpBackendService, err := compute.NewBackendService(ctx, urn, &compute.BackendServiceArgs{
+			Project:     pulumi.String(gcpProjectId),
+			Name:        pulumi.String(fmt.Sprintf("%s-bes", urnPrefix)),
+			Description: pulumi.String("Global Load Balancer - Backend Service - GKE At Scale!"),
+			CdnPolicy: &compute.BackendServiceCdnPolicyArgs{
+				ClientTtl:  pulumi.Int(5),
+				DefaultTtl: pulumi.Int(5),
+				MaxTtl:     pulumi.Int(5),
+			},
+			ConnectionDrainingTimeoutSec: pulumi.Int(10),
+			Backends:                     backendServiceBackendArray,
+			HealthChecks:                 gcpGLBTCPHealthCheck.ID(),
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
+		// Create URL Map
+		urn = fmt.Sprintf("%s-glb-url-map-https", urnPrefix)
+		gcpGLBURLMapHTTPS, err := compute.NewURLMap(ctx, urn, &compute.URLMapArgs{
+			Project:        pulumi.String(gcpProjectId),
+			Name:           pulumi.String(fmt.Sprintf("%s-glb-urlmap-https", urnPrefix)),
+			Description:    pulumi.String("Global Load Balancer - HTTPS URL Map - GKE At Scale!"),
+			DefaultService: gcpBackendService.SelfLink,
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
+		// Create URL Map
+		urn = fmt.Sprintf("%s-glb-url-map-http", urnPrefix)
+		gcpGLBURLMapHTTP, err := compute.NewURLMap(ctx, urn, &compute.URLMapArgs{
+			Project:     pulumi.String(gcpProjectId),
+			Name:        pulumi.String(fmt.Sprintf("%s-glb-urlmap-http", urnPrefix)),
+			Description: pulumi.String("Global Load Balancer - HTTP URL Map - GKE At Scale!"),
+			HostRules: &compute.URLMapHostRuleArray{
+				&compute.URLMapHostRuleArgs{
+					Hosts: pulumi.StringArray{
+						pulumi.String(domain),
+					},
+					PathMatcher: pulumi.String("all-paths"),
+					Description: pulumi.String("Default Route All Paths"),
+				},
+			},
+			PathMatchers: &compute.URLMapPathMatcherArray{
+				&compute.URLMapPathMatcherArgs{
+					Name:           pulumi.String("all-paths"),
+					DefaultService: gcpBackendService.SelfLink,
+					PathRules: &compute.URLMapPathMatcherPathRuleArray{
+						&compute.URLMapPathMatcherPathRuleArgs{
+							Paths: pulumi.StringArray{
+								pulumi.String("/*"),
+							},
+							UrlRedirect: &compute.URLMapPathMatcherPathRuleUrlRedirectArgs{
+								StripQuery:    pulumi.Bool(false),
+								HttpsRedirect: pulumi.Bool(true),
+							},
+						},
+					},
+				},
+			},
+			DefaultService: gcpBackendService.SelfLink,
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
+		// Create Target HTTPS Proxy
+		urn = fmt.Sprintf("%s-glb-https-proxy", urnPrefix)
+		gcpGLBTargetHTTPSProxy, err := compute.NewTargetHttpsProxy(ctx, urn, &compute.TargetHttpsProxyArgs{
+			Project: pulumi.String(gcpProjectId),
+			Name:    pulumi.String(urn),
+			UrlMap:  gcpGLBURLMapHTTPS.SelfLink,
+			SslCertificates: pulumi.StringArray{
+				gcpGLBManagedSSLCert.SelfLink,
+			},
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
+		// Create Target HTTP Proxy
+		urn = fmt.Sprintf("%s-glb-http-proxy", urnPrefix)
+		gcpGLBTargetHTTPProxy, err := compute.NewTargetHttpProxy(ctx, urn, &compute.TargetHttpProxyArgs{
+			Project: pulumi.String(gcpProjectId),
+			Name:    pulumi.String(urn),
+			UrlMap:  gcpGLBURLMapHTTP.SelfLink,
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
+		urn = fmt.Sprintf("%s-glb-https-forwarding-rule", urnPrefix)
+		_, err = compute.NewGlobalForwardingRule(ctx, urn, &compute.GlobalForwardingRuleArgs{
+			Project:             pulumi.String(gcpProjectId),
+			Target:              gcpGLBTargetHTTPSProxy.SelfLink,
+			IpAddress:           gcpGlobalAddress.SelfLink,
+			PortRange:           pulumi.String("443"),
+			LoadBalancingScheme: pulumi.String("EXTERNAL"),
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
+		urn = fmt.Sprintf("%s-glb-http-forwarding-rule", urnPrefix)
+		_, err = compute.NewGlobalForwardingRule(ctx, urn, &compute.GlobalForwardingRuleArgs{
+			Project:             pulumi.String(gcpProjectId),
+			Target:              gcpGLBTargetHTTPProxy.SelfLink,
+			IpAddress:           gcpGlobalAddress.SelfLink,
+			PortRange:           pulumi.String("80"),
+			LoadBalancingScheme: pulumi.String("EXTERNAL"),
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
+		}
+
 		return nil
 	})
 }
+
+// zones/us-central1-b/networkEndpointGroups/k8s1-1337ca60-asm-ingress-asm-ingressgateway-80-4dfc7a29
+// gcloud compute backend-services add-backend gas-bes --network-endpoint-group="k8s1-1337ca60-asm-ingress-asm-ingressgateway-80-4dfc7a29" --network-endpoint-group-zone="us-central1-b" --project=thiatt-manual-011 --global --max-rate-per-endpoint=1000 --balancing-mode="RATE"
+//gcloud compute backend-services add-backend gas-bes --network-endpoint-group="k8s1-072c8c7a-asm-ingress-asm-ingressgateway-80-555f90dc" --network-endpoint-group-zone="europe-west6-a" --project=thiatt-manual-011 --global --max-rate-per-endpoint=1000 --balancing-mode="RATE"
+
+/*
+gcloud compute firewall-rules create fw-allow-health-checks \
+    --network="gas-vpc" \
+    --action=ALLOW \
+    --direction=INGRESS \
+    --source-ranges="35.191.0.0/16","130.211.0.0/22" \
+    --target-tags=allow-health-checks \
+    --rules=tcp:PORT
+
+
+	gcloud compute firewall-rules create fw-allow-health-checks-k8s \
+    --network="gas-vpc" \
+    --action=ALLOW \
+    --direction=INGRESS \
+    --source-ranges="0.0.0.0/0" \
+    --target-tags=test-k8 \
+    --rules=tcp:8080
+*/

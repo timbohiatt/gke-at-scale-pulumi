@@ -1,6 +1,0 @@
-{
-    "version": 3,
-    "checkpoint": {
-        "stack": "organization/gke-at-scale/dev"
-    }
-}
