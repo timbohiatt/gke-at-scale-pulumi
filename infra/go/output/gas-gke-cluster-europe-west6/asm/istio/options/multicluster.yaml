@@ -5,4 +5,4 @@ spec:
     global:
       multiCluster:
         # Provided to ensure a human readable name rather than a UUID.
-        clusterName: "cn-thiatt-manual-011-europe-west6-gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.cluster-name"}
+        clusterName: "cn-thiatt-manual-015-europe-west6-gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.cluster-name"}

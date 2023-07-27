@@ -1,0 +1,56 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/gke-at-scale/dev",
+        "latest": {
+            "manifest": {
+                "time": "2023-07-20T07:43:21.209778958Z",
+                "magic": "2c2c9583d90766d028e819f886c2dc488eb9dd4d6b1caf826993f4ba26a98dc5",
+                "version": "v3.75.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:ALbmvV+u5EA=:v1:pk6Iv/p2mJXRzhF0:5nO507DPcmo9cWn7jpOCJy7uO77UYg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:gcp::default",
+                    "custom": true,
+                    "id": "c08f208c-1a10-4fd3-88fb-79e5ea1719b8",
+                    "type": "pulumi:providers:gcp",
+                    "inputs": {
+                        "version": "6.52.0"
+                    },
+                    "outputs": {
+                        "version": "6.52.0"
+                    },
+                    "created": "2023-07-20T07:42:55.642319937Z",
+                    "modified": "2023-07-20T07:42:55.642319937Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:pulumi:Stack::gke-at-scale-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2023-07-20T07:42:55.643524029Z",
+                    "modified": "2023-07-20T07:42:55.643524029Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::gke-at-scale::pulumi:providers:kubernetes::default",
+                    "custom": true,
+                    "id": "c7206cb7-3d53-4e16-9380-abe395391bfe",
+                    "type": "pulumi:providers:kubernetes",
+                    "inputs": {
+                        "version": "3.29.1"
+                    },
+                    "outputs": {
+                        "version": "3.29.1"
+                    },
+                    "created": "2023-07-20T07:42:56.8173907Z",
+                    "modified": "2023-07-20T07:42:56.8173907Z"
+                }
+            ]
+        }
+    }
+}

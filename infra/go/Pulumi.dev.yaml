@@ -2,5 +2,5 @@ encryptionsalt: v1:ALbmvV+u5EA=:v1:pk6Iv/p2mJXRzhF0:5nO507DPcmo9cWn7jpOCJy7uO77U
 config:
   gke-at-scale:domain: gke-at-scale.com
   gke-at-scale:domainName: gke-at-scale.com
-  gke-at-scale:gcpProjectId: thiatt-manual-011
+  gke-at-scale:gcpProjectId: thiatt-manual-015
   gke-at-scale:prefix: gas

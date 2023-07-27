@@ -21,6 +21,7 @@ import (
 )
 
 type cloudRegion struct {
+	Id                 string
 	Enabled            bool
 	Region             string
 	SubnetIp           string
@@ -30,27 +31,45 @@ type cloudRegion struct {
 
 var CloudRegions = []cloudRegion{
 	cloudRegion{
+		Id:                 "001",
 		Enabled:            true,
 		Region:             "us-central1",
 		SubnetIp:           "10.128.50.0/24",
 		KubernetesProvider: &k8s.Provider{},
 	},
 	cloudRegion{
+		Id:                 "002",
 		Enabled:            true,
 		Region:             "europe-west6",
 		SubnetIp:           "10.128.100.0/24",
 		KubernetesProvider: &k8s.Provider{},
 	},
 	cloudRegion{
-		Enabled:            false,
+		Id:                 "003",
+		Enabled:            true,
 		Region:             "asia-east1",
 		SubnetIp:           "10.128.150.0/24",
 		KubernetesProvider: &k8s.Provider{},
 	},
 	cloudRegion{
-		Enabled:            false,
+		Id:                 "004",
+		Enabled:            true,
 		Region:             "australia-southeast1",
 		SubnetIp:           "10.128.200.0/24",
+		KubernetesProvider: &k8s.Provider{},
+	},
+	cloudRegion{
+		Id:                 "005",
+		Enabled:            true,
+		Region:             "me-west1",
+		SubnetIp:           "10.128.250.0/24",
+		KubernetesProvider: &k8s.Provider{},
+	},
+	cloudRegion{
+		Id:                 "006",
+		Enabled:            true,
+		Region:             "southamerica-west1",
+		SubnetIp:           "10.129.50.0/24",
 		KubernetesProvider: &k8s.Provider{},
 	},
 }
@@ -101,6 +120,19 @@ func main() {
 			}
 			// Append API Enablement Resources to a Depenancies Array
 			gcpDependencies = append(gcpDependencies, gcpService)
+		}
+
+		// Create Global Load Balancer Static IP Address
+		urn = fmt.Sprintf("%s-glb-ip-address", urnPrefix)
+		gcpGlobalAddress, err := compute.NewGlobalAddress(ctx, urn, &compute.GlobalAddressArgs{
+			Project:     pulumi.String(gcpProjectId),
+			Name:        pulumi.String(fmt.Sprintf("%s-glb-ip-address", urnPrefix)),
+			AddressType: pulumi.String("EXTERNAL"),
+			IpVersion:   pulumi.String("IPV4"),
+			Description: pulumi.String("GKE At Scale - Global Load Balancer Static IP Address"),
+		}, pulumi.DependsOn(gcpDependencies))
+		if err != nil {
+			return err
 		}
 
 		// Create Google Cloud Service Account
@@ -180,7 +212,7 @@ func main() {
 			Description:            pulumi.String("GKE at Scale - Workload Identity Pool for GKE Cluster"),
 			Disabled:               pulumi.Bool(false),
 			DisplayName:            pulumi.String(urn),
-			WorkloadIdentityPoolId: pulumi.String(fmt.Sprintf("%s-wip-gke-014", urnPrefix)), // **** TODO: Replace with Pulumi RANDOM ID? ****
+			WorkloadIdentityPoolId: pulumi.String(fmt.Sprintf("%s-wip-gke-020", urnPrefix)), // **** TODO: Replace with Pulumi RANDOM ID? ****
 		}, pulumi.DependsOn(gcpDependencies))
 		if err != nil {
 			return err
@@ -374,7 +406,7 @@ func main() {
 			urn = fmt.Sprintf("%s-helm-deploy-cluster-ops-%s", urnPrefix, cloudRegion.Region)
 			helmClusterOps, err := helm.NewChart(ctx, urn, helm.ChartArgs{
 				Chart:          pulumi.String("cluster-ops"),
-				ResourcePrefix: cloudRegion.Region,
+				ResourcePrefix: cloudRegion.Id,
 				Version:        pulumi.String("0.1.1"),
 				Path:           pulumi.String("../../apps/helm"),
 				Values: pulumi.Map{
@@ -417,7 +449,7 @@ func main() {
 			urn = fmt.Sprintf("%s-helm-deploy-app-team-1-%s", urnPrefix, cloudRegion.Region)
 			_, err = helm.NewChart(ctx, urn, helm.ChartArgs{
 				Chart:          pulumi.String("app-team-1"),
-				ResourcePrefix: cloudRegion.Region,
+				ResourcePrefix: cloudRegion.Id,
 				Version:        pulumi.String("0.1.1"),
 				Path:           pulumi.String("../../apps/helm"),
 				Values: pulumi.Map{
@@ -451,7 +483,7 @@ func main() {
 
 		}
 
-		urn = fmt.Sprintf("%s-local-cmd-ams-multicluster-mesh", urnPrefix)
+		/*urn = fmt.Sprintf("%s-local-cmd-ams-multicluster-mesh", urnPrefix)
 		gcpASMMesh, err := local.NewCommand(ctx, urn, &local.CommandArgs{
 			Create: pulumi.String(cmd),
 			Update: pulumi.String(cmd),
@@ -461,22 +493,9 @@ func main() {
 		}
 		// Add GKE ASM Mesh as a Explicit Dependency.
 		gcpDependencies = append(gcpDependencies, gcpASMMesh)
-		ctx.Export(urn, gcpASMMesh)
+		ctx.Export(urn, gcpASMMesh)*/
 
 		// Construct Google Cloud Load Balancer
-
-		// Create Global Load Balancer Static IP Address
-		urn = fmt.Sprintf("%s-glb-ip-address", urnPrefix)
-		gcpGlobalAddress, err := compute.NewGlobalAddress(ctx, urn, &compute.GlobalAddressArgs{
-			Project:     pulumi.String(gcpProjectId),
-			Name:        pulumi.String(fmt.Sprintf("%s-glb-ip-address", urnPrefix)),
-			AddressType: pulumi.String("EXTERNAL"),
-			IpVersion:   pulumi.String("IPV4"),
-			Description: pulumi.String("GKE At Scale - Global Load Balancer Static IP Address"),
-		})
-		if err != nil {
-			return err
-		}
 
 		// Create Managed SSL Certificate
 		urn = fmt.Sprintf("%s-glb-ssl-cert", urnPrefix)

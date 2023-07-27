@@ -1,0 +1,48 @@
+# Default ASM Profile for multicloud installations.
+#   * Security: citadel
+#   * Telemetry: prometheus
+#   * Networking: istiod
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  meshConfig:
+    # Locality load balancing is not supported
+    localityLbSetting:
+      enabled: false
+  components:
+    # Egress is supported but not default
+    egressGateways:
+    - enabled: false
+      name: istio-egressgateway
+      k8s:
+        hpaSpec:
+          maxReplicas: 5
+          minReplicas: 2
+    ingressGateways:
+    - enabled: true
+      name: istio-ingressgateway
+      k8s:
+        hpaSpec:
+          maxReplicas: 5
+          minReplicas: 2
+    # The default profile is tuned to fit on smaller clusters.
+    # Increase cpu req to ensure we can handle larger scale clusters.
+    pilot:
+      k8s:
+        resources:
+          requests:
+            cpu: 500m
+        hpaSpec:
+          minReplicas: 2
+  values:
+    # Enable telemetry v2 backend by Prometheus.
+    telemetry:
+      enabled: true
+      v2:
+        enabled: true
+        prometheus:
+          enabled: true
+        stackdriver:
+          enabled: false
+    sidecarInjectorWebhook:
+      rewriteAppHTTPProbe: true
