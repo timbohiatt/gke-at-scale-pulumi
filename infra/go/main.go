@@ -29,7 +29,7 @@ type cloudRegion struct {
 var CloudRegions = []cloudRegion{
 	cloudRegion{
 		Id:       "001",
-		Enabled:  false,
+		Enabled:  true,
 		Region:   "us-central1",
 		SubnetIp: "10.128.50.0/24",
 	},
@@ -41,9 +41,81 @@ var CloudRegions = []cloudRegion{
 	},
 	cloudRegion{
 		Id:       "003",
-		Enabled:  false,
+		Enabled:  true,
 		Region:   "asia-east1",
 		SubnetIp: "10.128.150.0/24",
+	},
+	cloudRegion{
+		Id:       "004",
+		Enabled:  false,
+		Region:   "australia-southeast1",
+		SubnetIp: "10.128.200.0/24",
+	},
+	cloudRegion{
+		Id:       "005",
+		Enabled:  true,
+		Region:   "me-west1",
+		SubnetIp: "10.128.250.0/24",
+	},
+	cloudRegion{
+		Id:       "006",
+		Enabled:  false,
+		Region:   "southamerica-west1",
+		SubnetIp: "10.129.50.0/24",
+	},
+	cloudRegion{
+		Id:       "007",
+		Enabled:  true,
+		Region:   "europe-north1",
+		SubnetIp: "10.129.100.0/24",
+	},
+	cloudRegion{
+		Id:       "008",
+		Enabled:  false,
+		Region:   "northamerica-northeast1",
+		SubnetIp: "10.129.150.0/24",
+	},
+	cloudRegion{
+		Id:       "009",
+		Enabled:  true,
+		Region:   "us-east4",
+		SubnetIp: "10.129.200.0/24",
+	},
+	cloudRegion{
+		Id:       "010",
+		Enabled:  true,
+		Region:   "us-east5",
+		SubnetIp: "10.129.250.0/24",
+	},
+	cloudRegion{
+		Id:       "011",
+		Enabled:  true,
+		Region:   "us-south1",
+		SubnetIp: "10.130.50.0/24",
+	},
+	cloudRegion{
+		Id:       "012",
+		Enabled:  true,
+		Region:   "europe-west8",
+		SubnetIp: "10.130.100.0/24",
+	},
+	cloudRegion{
+		Id:       "013",
+		Enabled:  true,
+		Region:   "europe-west9",
+		SubnetIp: "10.130.150.0/24",
+	},
+	cloudRegion{
+		Id:       "014",
+		Enabled:  true,
+		Region:   "europe-west3",
+		SubnetIp: "10.130.200.0/24",
+	},
+	cloudRegion{
+		Id:       "015",
+		Enabled:  true,
+		Region:   "europe-central2",
+		SubnetIp: "10.130.250.0/24",
 	},
 }
 
@@ -590,21 +662,25 @@ func main() {
 			_, err = helm.NewChart(ctx, urn, helm.ChartArgs{
 				Chart:          pulumi.String("app-team"),
 				ResourcePrefix: cloudRegion.Id,
-				Version:        pulumi.String("0.1.1"),
+				Version:        pulumi.String("0.1.0"),
 				Path:           pulumi.String("../../apps/helm"),
 				Values: pulumi.Map{
 					"global": pulumi.Map{
 						"labels": pulumi.Map{
-							"region": pulumi.String(cloudRegion.Region),
+							"region":  pulumi.String(cloudRegion.Region),
+							"project": pulumi.String(gcpProjectId),
+							"prefix":  pulumi.String(urnPrefix),
 						},
 					},
-					"app": pulumi.Map{
-						"namespace":       k8sAppNamespace.Metadata.Name(),
-						"customer":        pulumi.String("Pulumi Developer!"),
-						"region":          pulumi.String(cloudRegion.Region),
-						"colorPrimary":    pulumi.String("#805ac3"),
-						"colorSecondary":  pulumi.String("#F6B436"),
-						"colorBackground": pulumi.String("#FFFFFF"),
+					"deployment": pulumi.Map{
+						"env": pulumi.Map{
+							"customer":         pulumi.String("Pulumi Developers"),
+							"color_primary":    pulumi.String("#805ac3"),
+							"color_secondary":  pulumi.String("#4d5bd9"),
+							"color_background": pulumi.String("#f7bf2a"),
+							"location":         pulumi.String(cloudRegion.Region),
+							"platform":         pulumi.String("GKE"),
+						},
 					},
 				},
 			}, pulumi.Provider(k8sProvider), pulumi.DependsOn([]pulumi.Resource{helmIstioBase, helmIstioD}), pulumi.Parent(gcpGKECluster))
