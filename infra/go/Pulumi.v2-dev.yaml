@@ -1,0 +1,4 @@
+config:
+  gke-at-scale:domainName: gke-at-scale.com
+  gke-at-scale:gcpProjectId: thiatt-manual-pulumi-006
+  gke-at-scale:prefix: gas

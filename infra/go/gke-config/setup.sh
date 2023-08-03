@@ -17,7 +17,7 @@ echo "GKE Cluster Index?: $GKE_IDX";
 
 rm -rf "./output/${GKE_CLUSTER}-${GKE_REGION}"
 
-echo "[ACTION - Get GKE Cluster Context and Credentials]"
+#echo "[ACTION - Get GKE Cluster Context and Credentials]"
 gcloud container clusters get-credentials ${GKE_CLUSTER} --region ${GKE_REGION} --project ${GKE_PROJECT}
 
 echo "[ACTION - Set GKE IAM Policy Bindings]"
@@ -31,12 +31,12 @@ gcloud container clusters update ${GKE_CLUSTER} --region ${GKE_REGION} --project
 
 # Register GKE cluster in Fleet
 echo "[ACTION - Register GKE Cluster in Fleet]"
-gcloud container fleet memberships register "${GKE_CLUSTER}-${GKE_REGION}" --gke-cluster="${GKE_REGION}/${GKE_CLUSTER}" --enable-workload-identity --project ${GKE_PROJECT} --quiet
+gcloud container fleet memberships register "${GKE_CLUSTER}" --gke-cluster="${GKE_REGION}/${GKE_CLUSTER}" --enable-workload-identity --project ${GKE_PROJECT} --quiet
 
 # Store Cluster Feet Memberhips ID
 echo "[ACTION - Collect GKE Cluster Fleet Memberships]"
 
-MEMBERSHIPS=$(gcloud container fleet memberships list --project ${GKE_PROJECT} --filter="${GKE_CLUSTER}-${GKE_REGION}" --format="value(NAME)")
+MEMBERSHIPS=$(gcloud container fleet memberships list --project ${GKE_PROJECT} --filter="${GKE_CLUSTER}" --format="value(NAME)")
 echo $MEMBERSHIPS
 
 # Fleet Config Cluster (when first cluster, index 0)
@@ -52,7 +52,7 @@ echo "[ACTION - Update GKE Fleet Mesh with Memberships]"
 gcloud container fleet mesh update --management automatic --memberships ${MEMBERSHIPS} --project ${GKE_PROJECT} --location global
 
 # Prepare ASM Install
-mkdir -p "./output/${GKE_CLUSTER}-${GKE_REGION}"
+mkdir -p "./output/${GKE_CLUSTER}"
 
 # Fleet Config Cluster (when first cluster, index 0)
 if [ "${GKE_IDX}" == "0" ]; then
@@ -99,7 +99,7 @@ echo "[ACTION - Install ASM on GKE Cluster: ${GKE_CLUSTER} Region: ${GKE_REGION}
       --managed \
       --verbose \
       --enable-all \
-      --output_dir "./output/${GKE_CLUSTER}-${GKE_REGION}" \
+      --output_dir "./output/${GKE_CLUSTER}" \
       --channel rapid
 
 # Patch MultiCluster Mode on the Cluster

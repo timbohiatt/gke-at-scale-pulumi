@@ -66,7 +66,7 @@ openAPI:
       x-k8s-cli:
         setter:
           name: anthos.servicemesh.idp-url
-          value: https://container.googleapis.com/v1/projects/thiatt-manual-015/locations/europe-west6/clusters/gas-gke-cluster
+          value: https://container.googleapis.com/v1/projects/thiatt-manual-pulumi-002/locations/europe-west6/clusters/gas-gke-cluster
           isSet: true
     io.k8s.cli.setters.anthos.servicemesh.istiod-vs-name:
       x-k8s-cli:
@@ -110,7 +110,7 @@ openAPI:
       x-k8s-cli:
         setter:
           name: anthos.servicemesh.spiffeBundleEndpoints
-          value: thiatt-manual-015.svc.id.goog|https://storage.googleapis.com/mesh-ca-resources/spiffe_bundle.json
+          value: thiatt-manual-pulumi-002.svc.id.goog|https://storage.googleapis.com/mesh-ca-resources/spiffe_bundle.json
           isSet: true
     io.k8s.cli.setters.anthos.servicemesh.tag:
       x-k8s-cli:
@@ -123,14 +123,14 @@ openAPI:
       x-k8s-cli:
         setter:
           name: anthos.servicemesh.tokenAudiences
-          value: istio-ca,thiatt-manual-015.svc.id.goog
+          value: istio-ca,thiatt-manual-pulumi-002.svc.id.goog
           isSet: true
     io.k8s.cli.setters.anthos.servicemesh.trustDomain:
       type: string
       x-k8s-cli:
         setter:
           name: anthos.servicemesh.trustDomain
-          value: thiatt-manual-015.svc.id.goog
+          value: thiatt-manual-pulumi-002.svc.id.goog
           isSet: true
     io.k8s.cli.setters.anthos.servicemesh.trustDomainAliases:
       items:
@@ -140,8 +140,8 @@ openAPI:
       x-k8s-cli:
         setter:
           listValues:
-          - "thiatt-manual-015.svc.id.goog"
-          - "thiatt-manual-015.hub.id.goog"
+          - "thiatt-manual-pulumi-002.svc.id.goog"
+          - "thiatt-manual-pulumi-002.hub.id.goog"
           name: anthos.servicemesh.trustDomainAliases
           isSet: true
     io.k8s.cli.setters.base-dir:
@@ -160,7 +160,7 @@ openAPI:
       x-k8s-cli:
         setter:
           name: gcloud.compute.network
-          value: thiatt-manual-015-gas-vpc
+          value: thiatt-manual-pulumi-002-gas-vpc
           isSet: true
     io.k8s.cli.setters.gcloud.container.cluster:
       type: string
@@ -188,21 +188,21 @@ openAPI:
       x-k8s-cli:
         setter:
           name: gcloud.core.project
-          value: thiatt-manual-015
+          value: thiatt-manual-pulumi-002
           isSet: true
     io.k8s.cli.setters.gcloud.project.environProjectNumber:
       type: string
       x-k8s-cli:
         setter:
           name: gcloud.project.environProjectNumber
-          value: "861098562042"
+          value: "215657742410"
           isSet: true
     io.k8s.cli.setters.gcloud.project.projectNumber:
       type: string
       x-k8s-cli:
         setter:
           name: gcloud.project.projectNumber
-          value: "861098562042"
+          value: "215657742410"
           isSet: true
     io.k8s.cli.substitutions.cluster-name:
       type: string

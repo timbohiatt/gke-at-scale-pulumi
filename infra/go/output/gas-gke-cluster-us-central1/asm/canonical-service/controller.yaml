@@ -4,14 +4,14 @@ metadata:
   labels:
     control-plane: controller-manager
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
   name: asm-system
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
     controller-gen.kubebuilder.io/version: (unknown)
   creationTimestamp: null
   name: canonicalservices.anthos.cloud.google.com
@@ -127,7 +127,7 @@ metadata:
   name: canonical-service-leader-election-role
   namespace: asm-system
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 rules:
 - apiGroups:
   - ""
@@ -162,7 +162,7 @@ metadata:
   creationTimestamp: null
   name: canonical-service-manager-role
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 rules:
 - apiGroups:
   - ""
@@ -206,7 +206,7 @@ kind: ClusterRole
 metadata:
   name: canonical-service-metrics-reader
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 rules:
 - nonResourceURLs:
   - /metrics
@@ -219,7 +219,7 @@ metadata:
   name: canonical-service-account
   namespace: asm-system
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -227,7 +227,7 @@ metadata:
   name: canonical-service-leader-election-rolebinding
   namespace: asm-system
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -242,7 +242,7 @@ kind: ClusterRoleBinding
 metadata:
   name: canonical-service-manager-rolebinding
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -257,7 +257,7 @@ kind: ClusterRoleBinding
 metadata:
   name: canonical-service-proxy-rolebinding
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -275,7 +275,7 @@ metadata:
   name: canonical-service-controller-manager-metrics-service
   namespace: asm-system
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 spec:
   ports:
   - name: https
@@ -292,7 +292,7 @@ metadata:
   name: canonical-service-controller-manager
   namespace: asm-system
   annotations:
-    gke.io/cluster: "gke://thiatt-manual-015/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
+    gke.io/cluster: "gke://thiatt-manual-pulumi-002/us-central1/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gkeio-cluster"}
 spec:
   replicas: 1
   selector:

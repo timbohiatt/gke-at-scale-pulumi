@@ -4,8 +4,8 @@ spec:
   profile: asm-gcp-multiproject
   meshConfig:
     trustDomainAliases: # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.trustDomainAliases"}
-    - "thiatt-manual-015.svc.id.goog"
-    - "thiatt-manual-015.hub.id.goog"
+    - "thiatt-manual-pulumi-002.svc.id.goog"
+    - "thiatt-manual-pulumi-002.hub.id.goog"
   values:
     global:
-      meshID: "proj-861098562042" # {"$ref":"#/definitions/io.k8s.cli.substitutions.mesh-id"}
+      meshID: "proj-215657742410" # {"$ref":"#/definitions/io.k8s.cli.substitutions.mesh-id"}

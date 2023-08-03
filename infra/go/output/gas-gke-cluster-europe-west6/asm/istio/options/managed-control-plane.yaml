@@ -21,7 +21,7 @@ spec:
         app: istio-ingressgateway
         istio: ingressgateway
   meshConfig:
-    trustDomain: "thiatt-manual-015.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.substitutions.trust-domain"}
+    trustDomain: "thiatt-manual-pulumi-002.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.substitutions.trust-domain"}
     defaultConfig:
       proxyMetadata:
         CA_ROOT_CA: "/etc/ssl/certs/ca-certificates.crt"
@@ -37,7 +37,7 @@ spec:
     global:
       sds:
         token:
-          aud: "thiatt-manual-015.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.substitutions.trust-domain"}
-      meshID: "proj-861098562042" # {"$ref":"#/definitions/io.k8s.cli.substitutions.mesh-id"}
+          aud: "thiatt-manual-pulumi-002.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.substitutions.trust-domain"}
+      meshID: "proj-215657742410" # {"$ref":"#/definitions/io.k8s.cli.substitutions.mesh-id"}
       multiCluster:
-        clusterName: "cn-thiatt-manual-015-europe-west6-gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.cluster-name"}
+        clusterName: "cn-thiatt-manual-pulumi-002-europe-west6-gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.cluster-name"}

@@ -6,13 +6,13 @@ spec:
   tag: 1.17.2-asm.1 # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.tag"}
   meshConfig:
     trustDomainAliases: # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.trustDomainAliases"}
-    - "thiatt-manual-015.svc.id.goog"
-    - "thiatt-manual-015.hub.id.goog"
-    trustDomain: thiatt-manual-015.svc.id.goog # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.trustDomain"}
+    - "thiatt-manual-pulumi-002.svc.id.goog"
+    - "thiatt-manual-pulumi-002.hub.id.goog"
+    trustDomain: thiatt-manual-pulumi-002.svc.id.goog # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.trustDomain"}
     defaultConfig:
       proxyMetadata:
-        GKE_CLUSTER_URL: "https://container.googleapis.com/v1/projects/thiatt-manual-015/locations/us-central1/clusters/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.idp-url"}
-        GCP_METADATA: "thiatt-manual-015|861098562042|gas-gke-cluster|us-central1" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gke-metadata"}
+        GKE_CLUSTER_URL: "https://container.googleapis.com/v1/projects/thiatt-manual-pulumi-002/locations/us-central1/clusters/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.idp-url"}
+        GCP_METADATA: "thiatt-manual-pulumi-002|215657742410|gas-gke-cluster|us-central1" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gke-metadata"}
         CA_PROVIDER: "GoogleCA"
         PLUGINS: "GoogleTokenExchange"
         USE_TOKEN_FOR_CSR: "true"
@@ -50,15 +50,15 @@ spec:
         replicaCount: 2
         env:
         - name: GKE_CLUSTER_URL
-          value: "https://container.googleapis.com/v1/projects/thiatt-manual-015/locations/us-central1/clusters/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.idp-url"}
+          value: "https://container.googleapis.com/v1/projects/thiatt-manual-pulumi-002/locations/us-central1/clusters/gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.idp-url"}
         - name: GCP_METADATA
-          value: "thiatt-manual-015|861098562042|gas-gke-cluster|us-central1" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gke-metadata"}
+          value: "thiatt-manual-pulumi-002|215657742410|gas-gke-cluster|us-central1" # {"$ref":"#/definitions/io.k8s.cli.substitutions.gke-metadata"}
         - name: SPIFFE_BUNDLE_ENDPOINTS
-          value: "thiatt-manual-015.svc.id.goog|https://storage.googleapis.com/mesh-ca-resources/spiffe_bundle.json" # {"$ref":"#/definitions/io.k8s.cli.substitutions.spiffe-bundle-endpoints"}
+          value: "thiatt-manual-pulumi-002.svc.id.goog|https://storage.googleapis.com/mesh-ca-resources/spiffe_bundle.json" # {"$ref":"#/definitions/io.k8s.cli.substitutions.spiffe-bundle-endpoints"}
         - name: ENABLE_STACKDRIVER_MONITORING
           value: "true" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.controlplane.monitoring.enabled"}
         - name: TOKEN_AUDIENCES
-          value: "istio-ca,thiatt-manual-015.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.substitutions.token-audiences"}
+          value: "istio-ca,thiatt-manual-pulumi-002.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.substitutions.token-audiences"}
         - name: PILOT_ENABLE_CROSS_CLUSTER_WORKLOAD_ENTRY
           value: "true"
   values:
@@ -84,12 +84,12 @@ spec:
         servicePort: 15463
       sds:
         token:
-          aud: "thiatt-manual-015.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.trustDomain"}
+          aud: "thiatt-manual-pulumi-002.svc.id.goog" # {"$ref":"#/definitions/io.k8s.cli.setters.anthos.servicemesh.trustDomain"}
       multiCluster:
         # Provided to ensure a human readable name rather than a UUID.
-        clusterName: "cn-thiatt-manual-015-us-central1-gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.cluster-name"}
-      meshID: "proj-861098562042" # {"$ref":"#/definitions/io.k8s.cli.substitutions.mesh-id"}
-      network: "thiatt-manual-015-gas-vpc" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.compute.network"}
+        clusterName: "cn-thiatt-manual-pulumi-002-us-central1-gas-gke-cluster" # {"$ref":"#/definitions/io.k8s.cli.substitutions.cluster-name"}
+      meshID: "proj-215657742410" # {"$ref":"#/definitions/io.k8s.cli.substitutions.mesh-id"}
+      network: "thiatt-manual-pulumi-002-gas-vpc" # {"$ref":"#/definitions/io.k8s.cli.setters.gcloud.compute.network"}
     gateways:
       istio-ingressgateway:
         # Enable gateway injection
