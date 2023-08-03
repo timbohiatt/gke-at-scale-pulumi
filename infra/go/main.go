@@ -180,7 +180,7 @@ func main() {
 			Description:            pulumi.String("GKE at Scale - Workload Identity Pool for GKE Cluster"),
 			Disabled:               pulumi.Bool(false),
 			DisplayName:            pulumi.String(urn),
-			WorkloadIdentityPoolId: pulumi.String(fmt.Sprintf("%s-wip-gke-0017", urnPrefix)), // **** TODO: Replace with Pulumi RANDOM ID? ****
+			WorkloadIdentityPoolId: pulumi.String(fmt.Sprintf("%s-wip-gke-0018", urnPrefix)), // **** TODO: Replace with Pulumi RANDOM ID? ****
 		})
 		if err != nil {
 			return err
@@ -259,7 +259,7 @@ func main() {
 			Description:      pulumi.String("TCP Health Check"),
 			HealthyThreshold: pulumi.Int(4),
 			TcpHealthCheck: &compute.HealthCheckTcpHealthCheckArgs{
-				Port:        pulumi.Int(8080),
+				Port:        pulumi.Int(80),
 				ProxyHeader: pulumi.String("NONE"),
 			},
 			TimeoutSec:         pulumi.Int(1),
@@ -415,30 +415,6 @@ func main() {
 
 			// Create GKE Autopilot Cluster for Cloud Region
 			cloudRegion.GKEClusterName = fmt.Sprintf("%s-gke-cluster-%s", urnPrefix, cloudRegion.Region)
-			/*gcpGKECluster, err := container.NewCluster(ctx, cloudRegion.GKEClusterName, &container.ClusterArgs{
-				Project:         pulumi.String(gcpProjectId),
-				Name:            pulumi.String(cloudRegion.GKEClusterName),
-				Network:         gcpNetwork.ID(),
-				Subnetwork:      gcpSubnetwork.ID(),
-				Location:        pulumi.String(cloudRegion.Region),
-				EnableAutopilot: pulumi.Bool(true),
-				VerticalPodAutoscaling: &container.ClusterVerticalPodAutoscalingArgs{
-					Enabled: pulumi.Bool(true),
-				},
-				IpAllocationPolicy: &container.ClusterIpAllocationPolicyArgs{},
-				MasterAuthorizedNetworksConfig: &container.ClusterMasterAuthorizedNetworksConfigArgs{
-					CidrBlocks: &container.ClusterMasterAuthorizedNetworksConfigCidrBlockArray{
-						&container.ClusterMasterAuthorizedNetworksConfigCidrBlockArgs{
-							CidrBlock:   pulumi.String("0.0.0.0/0"),
-							DisplayName: pulumi.String("Global Public Access"),
-						},
-					},
-				},
-			}, pulumi.IgnoreChanges([]string{"gatewayApiConfig"}))
-			if err != nil {
-				return err
-			}*/
-
 			gcpGKECluster, err := container.NewCluster(ctx, cloudRegion.GKEClusterName, &container.ClusterArgs{
 				Project:               pulumi.String(gcpProjectId),
 				Name:                  pulumi.String(cloudRegion.GKEClusterName),
@@ -571,45 +547,44 @@ func main() {
 				return err
 			}
 
-			/*
-				urn = fmt.Sprintf("%s-helm-deploy-cluster-ops-%s", urnPrefix, cloudRegion.Region)
-				helmClusterOps, err := helm.NewChart(ctx, urn, helm.ChartArgs{
-					Chart:          pulumi.String("cluster-ops"),
-					ResourcePrefix: cloudRegion.Id,
-					Version:        pulumi.String("0.1.0"),
-					Path:           pulumi.String("../../apps/helm"),
-					Values: pulumi.Map{
-						"global": pulumi.Map{
-							"labels": pulumi.Map{
-								"region": pulumi.String(cloudRegion.Region),
-							},
-						},
-						"app": pulumi.Map{
+			urn = fmt.Sprintf("%s-helm-deploy-cluster-ops-%s", urnPrefix, cloudRegion.Region)
+			helmClusterOps, err := helm.NewChart(ctx, urn, helm.ChartArgs{
+				Chart:          pulumi.String("cluster-ops"),
+				ResourcePrefix: cloudRegion.Id,
+				Version:        pulumi.String("0.1.0"),
+				Path:           pulumi.String("../../apps/helm"),
+				Values: pulumi.Map{
+					"global": pulumi.Map{
+						"labels": pulumi.Map{
 							"region": pulumi.String(cloudRegion.Region),
 						},
-						"autoneg": pulumi.Map{
-							"serviceAccount": pulumi.Map{
-								"annotations": pulumi.Map{
-									"iam.gke.io/gcp-service-account": pulumi.String(fmt.Sprintf("autoneg-system@%s.iam.gserviceaccount.com", gcpProjectId)),
-								}},
-						},
 					},
-				}, pulumi.Provider(k8sProvider), pulumi.DependsOn([]pulumi.Resource{helmIstioBase, helmIstioD}), pulumi.Parent(gcpGKENodePool))
-				if err != nil {
-					return err
-				}
+					"app": pulumi.Map{
+						"region": pulumi.String(cloudRegion.Region),
+					},
+					"autoneg": pulumi.Map{
+						"serviceAccount": pulumi.Map{
+							"annotations": pulumi.Map{
+								"iam.gke.io/gcp-service-account": pulumi.String(fmt.Sprintf("autoneg-system@%s.iam.gserviceaccount.com", gcpProjectId)),
+							}},
+					},
+				},
+			}, pulumi.Provider(k8sProvider), pulumi.DependsOn([]pulumi.Resource{helmIstioBase, helmIstioD}), pulumi.Parent(gcpGKENodePool))
+			if err != nil {
+				return err
+			}
 
-				urn = fmt.Sprintf("%s-iam-svc-account-k8s-binding-%s", urnPrefix, cloudRegion.Region)
-				gcpAutoNegIAMBindings, err := serviceaccount.NewIAMBinding(ctx, urn, &serviceaccount.IAMBindingArgs{
-					ServiceAccountId: gcpServiceAccountAutoNeg.Name,
-					Role:             pulumi.String("roles/iam.workloadIdentityUser"),
-					Members: pulumi.StringArray{
-						pulumi.String(fmt.Sprintf("serviceAccount:%s.svc.id.goog[autoneg-system/autoneg-controller-manager]", gcpProjectId)),
-					},
-				}, pulumi.Provider(k8sProvider), pulumi.DependsOn([]pulumi.Resource{gcpGKENodePool, helmClusterOps}), pulumi.Parent(gcpGKENodePool))
-				if err != nil {
-					return err
-				}*/
+			urn = fmt.Sprintf("%s-iam-svc-account-k8s-binding-%s", urnPrefix, cloudRegion.Region)
+			_, err = serviceaccount.NewIAMBinding(ctx, urn, &serviceaccount.IAMBindingArgs{
+				ServiceAccountId: gcpServiceAccountAutoNeg.Name,
+				Role:             pulumi.String("roles/iam.workloadIdentityUser"),
+				Members: pulumi.StringArray{
+					pulumi.String(fmt.Sprintf("serviceAccount:%s.svc.id.goog[autoneg-system/autoneg-controller-manager]", gcpProjectId)),
+				},
+			}, pulumi.Provider(k8sProvider), pulumi.DependsOn([]pulumi.Resource{gcpGKENodePool, helmClusterOps}), pulumi.Parent(gcpGKENodePool))
+			if err != nil {
+				return err
+			}
 
 			urn = fmt.Sprintf("%s-helm-deploy-app-team-%s", urnPrefix, cloudRegion.Region)
 			_, err = helm.NewChart(ctx, urn, helm.ChartArgs{
@@ -636,9 +611,6 @@ func main() {
 			if err != nil {
 				return err
 			}
-
-			//_ = gcpAutoNegIAMBindings
-
 		}
 
 		_ = gcpProject
