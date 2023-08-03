@@ -555,17 +555,17 @@ func main() {
 				Chart:         pulumi.String("gateway"),
 				Namespace:     k8sAppNamespace.Metadata.Name(),
 				CleanupOnFail: pulumi.Bool(true),
-				//Values: pulumi.Map{
-				//"service": pulumi.Map{
-				//"type": pulumi.String("LoadBalancer"),
-				//"type": pulumi.String("ClusterIP"),
-				//"annotations": pulumi.Map{
-				//	"cloud.google.com/neg":       pulumi.String("{\"exposed_ports\": {\"80\":{}}}"),
-				//	"controller.autoneg.dev/neg": pulumi.Sprintf("{\"backend_services\":{\"80\":[{\"name\":\"%s\",\"max_rate_per_endpoint\":100}]}}", gcpBackendService.Name),
-				//"networking.gke.io/load-balancer-type": pulumi.String("Internal"),
-				//		},
-				//	},
-				//},
+				Values: pulumi.Map{
+					"service": pulumi.Map{
+						//"type": pulumi.String("LoadBalancer"),
+						"type": pulumi.String("ClusterIP"),
+						"annotations": pulumi.Map{
+							"cloud.google.com/neg":                 pulumi.String("{\"exposed_ports\": {\"80\":{}}}"),
+							"controller.autoneg.dev/neg":           pulumi.Sprintf("{\"backend_services\":{\"80\":[{\"name\":\"%s\",\"max_rate_per_endpoint\":100}]}}", gcpBackendService.Name),
+							"networking.gke.io/load-balancer-type": pulumi.String("Internal"),
+						},
+					},
+				},
 			}, pulumi.Provider(k8sProvider), pulumi.DependsOn([]pulumi.Resource{helmIstioBase, helmIstioD}), pulumi.Parent(gcpGKENodePool))
 			if err != nil {
 				return err
