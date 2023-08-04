@@ -9,17 +9,6 @@ global:
     project: gke-at-scale
     region: 
 
-namespace: 
-  name: asm-ingress
-  labels: 
-    istio-injection: enabled
-
-serviceAccount: 
-  name: asm-ingressgateway
-
-gateway: 
-  name: asm-ingressgateway
-
 autoneg: 
   serviceAccount:
     annotations:

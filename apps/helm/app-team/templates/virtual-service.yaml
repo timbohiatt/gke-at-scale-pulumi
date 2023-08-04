@@ -1,0 +1,19 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: up-and-running-ingress
+  namespace: app-team
+  labels:
+    app: up-and-running
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - up-and-running-gateway
+  http:
+  - route:
+    - destination:
+        host: up-and-running
+        port:
+          number: 80

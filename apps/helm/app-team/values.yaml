@@ -1,0 +1,18 @@
+replicaCount: 1
+
+global: 
+  labels:
+    region:
+    project: up-and-running
+
+deployment: 
+  name: up-and-running
+  namespace: app-team
+  image: europe-docker.pkg.dev/thiatt-manual-020/showcase-containers/001-up-and-running:latest
+  env: 
+    customer: "Developers & Businesses!"
+    color_primary: "#000000"
+    color_secondary: "#5f5f61"
+    color_background: "#FFFFFF"
+    location: "one of our global data centers"
+    platform: "Google Cloud"
