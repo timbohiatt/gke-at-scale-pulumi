@@ -38,7 +38,7 @@ To deploy your infrastructure and demo applications, follow the below steps.
 
 ### Steps
 
-After cloning this repo, from this working directory, run these commands:
+After cloning this repo, from this working directory, navigate to the ```infra/go``` folder and run these commands:
 
 1. Create a new Pulumi stack, which is an isolated deployment target for this example:
 
@@ -87,34 +87,10 @@ After cloning this repo, from this working directory, run these commands:
 		SubnetIp:           "10.128.100.0/24",
 		KubernetesProvider: &k8s.Provider{},
 	},
-	cloudRegion{
-		Id:                 "003",
-		Enabled:            true,
-		Region:             "asia-east1",
-		SubnetIp:           "10.128.150.0/24",
-		KubernetesProvider: &k8s.Provider{},
-	},
-	cloudRegion{
-		Id:                 "004",
-		Enabled:            true,
-		Region:             "australia-southeast1",
-		SubnetIp:           "10.128.200.0/24",
-		KubernetesProvider: &k8s.Provider{},
-	},
-	cloudRegion{
-		Id:                 "005",
-		Enabled:            true,
-		Region:             "me-west1",
-		SubnetIp:           "10.128.250.0/24",
-		KubernetesProvider: &k8s.Provider{},
-	},
-	cloudRegion{
-		Id:                 "006",
-		Enabled:            true,
-		Region:             "southamerica-west1",
-		SubnetIp:           "10.129.50.0/24",
-		KubernetesProvider: &k8s.Provider{},
-	},
+
+    ....
+    ....
+
 }
    ```
 
@@ -122,9 +98,9 @@ After cloning this repo, from this working directory, run these commands:
 
     Now that we have configured which regions and how many clusters to provision it is time to stand up your infrastructure with Pulumi. 
     
-    To preview and deploy changes, run `pulumi update` and select "yes."
+    To preview and deploy changes, run `pulumi up` and select "yes."
 
-    The `update` sub-command shows a preview of the resources that will be created
+    The `up` sub-command shows a preview of the resources that will be created
     and prompts on whether to proceed with the deployment. Note that the stack
     itself is counted as a resource, though it does not correspond
     to a physical cloud resource.
@@ -132,35 +108,10 @@ After cloning this repo, from this working directory, run these commands:
     You can also run `pulumi up --diff` to see and inspect the diffs of the
     overall changes expected to take place.
 
-    Running `pulumi up` will deploy the GKE cluster. Note, provisioning a
-    new GKE cluster takes between 3-5 minutes.
+    Running `pulumi up` will deploy the GKE clusters and associated netowrking. Note, provisioning a
+    new GKE cluster takes between 5-7 minutes per cluster. Additional time will be required for the networking and application Helm deployments.
 
-    ```bash
-    $ pulumi update
-	Previewing update (dev):
-
-        Type                      Name            Plan
-    +   pulumi:pulumi:Stack       gcp-go-gke-dev  create
-    +   └─ gcp:container:Cluster  helloworld      create
-
-	Resources:
-        + 2 to create
-
-	Updating (dev):
-
-        Type                      Name            Plan
-    +   pulumi:pulumi:Stack       gcp-go-gke-dev  created
-    +   └─ gcp:container:Cluster  helloworld      created
-
-    Outputs:
-        ClusterName: "helloworld-9b9530f"
-        KubeConfig : "<KUBECONFIG_CONTENTS>"
-
-	Resources:
-        + 2 created
-
-    Duration: 3m3s
-    ```
+   
 
 1. After 3-5 minutes, your cluster will be ready, and the kubeconfig JSON you'll use to connect to the cluster will
    be available as an output.
