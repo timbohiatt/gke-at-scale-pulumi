@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  up-and-running
+  namespace: app-team
+  labels:
+    app: up-and-running
+spec:
+  selector:
+    matchLabels:
+      app: up-and-running
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: up-and-running
+    spec:
+      containers:
+      - name: up-and-running
+        image: {{.Values.deployment.image }}
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: CUSTOMER
+          value: "{{.Values.deployment.env.customer }}"
+        - name: COLOR_PRIMARY
+          value: "{{.Values.deployment.env.color_primary }}"
+        - name: COLOR_SECONDARY
+          value: "{{.Values.deployment.env.color_secondary }}"
+        - name: COLOR_BACKGROUND
+          value: "{{.Values.deployment.env.color_background }}"
+        - name: LOCATION
+          value: "{{.Values.deployment.env.location }}"
+        - name: PLATFORM
+          value: "{{.Values.deployment.env.platform }}"
