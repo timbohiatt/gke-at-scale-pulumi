@@ -1,4 +1,4 @@
-/.pulumi/
+**/.pulumi/
 /.vscode/
 /.vs/
 bin/

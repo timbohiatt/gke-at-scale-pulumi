@@ -111,24 +111,108 @@ After cloning this repo, from this working directory, navigate to the ```infra/g
     Running `pulumi up` will deploy the GKE clusters and associated netowrking. Note, provisioning a
     new GKE cluster takes between 5-7 minutes per cluster. Additional time will be required for the networking and application Helm deployments.
 
-   
-
-1. After 3-5 minutes, your cluster will be ready, and the kubeconfig JSON you'll use to connect to the cluster will
-   be available as an output.
-
-1. Access the Kubernetes Cluster using `kubectl`
-
-    To access your new Kubernetes cluster using `kubectl`, we need to setup the
-    `kubeconfig` file and download `kubectl`. We can leverage the Pulumi
-    stack output in the CLI, as Pulumi facilitates exporting these objects for us.
-
     ```bash
-    $ pulumi stack output kubeconfig --show-secrets > kubeconfig
-    $ export KUBECONFIG=$PWD/kubeconfig
+    $ pulumi update
+	Previewing update (dev):
 
-    $ kubectl version
-    $ kubectl cluster-info
-    $ kubectl get nodes
+        Type                                  Name                                          Plan      
+    +   pulumi:pulumi:Stack                   gke-at-scale-dev                              create    
+    +   ├─ gcp:projects:Service               gas-project-service-compute.googleapis.com    create     
+    +   ├─ gcp:projects:Service               gas-project-service-container.googleapis.com  create     
+    +   ├─ gcp:projects:IAMCustomRole         gas-iam-custom-role-autoneg                   create     
+    +   ├─ gcp:iam:WorkloadIdentityPool       gas-wip-gke-cluster                           create     
+    +   ├─ gcp:serviceAccount:Account         gas-service-account                           create     
+    +   ├─ gcp:serviceAccount:Account         gas-service-account-autoneg                   create     
+    +   ├─ gcp:compute:GlobalAddress          gas-glb-ip-address                            create     
+    +   ├─ gcp:compute:ManagedSslCertificate  gas-glb-ssl-cert                              create     
+    +   ├─ gcp:compute:Network                gas-vpc                                       create     
+    +   ├─ gcp:compute:HealthCheck            gas-glb-tcp-health-check                      create     
+    +   ├─ gcp:projects:IAMBinding            gas-iam-custom-role-binding-autoneg           create     
+    +   ├─ gcp:compute:Subnetwork             gas-vpc-subnetwork-us-central1                create     
+    +   ├─ gcp:compute:Subnetwork             gas-vpc-subnetwork-asia-east1                 create     
+    +   ├─ gcp:compute:Firewall               gas-fw-ingress-allow-cluster-app-access       create     
+    +   ├─ gcp:compute:Subnetwork             gas-vpc-subnetwork-europe-west6               create     
+    +   ├─ gcp:compute:Firewall               gas-fw-ingress-allow-health-checks            create     
+    +   ├─ gcp:container:Cluster              gas-gke-cluster-us-central1                   create     
+    +   │  └─ kubernetes:helm.sh/v3:Chart     gas-helm-deploy-app-team-us-central1          create     
+    +   ├─ gcp:compute:BackendService         gas-glb-bes                                   create     
+    +   ├─ gcp:container:Cluster              gas-gke-cluster-asia-east1                    create     
+    +   │  └─ kubernetes:helm.sh/v3:Chart     gas-helm-deploy-app-team-asia-east1           create     
+    +   ├─ gcp:container:Cluster              gas-gke-cluster-europe-west6                  create     
+    +   │  └─ kubernetes:helm.sh/v3:Chart     gas-helm-deploy-app-team-europe-west6         create     
+    +   ├─ gcp:compute:URLMap                 gas-glb-url-map-http                          create     
+    +   ├─ gcp:compute:URLMap                 gas-glb-url-map-https                         create     
+    +   ├─ gcp:compute:TargetHttpsProxy       gas-glb-https-proxy                           create     
+    +   ├─ gcp:compute:TargetHttpProxy        gas-glb-http-proxy                            create     
+    +   ├─ gcp:compute:GlobalForwardingRule   gas-glb-https-forwarding-rule                 create     
+    +   ├─ gcp:compute:GlobalForwardingRule   gas-glb-http-forwarding-rule                  create     
+    +   ├─ gcp:container:NodePool             gas-gke-asia-east1-np-01                      create     
+    +   │  ├─ gcp:serviceAccount:IAMBinding   gas-iam-svc-account-k8s-binding-asia-east1    create     
+    +   │  ├─ kubernetes:helm.sh/v3:Release   gas-helm-deploy-istio-istiod-asia-east1       create     
+    +   │  ├─ kubernetes:helm.sh/v3:Chart     gas-helm-deploy-cluster-ops-asia-east1        create     
+    +   │  └─ kubernetes:helm.sh/v3:Release   gas-helm-deploy-istio-igw-asia-east1          create     
+    +   ├─ gcp:container:NodePool             gas-gke-us-central1-np-01                     create     
+    +   │  ├─ gcp:serviceAccount:IAMBinding   gas-iam-svc-account-k8s-binding-us-central1   create     
+    +   │  ├─ kubernetes:helm.sh/v3:Release   gas-helm-deploy-istio-istiod-us-central1      create     
+    +   │  ├─ kubernetes:helm.sh/v3:Chart     gas-helm-deploy-cluster-ops-us-central1       create     
+    +   │  └─ kubernetes:helm.sh/v3:Release   gas-helm-deploy-istio-igw-us-central1         create     
+    +   ├─ gcp:container:NodePool             gas-gke-europe-west6-np-01                    create     
+    +   │  ├─ gcp:serviceAccount:IAMBinding   gas-iam-svc-account-k8s-binding-europe-west6  create     
+    +   │  ├─ kubernetes:helm.sh/v3:Release   gas-helm-deploy-istio-istiod-europe-west6     create     
+    +   │  ├─ kubernetes:helm.sh/v3:Chart     gas-helm-deploy-cluster-ops-europe-west6      create     
+    +   │  └─ kubernetes:helm.sh/v3:Release   gas-helm-deploy-istio-igw-europe-west6        create     
+    +   ├─ pulumi:providers:kubernetes        gas-gke-cluster-asia-east1-kubeconfig         create     
+    +   ├─ pulumi:providers:kubernetes        gas-gke-cluster-us-central1-kubeconfig        create     
+    +   ├─ pulumi:providers:kubernetes        gas-gke-cluster-europe-west6-kubeconfig       create     
+    +   ├─ kubernetes:helm.sh/v3:Release      gas-helm-deploy-istio-base-asia-east1         create     
+    +   ├─ kubernetes:helm.sh/v3:Release      gas-helm-deploy-istio-base-europe-west6       create     
+    +   ├─ kubernetes:helm.sh/v3:Release      gas-helm-deploy-istio-base-us-central1        create     
+    +   ├─ kubernetes:core/v1:Namespace       gas-k8s-namespace-app-us-central1             create     
+    +   ├─ kubernetes:core/v1:Namespace       gas-k8s-namespace-app-europe-west6            create     
+    +   └─ kubernetes:core/v1:Namespace       gas-k8s-namespace-app-asia-east1              create   
+
+	Resources:
+        + 54 to create
+
+	Updating (dev):
+
+        Type                                  Name                                          Status              Info
+    +   pulumi:pulumi:Stack                   gke-at-scale-dev                              creating (486s).    [GAS INFO] - Cloud Region: europe-central2 - SKIPPING
+    +   ├─ gcp:projects:Service               gas-project-service-compute.googleapis.com    created (95s)       
+    +   ├─ gcp:projects:Service               gas-project-service-container.googleapis.com  created (95s)       
+    +   ├─ gcp:serviceAccount:Account         gas-service-account-autoneg                   created (1s)        
+    +   ├─ gcp:projects:IAMCustomRole         gas-iam-custom-role-autoneg                   created (2s)        
+    +   ├─ gcp:serviceAccount:Account         gas-service-account                           created (2s)        
+    +   ├─ gcp:iam:WorkloadIdentityPool       gas-wip-gke-cluster                           created (12s)       
+    +   ├─ gcp:projects:IAMBinding            gas-iam-custom-role-binding-autoneg           created (8s)        
+    +   ├─ gcp:compute:HealthCheck            gas-glb-tcp-health-check                      created (12s)       
+    +   ├─ gcp:compute:ManagedSslCertificate  gas-glb-ssl-cert                              created (12s)       
+    +   ├─ gcp:compute:GlobalAddress          gas-glb-ip-address                            created (12s)       
+    +   ├─ gcp:compute:Network                gas-vpc                                       created (12s)       
+    +   ├─ gcp:compute:BackendService         gas-glb-bes                                   created (21s)       
+    +   ├─ gcp:compute:Firewall               gas-fw-ingress-allow-health-checks            created (11s)       
+    +   ├─ gcp:compute:Subnetwork             gas-vpc-subnetwork-us-central1                created (13s)       
+    +   ├─ gcp:compute:Subnetwork             gas-vpc-subnetwork-asia-east1                 created (31s)       
+    +   ├─ gcp:compute:Firewall               gas-fw-ingress-allow-cluster-app-access       created (12s)       
+    +   ├─ gcp:compute:Subnetwork             gas-vpc-subnetwork-europe-west6               created (24s)       
+    +   ├─ gcp:container:Cluster              gas-gke-cluster-us-central1                   creating (361s)..   
+    +   ├─ gcp:compute:URLMap                 gas-glb-url-map-http                          created (11s)       
+    +   ├─ gcp:compute:URLMap                 gas-glb-url-map-https                         created (12s)       
+    +   ├─ gcp:container:Cluster              gas-gke-cluster-europe-west6                  creating (351s)     
+    +   ├─ gcp:container:Cluster              gas-gke-cluster-asia-east1                    creating (344s)...  
+    +   ├─ gcp:compute:TargetHttpProxy        gas-glb-http-proxy                            created (11s)       
+    +   ├─ gcp:compute:TargetHttpsProxy       gas-glb-https-proxy                           created (11s)       
+    +   ├─ gcp:compute:GlobalForwardingRule   gas-glb-http-forwarding-rule                  created (18s)       
+    +   └─ gcp:compute:GlobalForwardingRule   gas-glb-https-forwarding-rule                 created (16s)       
+
+    Outputs:
+        ClusterName: "helloworld-9b9530f"
+        KubeConfig : "<KUBECONFIG_CONTENTS>"
+
+	Resources:
+        + 2 created
+
+    Duration: 3m3s
     ```
 
 1. Once you've finished experimenting, tear down your stack's resources by destroying and removing it:
