@@ -10,6 +10,7 @@ This provides a multi-region load balanced set of GKE Clusters. In this demo all
 
 The GKE Clusters are additionally configured with [Managed ASM (Anthos Service Mesh)](https://cloud.google.com/service-mesh/docs/managed/provision-managed-anthos-service-mesh) to give visibility of the workloads across a multi-cluster mesh. To enable this the clusters are also enrolled into [GKE Fleet Management](https://cloud.google.com/kubernetes-engine/docs/fleets-overview). 
 
+![Google Cloud High Level Infrastructure Diagram](https://github.com/timbohiatt/gke-at-scale-pulumi/blob/thiatt/ft_readme/docs/001-google-cloud-infra.png?raw=true)
 
 ## Deploying the App
 
