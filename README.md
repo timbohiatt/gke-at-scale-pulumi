@@ -8,9 +8,26 @@ Additionally a Domain Name is linked to a reserved static IP address and joined 
 
 This provides a multi-region load balanced set of GKE Clusters. In this demo all clusters run identical worloads configured using [Helm Charts](https://helm.sh/) which are also deployed with the [Pulumi Kubernetes/Helm provider](https://www.pulumi.com/registry/packages/kubernetes/api-docs/helm/). 
 
-The GKE Clusters are additionally configured with [Managed ASM (Anthos Service Mesh)](https://cloud.google.com/service-mesh/docs/managed/provision-managed-anthos-service-mesh) to give visibility of the workloads across a multi-cluster mesh. To enable this the clusters are also enrolled into [GKE Fleet Management](https://cloud.google.com/kubernetes-engine/docs/fleets-overview). 
+The GKE Clusters are additionally configured with [Managed Istio (Anthos Service Mesh)](https://istio.io/latest/about/service-mesh/) to give visibility of the workloads across a multi-cluster mesh. To enable this the clusters are also enrolled into [GKE Fleet Management](https://cloud.google.com/kubernetes-engine/docs/fleets-overview). 
+
+## The Design
+
+### High Level Design
 
 ![Google Cloud High Level Infrastructure Diagram](https://github.com/timbohiatt/gke-at-scale-pulumi/blob/thiatt/ft_readme/docs/001-google-cloud-infra.png?raw=true)
+
+### Load Balancer Breakdown
+When deploying a Google Cloud load balancer there is lots of configuration to consider. In our deployment we will be deploying a Layer 7 External Load Balancer. This loa balanacer breaks down into several components illustrated in the diagram below. 
+
+![Google Cloud Design - Load Balancer Breakdown](https://github.com/timbohiatt/gke-at-scale-pulumi/blob/thiatt/ft_readme/docs/002-load-balancer-breakdown.png?raw=true)
+
+1. External statis IP Address; Reserved and assigned as the entry to point to the global load balancer. This staitc IP address is assigned to your DNS Provider for validation for the SSL Certificate. 
+2. Forwaring Rule; Responsible for forwarding TCP traffic that enters the Google Cloud Network via the static IP address to a given HTTP or HTTPS Target Proxy. In our deployment we deploy two forwarding Rules.
+    - 1x HTTPS TCP traffic on 443 
+    - 1x HTTP TCP traffic on port 80
+3. Target Proxies; Responsible for linking the SSL certificates with a URL map tha detemrines how traffic will be routed through the Load Balancer to Google Cloud Compute backends. 
+4. URL Map; Reads the L7 TCP headers and compares them against the URL Maps associated with the Target Proxies. The URL map contains the configuration that determines which URL domains and paths will route to which Google Compute Backend services (VM's, Serverless, GKE). In our deployment we configure a single URL map for our chosen domain and all traffic routed into this URL Map from the Target Proxies will be routed to our GKE Backend Services.
+5. Backend Services are the bridge between the Load Balancer and the target compute; In our deployment our traffic will be routed from the URL map to a single Backend Service which will contain as series GKE Pod IP addresses (Network Endpoints) which will exist in a NEG (Network Endpoint Group).
 
 ## Deploying the App
 
