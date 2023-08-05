@@ -14,12 +14,12 @@ The GKE Clusters are additionally configured with [Managed Istio (Anthos Service
 
 ### High Level Design
 
-![Google Cloud High Level Infrastructure Diagram](https://github.com/timbohiatt/gke-at-scale-pulumi/blob/thiatt/ft_readme/docs/001-google-cloud-infra.png?raw=true)
+![Google Cloud High Level Infrastructure Diagram](https://github.com/timbohiatt/gke-at-scale-pulumi/blob/thiatt/main/docs/001-google-cloud-infra.png?raw=true)
 
 ### Load Balancer Breakdown
 When deploying a Google Cloud load balancer there is lots of configuration to consider. In our deployment we will be deploying a Layer 7 External Load Balancer. This loa balanacer breaks down into several components illustrated in the diagram below. 
 
-![Google Cloud Design - Load Balancer Breakdown](https://github.com/timbohiatt/gke-at-scale-pulumi/blob/thiatt/ft_readme/docs/002-load-balancer-breakdown.png?raw=true)
+![Google Cloud Design - Load Balancer Breakdown](https://github.com/timbohiatt/gke-at-scale-pulumi/blob/thiatt/main/docs/002-load-balancer-breakdown.png?raw=true)
 
 1. External statis IP Address; Reserved and assigned as the entry to point to the global load balancer. This staitc IP address is assigned to your DNS Provider for validation for the SSL Certificate. 
 2. Forwaring Rule; Responsible for forwarding TCP traffic that enters the Google Cloud Network via the static IP address to a given HTTP or HTTPS Target Proxy. In our deployment we deploy two forwarding Rules.
