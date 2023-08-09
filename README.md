@@ -48,11 +48,11 @@ To deploy your infrastructure and demo applications, follow the below steps.
     ```
 
     **Note:** This auth mechanism is meant for inner loop developer workflows. If you want to run this example in an unattended service account setting, such as in CI/CD, see [Using a Service Account](https://www.pulumi.com/docs/intro/cloud-providers/gcp/setup/) in the Pulumi docs. The service account must have the role `Kubernetes Engine Admin` / `container.admin`.
-1. A Domain Name to which you can use for this demo, ensure you have the ability to change the DNS records for this domain.
+1. [Optional] A Domain Name to which you can use for this demo, ensure you have the ability to change the DNS records for this domain.
 
 ### Steps
 
-After cloning this repo, from this working directory, navigate to the ```infra/go``` folder and run these commands:
+After cloning this repo, from this working directory, navigate to the ```infra``` folder and run these commands:
 
 1. Create a new Pulumi stack, which is an isolated deployment target for this example:
 
@@ -65,18 +65,24 @@ After cloning this repo, from this working directory, navigate to the ```infra/g
 1. Set the required GCP configuration variables. This sets configuration options and default values for our cluster:
 
     ```bash
-    pulumi config set prefix <YOUR_CHOSEN_RESOURCE_PREFIX>
-    pulumi config set gcpProjectId <YOUR_GCP_PROJECT_ID_HERE>
-    pulumi config set domainName <YOUR_DOMAIN_HERE>     # A domain you own and can control DNS records.
+    pulumi config set gcp:project <YOUR_GCP_PROJECT_ID_HERE>
+    pulumi config set prefix <YOUR_CHOSEN_RESOURCE_PREFIX> # Max Length 5 Characters
+    ```
+
+1. [Optional] add the Domain configuration variables. This will enable a Domain Name and SSL certificate for this demo:
+
+    ```bash
+    pulumi config set domainName <YOUR_DOMAIN_HERE>     # An domain you own and can control DNS records.
     ```
 
 1. Setup the regions and clusters:
     There is the possibility to configure additional GKE Clusters in additional regions as part of this deployment.
 
-    By Default; This demo configures a new VPC and in this VPC it will, by default, create two regional subnets:
+    By Default; This demo configures a new VPC and in this VPC it will, by default, create three regional subnets:
 
     1. `us-central1`
     1. `europe-west6`
+    1. `asia-east1`
 
     Each subnet region will also host a new GKE Cluster which is linked to our Global Load Balancer and has our Helm Charts deployed to it.
 
@@ -98,6 +104,13 @@ After cloning this repo, from this working directory, navigate to the ```infra/g
         Enabled:            true,
         Region:             "europe-west6",
         SubnetIp:           "10.128.100.0/24",
+        KubernetesProvider: &k8s.Provider{},
+    },
+    cloudRegion{
+        Id:                 "003",
+        Enabled:            true,
+        Region:             "asia-east1",
+        SubnetIp:           "10.128.150.0/24",
         KubernetesProvider: &k8s.Provider{},
     },
     // etc
