@@ -1,0 +1,6 @@
+name: gke-at-scale
+runtime: go
+description: Multi-Region GKE with Loadbalancing and Helm Charts
+config:
+  prefix:
+    description: Google Cloud Resource Prefix (Default - GAS - GKE At Scale)
